@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://vx2bv1y7pogc"]
+
+[ext_resource type="Script" uid="uid://bvgnvbbu3jwcn" path="res://Scripts/frog.gd" id="1_85unm"]
+
+[node name="frog" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+script = ExtResource("1_85unm")

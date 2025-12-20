@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5m003mwhajx7"]
+[gd_scene load_steps=5 format=3 uid="uid://b5m003mwhajx7"]
 
 [ext_resource type="Script" uid="uid://bvgnvbbu3jwcn" path="res://Scripts/frog.gd" id="1_85unm"]
 [ext_resource type="Texture2D" uid="uid://dlabmsl6q4vx1" path="res://icon.svg" id="2_4ygq6"]
+[ext_resource type="Texture2D" uid="uid://bwfwr1xenfsdj" path="res://shadow-1.png.png" id="2_c3muq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3muq"]
 size = Vector2(126, 48)
@@ -13,6 +14,12 @@ position = Vector2(131, 198)
 gravity_scale = 0.0
 script = ExtResource("1_85unm")
 
+[node name="Shadow1_png" type="Sprite2D" parent="RigidBody2D"]
+modulate = Color(0, 0, 0, 0.45882353)
+position = Vector2(-2.9802322e-08, 3.0000005)
+scale = Vector2(0.684375, 0.64375)
+texture = ExtResource("2_c3muq")
+
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 texture = ExtResource("2_4ygq6")
 
@@ -22,5 +29,7 @@ shape = SubResource("RectangleShape2D_c3muq")
 
 [node name="jumpTimer" type="Timer" parent="RigidBody2D"]
 one_shot = true
+
+[node name="jumpCooldown" type="Timer" parent="RigidBody2D"]
 
 [connection signal="timeout" from="RigidBody2D/jumpTimer" to="RigidBody2D" method="_on_jump_timer_timeout"]

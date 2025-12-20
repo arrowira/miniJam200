@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 	if(BowCharge >= 25 && !Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT)):
 		BowCharge = 0
 		var Arrow = ArrowObj.instantiate()
-		Arrow.look_at(get_global_mouse_position())
+		Arrow.look_at(get_viewport().get_mouse_position())
 		add_child(Arrow)
 		
 	if(Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT)):

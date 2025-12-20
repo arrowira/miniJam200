@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://hr83k442xjic"]
 
-[ext_resource type="Texture2D" uid="uid://dlabmsl6q4vx1" path="res://icon.svg" id="1_5mg4u"]
 [ext_resource type="Script" uid="uid://bejv5m45woyv1" path="res://Scripts/Arrow.gd" id="1_7v023"]
+[ext_resource type="Texture2D" uid="uid://dl340mgqtgi8y" path="res://Sprites/TestArrow.png" id="2_7v023"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7v023"]
 size = Vector2(45, 24)
@@ -10,9 +10,11 @@ size = Vector2(45, 24)
 script = ExtResource("1_7v023")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(0, 1)
-scale = Vector2(0.5546875, 0.12499999)
-texture = ExtResource("1_5mg4u")
+texture_filter = 1
+position = Vector2(12.000001, -5.9604645e-08)
+rotation = 1.5598922
+scale = Vector2(1.6523438, 3.3125002)
+texture = ExtResource("2_7v023")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(15.5, 0)

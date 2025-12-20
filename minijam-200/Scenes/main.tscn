@@ -4,6 +4,6 @@
 
 [node name="main" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]

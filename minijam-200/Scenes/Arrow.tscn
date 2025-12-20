@@ -21,4 +21,9 @@ position = Vector2(26.109703, 4.7683716e-07)
 scale = Vector2(1.3208625, -1.217651)
 shape = SubResource("RectangleShape2D_7v023")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 2000
+randomness = 1.0
+gravity = Vector2(0, 0)
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

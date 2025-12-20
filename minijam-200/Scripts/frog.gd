@@ -1,5 +1,5 @@
 extends Area2D
-
+var groundPound = preload("res://Scenes/ground_pound_effect.tscn")
 var jumpDir = Vector2.RIGHT
 var jumpDist = 3
 var jumping = false
@@ -35,10 +35,15 @@ func jump(dir):
 
 
 func _on_jump_timer_timeout() -> void:
-	print(t)
 	jumping=false
 	$Sprite2D.frame=0
 	$CollisionShape2D.visible = true
+	var aoe = groundPound.instantiate()
+	aoe.global_position = global_position
+	aoe.global_position.y+=35
+	
+	aoe.z_index=z_index-5
+	get_parent().get_parent().add_child(aoe)
 
 
 func _on_jump_cooldown_timeout() -> void:

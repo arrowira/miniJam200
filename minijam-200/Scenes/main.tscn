@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=6 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="Texture2D" uid="uid://dp4rfoifvw87i" path="res://Sprites/Background.png" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://vx2bv1y7pogc" path="res://Scenes/frog.tscn" id="3_8gbba"]
+[ext_resource type="Texture2D" uid="uid://ckbqcxm0gsvwm" path="res://Sprites/Health.png" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://d01kyurrhj6hq" path="res://Scenes/HealthManager.gd" id="4_kry3j"]
 
 [node name="main" type="Node2D"]
 
@@ -55,21 +57,25 @@ position = Vector2(-67, -97)
 position = Vector2(86, 98)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("4_kry3j")
 
-[node name="Panel3" type="Panel" parent="CanvasLayer"]
-offset_left = 116.0
-offset_top = 7.0
-offset_right = 156.0
-offset_bottom = 47.0
+[node name="Health1" type="Sprite2D" parent="CanvasLayer"]
+texture_filter = 2
+position = Vector2(21.8, 20.8)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("4_jjvhh")
+vframes = 2
 
-[node name="Panel2" type="Panel" parent="CanvasLayer"]
-offset_left = 61.0
-offset_top = 5.0
-offset_right = 101.0
-offset_bottom = 45.0
+[node name="Health2" type="Sprite2D" parent="CanvasLayer"]
+texture_filter = 2
+position = Vector2(71, 21)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("4_jjvhh")
+vframes = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 45.0
-offset_bottom = 45.0
+[node name="Health3" type="Sprite2D" parent="CanvasLayer"]
+texture_filter = 2
+position = Vector2(120, 21)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("4_jjvhh")
+vframes = 2

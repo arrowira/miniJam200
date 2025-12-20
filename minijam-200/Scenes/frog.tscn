@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5m003mwhajx7"]
+[gd_scene load_steps=5 format=3 uid="uid://vx2bv1y7pogc"]
 
 [ext_resource type="Script" uid="uid://bvgnvbbu3jwcn" path="res://Scripts/frog.gd" id="1_85unm"]
 [ext_resource type="Texture2D" uid="uid://bwfwr1xenfsdj" path="res://shadow-1.png.png" id="2_c3muq"]
 [ext_resource type="Texture2D" uid="uid://cg4d80juakavq" path="res://Sprites/base frog spritesheet.png" id="3_c3muq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3muq"]
-size = Vector2(80, 39)
+size = Vector2(59, 62.99999)
 
 [node name="frog" type="Node2D"]
 
@@ -26,7 +26,8 @@ texture = ExtResource("3_c3muq")
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="frogArea2D"]
-position = Vector2(4, 83.5)
+position = Vector2(14.499995, 71.49998)
+scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_c3muq")
 
 [node name="jumpTimer" type="Timer" parent="frogArea2D"]

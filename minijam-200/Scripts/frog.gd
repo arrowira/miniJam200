@@ -10,7 +10,7 @@ var height = 10
 func _ready() -> void:
 	pass
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("space"):
+	if Input.is_action_just_pressed("Space"):
 		jump(jumpDir)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float):
@@ -18,7 +18,7 @@ func _physics_process(delta: float):
 		t+=1
 		print(t)
 		position.x += jumpDist*cos(t/(120*PI))
-		$Sprite2D.position.y = -height*sin(t/(4*PI))6
+		$Sprite2D.position.y = -height*sin(t/(4*PI))
 		
 func jump(dir):
 	t = 0

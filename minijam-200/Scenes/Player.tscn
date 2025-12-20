@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn0wyr0nn2y2q"]
+[gd_scene load_steps=8 format=3 uid="uid://dn0wyr0nn2y2q"]
 
 [ext_resource type="Script" uid="uid://cn7v7jwhckh73" path="res://Scripts/PlayerMovement.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://dlabmsl6q4vx1" path="res://icon.svg" id="1_rpqav"]
 [ext_resource type="Script" path="res://Scripts/BowRotation.gd" id="3_gntrk"]
 [ext_resource type="AudioStream" uid="uid://dltll0oypd84r" path="res://audio/bowShoot.mp3" id="4_5ixxa"]
+[ext_resource type="Texture2D" uid="uid://cu43byynkr0h3" path="res://Sprites/bow.png" id="4_nn08x"]
 [ext_resource type="AudioStream" uid="uid://b833fuqoqqr5n" path="res://audio/bowChargeUp.mp3" id="5_nn08x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
@@ -25,9 +26,12 @@ shape = SubResource("RectangleShape2D_kyqiw")
 script = ExtResource("3_gntrk")
 
 [node name="Bow" type="Sprite2D" parent="BowPivot"]
-position = Vector2(23, 1)
-scale = Vector2(0.033826184, 0.6799991)
-texture = ExtResource("1_rpqav")
+position = Vector2(0, 1)
+rotation = 2.3603845
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("4_nn08x")
+hframes = 2
+vframes = 3
 
 [node name="shoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_5ixxa")

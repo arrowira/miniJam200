@@ -4,18 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://dl340mgqtgi8y" path="res://Sprites/TestArrow.png" id="2_7v023"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7v023"]
-size = Vector2(45, 24)
+size = Vector2(28.935188, 21.352587)
 
 [node name="Arrow" type="Area2D"]
 script = ExtResource("1_7v023")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(12.000001, -5.9604645e-08)
+position = Vector2(-26, -3.1664968e-08)
 rotation = 1.5598922
-scale = Vector2(1.6523438, 3.3125002)
+scale = Vector2(2.534225, 8.760999)
 texture = ExtResource("2_7v023")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-position = Vector2(15.5, 0)
+position = Vector2(26.109703, 4.7683716e-07)
+scale = Vector2(1.3208625, -1.217651)
 shape = SubResource("RectangleShape2D_7v023")

@@ -12,13 +12,15 @@ var DashSpeed = 2
 
 func _physics_process(delta: float) -> void:
 	if(BowCharge >= 25 && !Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT)):
+		$shoot.play()
 		BowCharge = 0
 		var Arrow = ArrowObj.instantiate()
 		var MousePos = get_global_mouse_position()
 		var Aim = (MousePos - global_position).angle()
 		Arrow.rotation = Aim
 		add_child(Arrow)
-		
+	if BowCharge==0 and Input.is_action_just_pressed("shoot"):
+		$charge.play()
 	if(Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT)):
 		BowCharge+=1
 	else:

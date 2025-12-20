@@ -8,7 +8,7 @@ var ArrowObj = preload("res://Scenes/Arrow.tscn")
 
 var Dashing = false
 var DashTime = 0
-var DashSpeed = 7
+var DashSpeed = 2
 
 func _physics_process(delta: float) -> void:
 	if(BowCharge >= 25 && !Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT)):

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dp4rfoifvw87i" path="res://Sprites/Background.png" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://b5m003mwhajx7" path="res://Scenes/frog.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://vx2bv1y7pogc" path="res://Scenes/frog.tscn" id="3_8gbba"]
 
 [node name="main" type="Node2D"]
 
@@ -52,4 +52,24 @@ position = Vector2(90, -32)
 position = Vector2(-67, -97)
 
 [node name="frog6" parent="." instance=ExtResource("3_8gbba")]
-position = Vector2(49, 42)
+position = Vector2(86, 98)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel3" type="Panel" parent="CanvasLayer"]
+offset_left = 116.0
+offset_top = 7.0
+offset_right = 156.0
+offset_bottom = 47.0
+
+[node name="Panel2" type="Panel" parent="CanvasLayer"]
+offset_left = 61.0
+offset_top = 5.0
+offset_right = 101.0
+offset_bottom = 45.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0

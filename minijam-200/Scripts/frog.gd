@@ -38,3 +38,6 @@ func _on_jump_cooldown_timeout() -> void:
 		var randY = randf_range(-1,1)
 		var newDir = Vector2(randX,randY).normalized()
 		jump(newDir)
+	elif movementChoice < 9:
+		var playerDir: Vector2 = get_parent().get_parent().get_node("Player").global_position - self.global_position
+		jump(playerDir.normalized())

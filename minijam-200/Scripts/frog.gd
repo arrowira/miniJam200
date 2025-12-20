@@ -13,6 +13,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float):
+	if jumpDir.x>0:
+		$Sprite2D.flip_h = false
+	else:
+		$Sprite2D.flip_h = true
 	if jumping:
 		t+=1
 		position += jumpDir*jumpDist
@@ -24,6 +28,7 @@ func jump(dir):
 	jumpDir = dir
 	t = 0
 	jumping=true
+	$Sprite2D.frame=1
 	$jumpTimer.start()
 	$CollisionShape2D.visible = false
 
@@ -31,6 +36,7 @@ func jump(dir):
 func _on_jump_timer_timeout() -> void:
 	print(t)
 	jumping=false
+	$Sprite2D.frame=0
 	$CollisionShape2D.visible = true
 
 

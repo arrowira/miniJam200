@@ -1,26 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://vx2bv1y7pogc"]
+[gd_scene load_steps=2 format=3 uid="uid://vx2bv1y7pogc"]
 
 [ext_resource type="Script" uid="uid://bvgnvbbu3jwcn" path="res://Scripts/frog.gd" id="1_85unm"]
-[ext_resource type="Texture2D" uid="uid://dlabmsl6q4vx1" path="res://icon.svg" id="2_4ygq6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3muq"]
-size = Vector2(126, 48)
 
 [node name="frog" type="Node2D"]
-position = Vector2(131, 198)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-gravity_scale = 0.0
 script = ExtResource("1_85unm")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-texture = ExtResource("2_4ygq6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(0, 40)
-shape = SubResource("RectangleShape2D_c3muq")
-
-[node name="jumpTimer" type="Timer" parent="RigidBody2D"]
-one_shot = true
-
-[connection signal="timeout" from="RigidBody2D/jumpTimer" to="RigidBody2D" method="_on_jump_timer_timeout"]

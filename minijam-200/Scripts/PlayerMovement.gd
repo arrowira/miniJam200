@@ -11,6 +11,7 @@ var DashTime = 0
 var DashSpeed = 2
 
 func _physics_process(delta: float) -> void:
+	z_index = global_position.y-12
 	if(BowCharge >= 25 && !Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT)):
 		$shoot.play()
 		BowCharge = 0

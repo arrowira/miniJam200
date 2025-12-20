@@ -13,6 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float):
+	z_index = global_position.y
 	if jumpDir.x>0:
 		$Sprite2D.flip_h = false
 	else:

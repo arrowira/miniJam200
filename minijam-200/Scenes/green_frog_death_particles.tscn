@@ -1,3 +1,63 @@
-[gd_scene format=3 uid="uid://br55cotu8stut"]
+[gd_scene load_steps=4 format=3 uid="uid://br55cotu8stut"]
+
+[ext_resource type="Script" uid="uid://400awro3y0km" path="res://Scenes/parts.gd" id="1_jfbk2"]
+
+[sub_resource type="Curve" id="Curve_x0rir"]
+_data = [Vector2(0.017441869, 0.8876405), 0.0, 0.0, 0, 0, Vector2(0.63953495, 0.64044946), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_jfbk2"]
+offsets = PackedFloat32Array(0, 0.98630136)
+colors = PackedColorArray(0.39086026, 0.4626177, 0.33583143, 1, 0.78576946, 0.8591996, 0.73435664, 1)
 
 [node name="greenFrogDeathParticles" type="Node2D"]
+script = ExtResource("1_jfbk2")
+
+[node name="blood" type="CPUParticles2D" parent="."]
+emitting = false
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.88
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector2(7, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+angular_velocity_min = -148.45
+angular_velocity_max = 133.61
+linear_accel_min = -10.0
+linear_accel_max = -10.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_x0rir")
+color = Color(0.93685174, 0.22689092, 0.22367537, 1)
+hue_variation_min = -0.03
+hue_variation_max = -0.03
+
+[node name="green" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 24
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 3.0
+direction = Vector2(7, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 111.24
+angular_velocity_min = -148.45
+angular_velocity_max = 133.61
+linear_accel_min = -100.0
+linear_accel_max = -100.0
+damping_min = 13.57
+damping_max = 13.57
+scale_amount_min = 4.0
+scale_amount_max = 8.0
+scale_amount_curve = SubResource("Curve_x0rir")
+color_initial_ramp = SubResource("Gradient_jfbk2")
+hue_variation_min = 0.23
+hue_variation_max = 0.33

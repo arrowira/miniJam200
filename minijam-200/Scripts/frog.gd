@@ -5,7 +5,7 @@ var jumpDist = 5
 var jumping = false
 var jumpStartPos = Vector2.ZERO
 var t = 0
-var height = 5
+var height = 0.3
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -17,8 +17,8 @@ func _physics_process(delta: float):
 	if jumping:
 		t+=1
 		print(t)
-		position.x += jumpDist*cos(t/(120*PI))
-		$Sprite2D.position.y = -height*sin(t/(4*PI))
+		position += jumpDir*jumpDist
+		$Sprite2D.position.y = height*(t-60)*t
 		
 func jump(dir):
 	t = 0

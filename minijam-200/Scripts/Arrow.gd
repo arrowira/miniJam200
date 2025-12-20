@@ -10,6 +10,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.name == "frogArea2D":
+		$DeathSound.play()
 		area.get_parent().queue_free()
 		var parts = GreenParts.instantiate()
 		parts.global_position = global_position

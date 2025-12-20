@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=4 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="Texture2D" uid="uid://dp4rfoifvw87i" path="res://Sprites/Background.png" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://b5m003mwhajx7" path="res://Scenes/frog.tscn" id="3_8gbba"]
 
 [node name="main" type="Node2D"]
 
@@ -32,3 +33,9 @@ texture = ExtResource("1_bo1nx")
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="frog" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(172, 141)
+
+[node name="frog2" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(-193, -85)

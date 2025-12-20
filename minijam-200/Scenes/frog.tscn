@@ -5,10 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bwfwr1xenfsdj" path="res://shadow-1.png.png" id="2_c3muq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3muq"]
-size = Vector2(126, 48)
+size = Vector2(64, 27)
 
 [node name="frog" type="Node2D"]
-position = Vector2(131, 198)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 gravity_scale = 0.0
@@ -16,20 +15,25 @@ script = ExtResource("1_85unm")
 
 [node name="Shadow1_png" type="Sprite2D" parent="RigidBody2D"]
 modulate = Color(0, 0, 0, 0.45882353)
-position = Vector2(-2.9802322e-08, 3.0000005)
-scale = Vector2(0.684375, 0.64375)
+position = Vector2(3.0000038, -5.9999905)
+scale = Vector2(0.40624994, 0.36875007)
 texture = ExtResource("2_c3muq")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(2, 0)
+scale = Vector2(0.5312499, 0.57031256)
 texture = ExtResource("2_4ygq6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(0, 40)
+position = Vector2(2, 21.5)
 shape = SubResource("RectangleShape2D_c3muq")
 
 [node name="jumpTimer" type="Timer" parent="RigidBody2D"]
 one_shot = true
 
 [node name="jumpCooldown" type="Timer" parent="RigidBody2D"]
+wait_time = 3.0
+autostart = true
 
 [connection signal="timeout" from="RigidBody2D/jumpTimer" to="RigidBody2D" method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="RigidBody2D/jumpCooldown" to="RigidBody2D" method="_on_jump_cooldown_timeout"]

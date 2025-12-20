@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsgr2v5hac8gj"]
+
+[ext_resource type="AudioStream" uid="uid://cbtbvm3xnyr4" path="res://audio/miniJam200Music.mp3" id="1_fbmny"]
+
+[node name="music" type="AudioStreamPlayer"]
+stream = ExtResource("1_fbmny")
+volume_db = -5.725
+autoplay = true

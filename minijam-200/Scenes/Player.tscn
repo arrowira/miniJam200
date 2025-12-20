@@ -62,7 +62,7 @@ shape = SubResource("RectangleShape2D_kyqiw")
 script = ExtResource("3_gntrk")
 
 [node name="Bow" type="Sprite2D" parent="BowPivot"]
-position = Vector2(0, 1)
+position = Vector2(22, 1)
 rotation = 2.3603845
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("4_nn08x")

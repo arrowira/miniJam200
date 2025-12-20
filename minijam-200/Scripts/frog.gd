@@ -5,7 +5,7 @@ var jumpDist = 5
 var jumping = false
 var jumpStartPos = Vector2.ZERO
 var t = 0
-var height = 10
+var height = 5
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass

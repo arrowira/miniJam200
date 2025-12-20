@@ -12,9 +12,6 @@ var DashSpeed = 2
 
 var PlayerHealth = 3
 
-func _ready() -> void:
-	Damage(3)
-
 func _physics_process(delta: float) -> void:
 	z_index = global_position.y-12
 	if(!Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT)):

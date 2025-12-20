@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dn0wyr0nn2y2q"]
+[gd_scene load_steps=5 format=3 uid="uid://dn0wyr0nn2y2q"]
 
 [ext_resource type="Script" uid="uid://cn7v7jwhckh73" path="res://Scripts/PlayerMovement.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://dlabmsl6q4vx1" path="res://icon.svg" id="1_rpqav"]
+[ext_resource type="Script" uid="uid://c6f04job5tkik" path="res://Scenes/BowRotation.gd" id="3_gntrk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
 size = Vector2(42, 124)
@@ -18,4 +19,10 @@ texture = ExtResource("1_rpqav")
 position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_kyqiw")
 
-[node name="Bow" type="Sprite2D" parent="."]
+[node name="BowPivot" type="Node2D" parent="."]
+script = ExtResource("3_gntrk")
+
+[node name="Bow" type="Sprite2D" parent="BowPivot"]
+position = Vector2(20, 1)
+scale = Vector2(0.07382679, 0.39999938)
+texture = ExtResource("1_rpqav")

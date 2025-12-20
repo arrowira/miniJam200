@@ -1,8 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=3 format=3 uid="uid://dqlq65abvfvhe"]
 
+[ext_resource type="Texture2D" uid="uid://dp4rfoifvw87i" path="res://Sprites/Background.png" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 
 [node name="main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-120, 72)
+scale = Vector2(4.576159, 3.6769583)
+texture = ExtResource("1_bo1nx")
+
+[node name="Background" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(-105.32849, 76.693825)
+scale = Vector2(4.576159, 3.6769583)
+texture = ExtResource("1_bo1nx")
+
+[node name="Background" type="Sprite2D" parent="Background/Background"]
+texture_filter = 1
+position = Vector2(31.51677, 4.955612)
+scale = Vector2(4.576159, 3.6769583)
+texture = ExtResource("1_bo1nx")
+
+[node name="Background" type="Sprite2D" parent="Background/Background/Background"]
+texture_filter = 1
+position = Vector2(5.019284, -2.4138772)
+scale = Vector2(4.576159, 3.6769583)
+texture = ExtResource("1_bo1nx")
 
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 

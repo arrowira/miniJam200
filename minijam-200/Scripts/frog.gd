@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Area2D
 
 var jumpDir = Vector2.RIGHT
 var jumpDist = 3
@@ -17,6 +17,8 @@ func _physics_process(delta: float):
 		t+=1
 		position += jumpDir*jumpDist
 		$Sprite2D.position.y = height*(t-60)*t
+		if t == 60:
+			jumping=false
 		
 func jump(dir):
 	jumpDir = dir

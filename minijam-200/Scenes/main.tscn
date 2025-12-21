@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=8 format=3 uid="uid://dqlq65abvfvhe"]
 
+[ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scenes/gameManager.gd" id="1_6bp64"]
 [ext_resource type="Texture2D" uid="uid://dp4rfoifvw87i" path="res://Sprites/Background.png" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://vx2bv1y7pogc" path="res://Scenes/frog.tscn" id="3_8gbba"]
 [ext_resource type="Texture2D" uid="uid://ckbqcxm0gsvwm" path="res://Sprites/Health.png" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://d01kyurrhj6hq" path="res://Scripts/HealthManager.gd" id="4_kry3j"]
+[ext_resource type="FontFile" uid="uid://d35yfqyb2ke15" path="res://at01.ttf" id="7_344ge"]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_6bp64")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -81,3 +84,53 @@ position = Vector2(42, 9)
 scale = Vector2(0.047500003, 0.047500007)
 texture = ExtResource("4_jjvhh")
 vframes = 2
+
+[node name="deathScreen" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/deathScreen"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 21.0
+offset_right = 568.0
+offset_bottom = 278.0
+
+[node name="death Text" type="RichTextLabel" parent="CanvasLayer/deathScreen/Panel"]
+layout_mode = 0
+offset_right = 534.0
+offset_bottom = 108.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[wave]You Died"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/deathScreen/Panel"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 167.0
+offset_right = 369.0
+offset_bottom = 225.0
+theme_override_fonts/font = ExtResource("7_344ge")
+theme_override_font_sizes/font_size = 32
+text = "
+"
+clip_text = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/deathScreen/Panel/Button"]
+modulate = Color(0.3496107, 0.6441328, 0.3789337, 1)
+layout_mode = 0
+offset_left = 35.0
+offset_right = 166.0
+offset_bottom = 80.0
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+theme_override_font_sizes/normal_font_size = 64
+text = "RETRY"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/deathScreen/Panel/Button" to="." method="_on_button_pressed"]

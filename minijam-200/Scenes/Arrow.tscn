@@ -5,21 +5,21 @@
 [ext_resource type="AudioStream" uid="uid://vlcbhwu5sl0r" path="res://audio/FleshDeath.mp3" id="3_2nt64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7v023"]
-size = Vector2(28.935188, 21.352587)
+size = Vector2(12.870378, 4.927519)
 
 [node name="Arrow" type="Area2D"]
 script = ExtResource("1_7v023")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1, 1.000001)
+position = Vector2(1, 1)
 rotation = 2.3561945
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.04, 0.04)
 texture = ExtResource("2_7v023")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-position = Vector2(26.109703, 4.7683716e-07)
-scale = Vector2(1.3208625, -1.217651)
+position = Vector2(10.000001, 0.99999994)
+scale = Vector2(1.3208625, -1.2176512)
 shape = SubResource("RectangleShape2D_7v023")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]

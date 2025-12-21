@@ -12,26 +12,29 @@ var DashTime = 0
 var DashSpeed = 2
 
 var PlayerHealth = 3
+var Arrows = 3
 
 func _physics_process(delta: float) -> void:
 	z_index = global_position.y-12
 	if(!Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT)):
-		if BowCharge >=25:
+		if BowCharge >=25 && Arrows > 0:
 			$shoot.play()
+			Arrows-=1
 			BowCharge = 0
 			var Arrow = ArrowObj.instantiate()
 			var MousePos = get_global_mouse_position()
 			var Aim = (MousePos - global_position).angle()
 			Arrow.rotation = Aim
+			Arrow.global_position = global_position
 			get_parent().add_child(Arrow)
 		
-	if BowCharge==0 and Input.is_action_just_pressed("shoot"):
+	if BowCharge==0 and Input.is_action_just_pressed("shoot") && Arrows > 0:
 		$BowPivot/AnimationPlayer.play("shootBow")
 		$charge.play()
 	if Input.is_action_just_released("shoot"):
 		$BowPivot/AnimationPlayer.play("RESET")
 		$BowPivot/Bow.frame = 0
-	if(Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT)):
+	if(Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT) && Arrows > 0):
 		BowCharge+=1
 	else:
 		$BowPivot/Bow.frame = 0
@@ -89,8 +92,6 @@ func _physics_process(delta: float) -> void:
 func Damage(D):
 	PlayerHealth-=D
 	get_parent().get_node("CanvasLayer").UpdateHealth()
-	
-
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "damage":

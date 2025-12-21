@@ -9,7 +9,10 @@ var ArrowSpeed = 15
 func _physics_process(delta: float) -> void:
 	if(DropTimer<=25):
 		global_position += transform.x * 15
+	else:
+		$CPUParticles2D.visible = false
 	DropTimer+=1
+	
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.name == "frogArea2D":

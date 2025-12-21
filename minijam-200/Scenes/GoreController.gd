@@ -17,8 +17,9 @@ func _physics_process(delta: float) -> void:
 	rotation = lerp_angle(rotation, TAngle, RotSpeed)
 	
 	T+=1
-	if(T>=50):
-		modulate.a = 1-((T-49)/50)
+	#if(T>=50):
+		#Fix maybe
+		#modulate.a = 1-((50/(T-49))-1)
 	if(T >= 100):
 		queue_free()
 	

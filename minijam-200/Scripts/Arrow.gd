@@ -2,12 +2,15 @@ extends Area2D
 
 var FrogGoreObj = preload("res://Scenes/FrogGoreTemplate.tscn") 
 
-var DespawnTimer = 0
+var DropTimer = 0
 var GreenParts = preload("res://Scenes/green_frog_death_particles.tscn")
+var ArrowSpeed = 15
 
 func _physics_process(delta: float) -> void:
-	global_position += transform.x * 15
-	
+	if(DropTimer<=50):
+		global_position += transform.x * 15
+	else:
+		global_position += transform.x * (ArrowSpeed/(DropTimer-50))
 
 
 func _on_area_entered(area: Area2D) -> void:

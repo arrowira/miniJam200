@@ -48,7 +48,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nn08x"]
-size = Vector2(51, 43)
+size = Vector2(51, 67.5)
 
 [sub_resource type="Animation" id="Animation_megsn"]
 length = 0.001
@@ -276,7 +276,7 @@ volume_db = -17.563
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, 43)
+position = Vector2(2, 30.75)
 shape = SubResource("RectangleShape2D_nn08x")
 
 [node name="playerAnimiations" type="AnimationPlayer" parent="."]

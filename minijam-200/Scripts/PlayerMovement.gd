@@ -50,16 +50,23 @@ func _physics_process(delta: float) -> void:
 		lookingRight = true
 	if Input.is_action_just_pressed("Left"):
 		lookingRight = false
-	if velocity.length() <= 30:
-		if lookingRight:
-			$playerAnimiations.play("idleRight")
+	if !Dashing:
+		if velocity.length() <= 30:
+			if lookingRight:
+				$playerAnimiations.play("idleRight")
+			else:
+				$playerAnimiations.play("idleLeft")
 		else:
-			$playerAnimiations.play("idleLeft")
+			if lookingRight:
+				$playerAnimiations.play("runRight")
+			else:
+				$playerAnimiations.play("runLeft")
 	else:
 		if lookingRight:
-			$playerAnimiations.play("runRight")
+			$playerAnimiations.play("dashRight")
 		else:
-			$playerAnimiations.play("runLeft")
+			$playerAnimiations.play("dashLeft")
+		
 	
 	if(Input.is_action_just_pressed("Dash") && Dashing == false):
 		Dashing = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dn0wyr0nn2y2q"]
+[gd_scene load_steps=21 format=3 uid="uid://dn0wyr0nn2y2q"]
 
 [ext_resource type="Script" uid="uid://cn7v7jwhckh73" path="res://Scripts/PlayerMovement.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://bkm2ngfldl2xg" path="res://Sprites/frog_game_movement_sheet.png" id="2_nn08x"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bwfwr1xenfsdj" path="res://shadow-1.png.png" id="7_52ee3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
-size = Vector2(42, 124)
+size = Vector2(42, 45)
 
 [sub_resource type="Animation" id="Animation_52ee3"]
 length = 0.001
@@ -191,9 +191,43 @@ tracks/1/keys = {
 "values": [Vector2(-6, 27)]
 }
 
+[sub_resource type="Animation" id="Animation_miouo"]
+resource_name = "dashRight"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10269565, 0.19984019, 0.30114806, 0.40245593, 0.50515157),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [30, 31, 32, 33, 34, 35]
+}
+
+[sub_resource type="Animation" id="Animation_o3h8g"]
+resource_name = "dashLeft"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10269565, 0.20400351, 0.29976028, 0.40106815, 0.50098825),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27, 28, 29]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yoq75"]
 _data = {
 &"RESET": SubResource("Animation_megsn"),
+&"dashLeft": SubResource("Animation_o3h8g"),
+&"dashRight": SubResource("Animation_miouo"),
 &"idleLeft": SubResource("Animation_yoq75"),
 &"idleRight": SubResource("Animation_bhhdu"),
 &"runLeft": SubResource("Animation_ksbbd"),
@@ -211,8 +245,7 @@ hframes = 6
 vframes = 6
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(2, 0)
+position = Vector2(2, 39.5)
 shape = SubResource("RectangleShape2D_kyqiw")
 
 [node name="BowPivot" type="Node2D" parent="."]

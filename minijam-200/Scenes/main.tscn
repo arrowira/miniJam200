@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://vx2bv1y7pogc" path="res://Scenes/frog.tscn" id="3_8gbba"]
 [ext_resource type="Texture2D" uid="uid://ckbqcxm0gsvwm" path="res://Sprites/Health.png" id="4_jjvhh"]
-[ext_resource type="Script" path="res://Scripts/HealthManager.gd" id="4_kry3j"]
+[ext_resource type="Script" uid="uid://d01kyurrhj6hq" path="res://Scripts/HealthManager.gd" id="4_kry3j"]
 
 [node name="main" type="Node2D"]
 
@@ -59,23 +59,25 @@ position = Vector2(86, 98)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("4_kry3j")
 
-[node name="Health1" type="Sprite2D" parent="CanvasLayer"]
+[node name="hearts" type="Node" parent="CanvasLayer"]
+
+[node name="Health1" type="Sprite2D" parent="CanvasLayer/hearts"]
 texture_filter = 2
-position = Vector2(21.8, 20.8)
-scale = Vector2(0.13, 0.13)
+position = Vector2(10.000001, 9)
+scale = Vector2(0.047500003, 0.047500007)
 texture = ExtResource("4_jjvhh")
 vframes = 2
 
-[node name="Health2" type="Sprite2D" parent="CanvasLayer"]
+[node name="Health2" type="Sprite2D" parent="CanvasLayer/hearts"]
 texture_filter = 2
-position = Vector2(71, 21)
-scale = Vector2(0.13, 0.13)
+position = Vector2(26.000002, 9.000001)
+scale = Vector2(0.047500003, 0.047500007)
 texture = ExtResource("4_jjvhh")
 vframes = 2
 
-[node name="Health3" type="Sprite2D" parent="CanvasLayer"]
+[node name="Health3" type="Sprite2D" parent="CanvasLayer/hearts"]
 texture_filter = 2
-position = Vector2(120, 21)
-scale = Vector2(0.13, 0.13)
+position = Vector2(42, 9)
+scale = Vector2(0.047500003, 0.047500007)
 texture = ExtResource("4_jjvhh")
 vframes = 2

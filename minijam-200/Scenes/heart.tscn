@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4iajdoj2ymk2"]
+
+[ext_resource type="Texture2D" uid="uid://ckbqcxm0gsvwm" path="res://Sprites/Health.png" id="1_452e1"]
+
+[node name="Health1" type="Sprite2D"]
+texture_filter = 2
+scale = Vector2(0.047500003, 0.047500007)
+texture = ExtResource("1_452e1")
+vframes = 2

@@ -11,6 +11,7 @@ var Dashing = false
 var DashTime = 0
 var DashSpeed = 2
 
+var maxHealth = 3
 var PlayerHealth = 3
 
 func _physics_process(delta: float) -> void:

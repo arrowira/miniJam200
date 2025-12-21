@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cn7v7jwhckh73" path="res://Scripts/PlayerMovement.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://bkm2ngfldl2xg" path="res://Sprites/frog_game_movement_sheet.png" id="2_nn08x"]
-[ext_resource type="Script" uid="uid://c6f04job5tkik" path="res://Scripts/BowRotation.gd" id="3_gntrk"]
+[ext_resource type="Script" path="res://Scripts/BowRotation.gd" id="3_gntrk"]
 [ext_resource type="AudioStream" uid="uid://dltll0oypd84r" path="res://audio/bowShoot.mp3" id="4_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://cu43byynkr0h3" path="res://Sprites/bow.png" id="4_nn08x"]
 [ext_resource type="AudioStream" uid="uid://b833fuqoqqr5n" path="res://audio/bowChargeUp.mp3" id="5_nn08x"]

@@ -3,6 +3,7 @@ extends CharacterBody2D
 var DefSpeed = 20
 var Speed = 20
 var Aiming = false
+var lookingRight = true
 var BowCharge = 0
 var ArrowObj = preload("res://Scenes/Arrow.tscn")
 
@@ -45,6 +46,20 @@ func _physics_process(delta: float) -> void:
 	velocity += InputDir * Speed
 	if(DashTime > 7 || Dashing == false):
 		velocity*=0.9
+	if Input.is_action_just_pressed("Right"):
+		lookingRight = true
+	if Input.is_action_just_pressed("Left"):
+		lookingRight = false
+	if velocity.length() <= 0.5:
+		if lookingRight:
+			$playerAnimiations.play("idleRight")
+		else:
+			$playerAnimiations.play("idleLeft")
+	else:
+		if lookingRight:
+			$playerAnimiations.play("runRight")
+		else:
+			$playerAnimiations.play("runLeft")
 	
 	if(Input.is_action_just_pressed("Dash") && Dashing == false):
 		Dashing = true

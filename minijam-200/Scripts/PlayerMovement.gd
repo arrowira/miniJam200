@@ -50,7 +50,7 @@ func _physics_process(delta: float) -> void:
 		lookingRight = true
 	if Input.is_action_just_pressed("Left"):
 		lookingRight = false
-	if velocity.length() <= 0.5:
+	if velocity.length() <= 30:
 		if lookingRight:
 			$playerAnimiations.play("idleRight")
 		else:

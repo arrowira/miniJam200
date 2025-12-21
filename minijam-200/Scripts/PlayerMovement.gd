@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 			var MousePos = get_global_mouse_position()
 			var Aim = (MousePos - global_position).angle()
 			Arrow.rotation = Aim
-			add_child(Arrow)
+			get_parent().add_child(Arrow)
 		
 	if BowCharge==0 and Input.is_action_just_pressed("shoot"):
 		$BowPivot/AnimationPlayer.play("shootBow")

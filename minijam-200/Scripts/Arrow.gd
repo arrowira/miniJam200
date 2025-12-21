@@ -7,11 +7,9 @@ var GreenParts = preload("res://Scenes/green_frog_death_particles.tscn")
 var ArrowSpeed = 15
 
 func _physics_process(delta: float) -> void:
-	if(DropTimer<=50):
+	if(DropTimer<=25):
 		global_position += transform.x * 15
-	else:
-		global_position += transform.x * (ArrowSpeed/(DropTimer-50))
-
+	DropTimer+=1
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.name == "frogArea2D":

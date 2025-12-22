@@ -5,23 +5,28 @@ var FrogGoreObj = preload("res://Scenes/FrogGoreTemplate.tscn")
 var DropTimer = 0
 var GreenParts = preload("res://Scenes/green_frog_death_particles.tscn")
 var ArrowSpeed = 15
+var Dropped = false
 
 func _physics_process(delta: float) -> void:
 	if(DropTimer<=25):
-		global_position += transform.x * 15
+		global_position += transform.x * ArrowSpeed
 	else:
 		$CPUParticles2D.visible = false
+		Dropped = true
 	DropTimer+=1
 	
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.name == "frogArea2D":
-		$DeathSound.play()
-		area.get_parent().queue_free()
-		SpawnFrogGore()
-		var parts = GreenParts.instantiate()
-		parts.global_position = global_position
-		get_parent().get_parent().add_child(parts)
+		if(Dropped == false):
+			$DeathSound.play()
+			area.get_parent().queue_free()
+			SpawnFrogGore()
+			var parts = GreenParts.instantiate()
+			parts.global_position = global_position
+			get_parent().get_parent().add_child(parts)
+			if(ArrowSpeed >= 10):
+				ArrowSpeed -= 10
 		
 		
 func SpawnFrogGore():

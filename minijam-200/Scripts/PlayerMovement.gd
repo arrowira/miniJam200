@@ -105,7 +105,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "damage":
 		print("damaged")
 		Damage(1)
-	if(area.name == "Arrow"):
+	if(area.get_children()[0].name == "ArrowSprite"):
 		if(area.DropTimer>= 20):
 			Arrows+=1
 			area.queue_free()

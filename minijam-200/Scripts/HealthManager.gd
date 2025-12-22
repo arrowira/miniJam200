@@ -4,8 +4,8 @@ var heart = preload("res://Scenes/heart.tscn")
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("space"):
 		addheart()
+
 func UpdateHealth():
-	
 	$hearts.get_children()[get_parent().get_node("Player").PlayerHealth].frame=1
 		
 func addheart():

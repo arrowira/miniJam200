@@ -174,10 +174,11 @@ text = "Arrow Penetration 2"
 
 [node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/MoreArrows"]
 anchors_preset = -1
-anchor_right = -0.07666667
-offset_left = 1.0
+anchor_left = -0.07666667
+anchor_right = -0.15
+offset_left = 24.0
 offset_top = 82.0
-offset_right = 95.0
+offset_right = 118.0
 offset_bottom = 96.0
 metadata/_edit_use_anchors_ = true
 
@@ -193,11 +194,11 @@ text = "More Arrows 3"
 
 [node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/Speed"]
 anchors_preset = -1
-anchor_left = -0.07666667
-anchor_right = -0.25666666
-offset_left = 24.0
+anchor_left = -0.25666666
+anchor_right = -0.42666668
+offset_left = 77.0
 offset_top = 97.0
-offset_right = 118.0
+offset_right = 171.0
 offset_bottom = 111.0
 metadata/_edit_use_anchors_ = true
 
@@ -215,11 +216,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/DashDistance"]
 anchors_preset = -1
-anchor_left = -0.25666666
-anchor_right = -0.32333332
-offset_left = 78.0
+anchor_left = -0.32333332
+anchor_right = -0.38
+offset_left = 96.0
 offset_top = 112.0
-offset_right = 172.0
+offset_right = 190.0
 offset_bottom = 126.0
 metadata/_edit_use_anchors_ = true
 
@@ -239,11 +240,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/AimSpeed"]
 anchors_preset = -1
-anchor_left = -0.32333332
-anchor_right = -0.44
-offset_left = 98.0
+anchor_left = -0.44
+anchor_right = -0.55
+offset_left = 132.0
 offset_top = 128.0
-offset_right = 192.0
+offset_right = 226.0
 offset_bottom = 142.0
 metadata/_edit_use_anchors_ = true
 

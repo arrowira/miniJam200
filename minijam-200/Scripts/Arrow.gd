@@ -26,6 +26,8 @@ func _on_area_entered(area: Area2D) -> void:
 				SpawnFrogGore(1)
 			if(area.get_children()[0].name == "WizardFrog"):
 				SpawnFrogGore(2)
+			if(area.get_children()[0].name == "HealFrog"):
+				get_parent().get_node("CanvasLayer").heal()
 			var parts = GreenParts.instantiate()
 			parts.global_position = global_position
 			get_parent().get_parent().add_child(parts)

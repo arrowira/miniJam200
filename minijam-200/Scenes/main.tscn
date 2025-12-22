@@ -141,16 +141,123 @@ horizontal_alignment = 1
 [node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/HealthUpgrade"]
 offset_left = 1.0
 offset_top = 52.0
-offset_right = 107.0
-offset_bottom = 76.0
+offset_right = 65.0
+offset_bottom = 66.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/HealthUpgrade"]
-offset_left = 3.0
-offset_top = 50.0
-offset_right = 119.0
-offset_bottom = 90.0
+offset_left = 4.0
+offset_top = 51.0
+offset_right = 64.0
+offset_bottom = 69.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
 text = "Max Health 1
 "
+
+[node name="ArrowPenetration" type="Node" parent="CanvasLayer/UpgradeUI"]
+
+[node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/ArrowPenetration"]
+offset_left = 1.0
+offset_top = 67.0
+offset_right = 95.0
+offset_bottom = 81.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/ArrowPenetration"]
+offset_left = 4.0
+offset_top = 66.0
+offset_right = 99.0
+offset_bottom = 84.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+text = "Arrow Penetration 2"
+
+[node name="MoreArrows" type="Node" parent="CanvasLayer/UpgradeUI"]
+
+[node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/MoreArrows"]
+anchors_preset = -1
+anchor_right = -0.07666667
+offset_left = 1.0
+offset_top = 82.0
+offset_right = 95.0
+offset_bottom = 96.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/MoreArrows"]
+offset_left = 4.0
+offset_top = 81.0
+offset_right = 73.0
+offset_bottom = 99.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+text = "More Arrows 3"
+
+[node name="Speed" type="Node" parent="CanvasLayer/UpgradeUI"]
+
+[node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/Speed"]
+anchors_preset = -1
+anchor_left = -0.07666667
+anchor_right = -0.25666666
+offset_left = 24.0
+offset_top = 97.0
+offset_right = 118.0
+offset_bottom = 111.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/Speed"]
+offset_left = 4.0
+offset_top = 96.0
+offset_right = 41.0
+offset_bottom = 114.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+text = "Speed 4
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="DashDistance" type="Node" parent="CanvasLayer/UpgradeUI"]
+
+[node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/DashDistance"]
+anchors_preset = -1
+anchor_left = -0.25666666
+anchor_right = -0.32333332
+offset_left = 78.0
+offset_top = 112.0
+offset_right = 172.0
+offset_bottom = 126.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/DashDistance"]
+anchors_preset = -1
+anchor_right = 0.13
+offset_left = 2.0
+offset_top = 111.0
+offset_right = 39.0
+offset_bottom = 129.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+text = "Dash Distance 5
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="AimSpeed" type="Node" parent="CanvasLayer/UpgradeUI"]
+
+[node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/AimSpeed"]
+anchors_preset = -1
+anchor_left = -0.32333332
+anchor_right = -0.44
+offset_left = 98.0
+offset_top = 128.0
+offset_right = 192.0
+offset_bottom = 142.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/AimSpeed"]
+anchors_preset = -1
+anchor_right = 0.13
+offset_left = 2.0
+offset_top = 127.0
+offset_right = 39.0
+offset_bottom = 145.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+text = "Aim Speed 6
+"
+metadata/_edit_use_anchors_ = true
 
 [node name="healFrog" parent="." instance=ExtResource("9_ynf5e")]
 position = Vector2(-81, 8)

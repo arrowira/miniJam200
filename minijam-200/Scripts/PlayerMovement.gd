@@ -90,7 +90,9 @@ func _physics_process(delta: float) -> void:
 			$Sprite.self_modulate.a = 0.5
 		else:
 			$Sprite.self_modulate.a = 1
-		
+	
+	get_parent().get_node("CanvasLayer/ArrowDisplay/ArrowCount").text = str(Arrows)
+	
 	move_and_slide()
 	
 func Damage(D):
@@ -103,7 +105,6 @@ func Damage(D):
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "damage":
-		print("damaged")
 		Damage(1)
 	if(area.get_children()[0].name == "ArrowSprite"):
 		if(area.DropTimer>= 20):

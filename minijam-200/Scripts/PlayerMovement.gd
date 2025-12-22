@@ -17,11 +17,13 @@ var Arrows = 3
 
 var dead = false
 
+var BowChargeNeeded = 25
+
 func _physics_process(delta: float) -> void:
 	if !dead:
 		z_index = global_position.y-12
 		if(!Input.is_mouse_button_pressed(MouseButton.MOUSE_BUTTON_LEFT)):
-			if BowCharge >=25 && Arrows > 0:
+			if BowCharge >=BowChargeNeeded && Arrows > 0:
 				$shoot.play()
 				Arrows-=1
 				BowCharge = 0

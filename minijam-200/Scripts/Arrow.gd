@@ -6,6 +6,7 @@ var WizardFrogGoreObj = preload("res://Scenes/WizardFrogGoreTemplate.tscn")
 var DropTimer = 0
 var GreenParts = preload("res://Scenes/green_frog_death_particles.tscn")
 var ArrowSpeed = 15
+var ArrowSlow = 10
 var Dropped = false
 
 func _physics_process(delta: float) -> void:
@@ -15,6 +16,7 @@ func _physics_process(delta: float) -> void:
 		$CPUParticles2D.visible = false
 		Dropped = true
 	DropTimer+=1
+	ArrowSlow = 10 - (get_tree().current_scene.UpgradeArray[1]*2)
 	
 
 func _on_area_entered(area: Area2D) -> void:
@@ -31,8 +33,8 @@ func _on_area_entered(area: Area2D) -> void:
 			var parts = GreenParts.instantiate()
 			parts.global_position = global_position
 			get_parent().get_parent().add_child(parts)
-			if(ArrowSpeed >= 10):
-				ArrowSpeed -= 10
+			if(ArrowSpeed - ArrowSlow > 0):
+				ArrowSpeed -= ArrowSlow
 		
 func SpawnFrogGore(type):
 	for i in range(randi_range(3, 5)):

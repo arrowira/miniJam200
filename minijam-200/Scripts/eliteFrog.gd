@@ -3,6 +3,7 @@ var groundPound = preload("res://Scenes/ground_pound_effect.tscn")
 var jumpDir = Vector2.RIGHT
 var jumpDist = 3
 var health = 3
+var regFrame = 0
 var jumping = false
 var jumpStartPos = Vector2.ZERO
 var t = 0
@@ -35,12 +36,14 @@ func jump(dir):
 	$CollisionShape2D.visible = false
 
 func damage():
+	regFrame+=1
 	health-=1
+	$Sprite2D.frame=regFrame
 	if health == 0:
 		queue_free()
 func _on_jump_timer_timeout() -> void:
 	jumping=false
-	$Sprite2D.frame=0
+	$Sprite2D.frame=regFrame
 	$CollisionShape2D.visible = true
 	var aoe = groundPound.instantiate()
 	aoe.global_position = global_position

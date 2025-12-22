@@ -26,3 +26,11 @@ func addheart():
 	newHeart.position.y = 9
 	newHeart.position.x = 10+16*(get_parent().get_node("Player").maxHealth-1)
 	
+func heal():
+	if get_parent().get_node("Player").PlayerHealth != get_parent().get_node("Player").maxHealth:
+		get_parent().get_node("Player").PlayerHealth+=1
+		$hearts.get_children()[get_parent().get_node("Player").PlayerHealth-1].frame=0
+	
+	
+	
+	

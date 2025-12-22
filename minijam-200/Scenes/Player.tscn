@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://dn0wyr0nn2y2q"]
 
 [ext_resource type="Script" uid="uid://cn7v7jwhckh73" path="res://Scripts/PlayerMovement.gd" id="1_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://bkm2ngfldl2xg" path="res://Sprites/frog_game_movement_sheet.png" id="2_nn08x"]
+[ext_resource type="Texture2D" uid="uid://cpcixri5didi5" path="res://Sprites/playerMovementSheet.png" id="2_52ee3"]
 [ext_resource type="Script" path="res://Scripts/BowRotation.gd" id="3_gntrk"]
 [ext_resource type="AudioStream" uid="uid://dltll0oypd84r" path="res://audio/bowShoot.mp3" id="4_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://cu43byynkr0h3" path="res://Sprites/bow.png" id="4_nn08x"]
@@ -86,7 +86,7 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.10269565, 0.20400351, 0.29976028, 0.40106815, 0.50098825),
+"times": PackedFloat32Array(0, 0.03333334, 0.06666667, 0.23333333, 0.36666667, 0.46666667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [24, 25, 26, 27, 28, 29]
@@ -95,7 +95,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_miouo"]
 resource_name = "dashRight"
 length = 0.6
-loop_mode = 1
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -103,7 +103,7 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.10269565, 0.19984019, 0.30114806, 0.40245593, 0.50515157),
+"times": PackedFloat32Array(0, 0.03333334, 0.06666666, 0.23333333, 0.36666667, 0.46666667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [30, 31, 32, 33, 34, 35]
@@ -240,9 +240,9 @@ script = ExtResource("1_kyqiw")
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(1, -3)
 scale = Vector2(4, 4)
-texture = ExtResource("2_nn08x")
+texture = ExtResource("2_52ee3")
 hframes = 6
-vframes = 6
+vframes = 7
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(2, 39.5)

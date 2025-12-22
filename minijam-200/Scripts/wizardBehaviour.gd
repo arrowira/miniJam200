@@ -49,6 +49,7 @@ func _on_start_timeout() -> void:
 
 
 func _on_shoot_timer_timeout() -> void:
+	$shootTimer.wait_time = randf_range(1.5,2.5)
 	var newProj = projectile.instantiate()
 	
 	

@@ -177,7 +177,7 @@ libraries = {
 speed_scale = 1.5
 
 [node name="shootTimer" type="Timer" parent="frogArea2D"]
-wait_time = 0.5
+wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="frogArea2D/teleportTimer" to="frogArea2D" method="_on_tele_timer_timeout"]

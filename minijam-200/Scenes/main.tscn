@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=14 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
@@ -8,8 +8,10 @@
 [ext_resource type="FontFile" uid="uid://d35yfqyb2ke15" path="res://at01.ttf" id="7_344ge"]
 [ext_resource type="Texture2D" uid="uid://ck5nwoqf2obg8" path="res://Sprites/arrow-1.png.png" id="7_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://chqwrmeaa261a" path="res://Scenes/wizard.tscn" id="8_344ge"]
+[ext_resource type="Texture2D" uid="uid://dlabmsl6q4vx1" path="res://icon.svg" id="9_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://cd0b22t6ej1g4" path="res://Scenes/healFrog.tscn" id="9_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://cej487rhp56f3" path="res://Sprites/pond1-1.png.png" id="10_hptm8"]
+[ext_resource type="Texture2D" uid="uid://dhoifquegvowv" path="res://Sprites/UpgradeBarBackground.png" id="10_jkdf5"]
 [ext_resource type="Texture2D" uid="uid://bfnnqj5qfo7ju" path="res://Sprites/pond1-2.png.png" id="11_d1ilt"]
 
 [node name="main" type="Node2D"]
@@ -140,11 +142,16 @@ horizontal_alignment = 1
 
 [node name="HealthUpgrade" type="Node" parent="CanvasLayer/UpgradeUI"]
 
-[node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/HealthUpgrade"]
-offset_left = 1.0
-offset_top = 52.0
-offset_right = 65.0
-offset_bottom = 66.0
+[node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/HealthUpgrade"]
+position = Vector2(1.0000019, 52.999996)
+scale = Vector2(1e-05, 0.082)
+texture = ExtResource("9_fdnlq")
+centered = false
+
+[node name="Bar" type="Sprite2D" parent="CanvasLayer/UpgradeUI/HealthUpgrade"]
+position = Vector2(30, 59)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("10_jkdf5")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/HealthUpgrade"]
 offset_left = 4.0
@@ -152,17 +159,21 @@ offset_top = 51.0
 offset_right = 64.0
 offset_bottom = 69.0
 theme_override_fonts/normal_font = ExtResource("7_344ge")
-text = "Max Health 1
+text = "Max Health
 "
 
 [node name="ArrowPenetration" type="Node" parent="CanvasLayer/UpgradeUI"]
 
-[node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/ArrowPenetration"]
-offset_left = 1.0
-offset_top = 67.0
-offset_right = 95.0
-offset_bottom = 81.0
-metadata/_edit_use_anchors_ = true
+[node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/ArrowPenetration"]
+position = Vector2(1, 69)
+scale = Vector2(1e-05, 0.082)
+texture = ExtResource("9_fdnlq")
+centered = false
+
+[node name="Bar" type="Sprite2D" parent="CanvasLayer/UpgradeUI/ArrowPenetration"]
+position = Vector2(29.4, 75.2)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("10_jkdf5")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/ArrowPenetration"]
 offset_left = 4.0
@@ -170,19 +181,20 @@ offset_top = 66.0
 offset_right = 99.0
 offset_bottom = 84.0
 theme_override_fonts/normal_font = ExtResource("7_344ge")
-text = "Arrow Penetration 1"
+text = "Arrow Penetration"
 
 [node name="MoreArrows" type="Node" parent="CanvasLayer/UpgradeUI"]
 
-[node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/MoreArrows"]
-anchors_preset = -1
-anchor_left = -0.15
-anchor_right = -0.15
-offset_left = 24.0
-offset_top = 82.0
-offset_right = 118.0
-offset_bottom = 96.0
-metadata/_edit_use_anchors_ = true
+[node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/MoreArrows"]
+position = Vector2(2.000002, 83.99999)
+scale = Vector2(1e-05, 0.082)
+texture = ExtResource("9_fdnlq")
+centered = false
+
+[node name="Bar" type="Sprite2D" parent="CanvasLayer/UpgradeUI/MoreArrows"]
+position = Vector2(30.4, 90.2)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("10_jkdf5")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/MoreArrows"]
 offset_left = 4.0
@@ -190,19 +202,20 @@ offset_top = 81.0
 offset_right = 73.0
 offset_bottom = 99.0
 theme_override_fonts/normal_font = ExtResource("7_344ge")
-text = "More Arrows 1"
+text = "More Arrows"
 
 [node name="Speed" type="Node" parent="CanvasLayer/UpgradeUI"]
 
-[node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/Speed"]
-anchors_preset = -1
-anchor_left = -0.42666668
-anchor_right = -0.42666668
-offset_left = 77.0
-offset_top = 97.0
-offset_right = 171.0
-offset_bottom = 111.0
-metadata/_edit_use_anchors_ = true
+[node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/Speed"]
+position = Vector2(2.000002, 98.99999)
+scale = Vector2(1e-05, 0.082)
+texture = ExtResource("9_fdnlq")
+centered = false
+
+[node name="Bar" type="Sprite2D" parent="CanvasLayer/UpgradeUI/Speed"]
+position = Vector2(30.4, 105.2)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("10_jkdf5")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/Speed"]
 offset_left = 4.0
@@ -210,21 +223,22 @@ offset_top = 96.0
 offset_right = 41.0
 offset_bottom = 114.0
 theme_override_fonts/normal_font = ExtResource("7_344ge")
-text = "Speed 1
+text = "Speed
 "
 metadata/_edit_use_anchors_ = true
 
 [node name="DashDistance" type="Node" parent="CanvasLayer/UpgradeUI"]
 
-[node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/DashDistance"]
-anchors_preset = -1
-anchor_left = -0.38
-anchor_right = -0.38
-offset_left = 96.0
-offset_top = 112.0
-offset_right = 190.0
-offset_bottom = 126.0
-metadata/_edit_use_anchors_ = true
+[node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/DashDistance"]
+position = Vector2(2.000002, 113.99999)
+scale = Vector2(1e-05, 0.082)
+texture = ExtResource("9_fdnlq")
+centered = false
+
+[node name="Bar" type="Sprite2D" parent="CanvasLayer/UpgradeUI/DashDistance"]
+position = Vector2(30.4, 120.2)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("10_jkdf5")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/DashDistance"]
 anchors_preset = -1
@@ -234,21 +248,22 @@ offset_top = 111.0
 offset_right = 39.0
 offset_bottom = 129.0
 theme_override_fonts/normal_font = ExtResource("7_344ge")
-text = "Dash Distance 1
+text = "Dash Distance
 "
 metadata/_edit_use_anchors_ = true
 
 [node name="AimSpeed" type="Node" parent="CanvasLayer/UpgradeUI"]
 
-[node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/AimSpeed"]
-anchors_preset = -1
-anchor_left = -0.55
-anchor_right = -0.55
-offset_left = 132.0
-offset_top = 128.0
-offset_right = 226.0
-offset_bottom = 142.0
-metadata/_edit_use_anchors_ = true
+[node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/AimSpeed"]
+position = Vector2(1, 130)
+scale = Vector2(1e-05, 0.082)
+texture = ExtResource("9_fdnlq")
+centered = false
+
+[node name="Bar" type="Sprite2D" parent="CanvasLayer/UpgradeUI/AimSpeed"]
+position = Vector2(29.4, 136.2)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("10_jkdf5")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/AimSpeed"]
 anchors_preset = -1
@@ -258,7 +273,7 @@ offset_top = 127.0
 offset_right = 39.0
 offset_bottom = 145.0
 theme_override_fonts/normal_font = ExtResource("7_344ge")
-text = "Aim Speed 1
+text = "Aim Speed
 "
 metadata/_edit_use_anchors_ = true
 

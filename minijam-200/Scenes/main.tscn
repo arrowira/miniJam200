@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dqlq65abvfvhe"]
 
-[ext_resource type="Script" path="res://Scenes/gameManager.gd" id="1_6bp64"]
+[ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://gameManager.gd" id="1_6bp64"]
 [ext_resource type="Texture2D" uid="uid://dp4rfoifvw87i" path="res://Sprites/Background.png" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://vx2bv1y7pogc" path="res://Scenes/frog.tscn" id="3_8gbba"]
@@ -72,7 +72,7 @@ script = ExtResource("4_kry3j")
 
 [node name="ArrowDisplay" type="Node" parent="CanvasLayer"]
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ArrowDisplay"]
+[node name="ArrowDisplaySprite" type="Sprite2D" parent="CanvasLayer/ArrowDisplay"]
 texture_filter = 1
 position = Vector2(283, 19)
 scale = Vector2(0.04, 0.04)

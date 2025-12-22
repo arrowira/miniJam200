@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://dpcpildhnthrn"]
 
-[ext_resource type="Texture2D" uid="uid://dfdjkbdx5660w" path="res://Sprites/FrogGore.png" id="1_ddhy3"]
+[ext_resource type="Texture2D" uid="uid://63fli2fkhu67" path="res://Sprites/GreenFrogGore.png" id="1_ql04w"]
 [ext_resource type="Script" uid="uid://cktak4b4ts3ko" path="res://Scripts/GoreController.gd" id="2_ql04w"]
 
 [node name="Gore" type="Sprite2D"]
-texture = ExtResource("1_ddhy3")
+texture = ExtResource("1_ql04w")
 vframes = 4
 script = ExtResource("2_ql04w")

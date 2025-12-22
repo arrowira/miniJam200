@@ -1,11 +1,62 @@
 [gd_scene load_steps=8 format=3 uid="uid://5f4orw766gg1"]
 
-[ext_resource type="Script" path="res://Scripts/wizardBehaviour.gd" id="1_33wk7"]
+[ext_resource type="Script" uid="uid://b5oi0ewr1cvsc" path="res://Scripts/wizardBehaviour.gd" id="1_33wk7"]
 [ext_resource type="Texture2D" uid="uid://bwfwr1xenfsdj" path="res://shadow-1.png.png" id="2_mqqw1"]
 [ext_resource type="Texture2D" uid="uid://dd3dmaryj0nnn" path="res://Sprites/wizard frog.png" id="3_33wk7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3muq"]
 size = Vector2(81.50001, 57.99996)
+
+[sub_resource type="Animation" id="Animation_33wk7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.15, 0.165)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("portal:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.01, 0.01)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("portal:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_mqqw1"]
 resource_name = "teleport"
@@ -70,57 +121,6 @@ tracks/4/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_33wk7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.15, 0.165)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("portal:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.01, 0.01)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("portal:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_be21u"]
 _data = {
 &"RESET": SubResource("Animation_33wk7"),
@@ -176,6 +176,11 @@ libraries = {
 }
 speed_scale = 1.5
 
+[node name="shootTimer" type="Timer" parent="frogArea2D"]
+wait_time = 0.5
+autostart = true
+
 [connection signal="timeout" from="frogArea2D/teleportTimer" to="frogArea2D" method="_on_tele_timer_timeout"]
 [connection signal="timeout" from="frogArea2D/teleCooldown" to="frogArea2D" method="_on_tele_cooldown_timeout"]
 [connection signal="timeout" from="frogArea2D/start" to="frogArea2D" method="_on_start_timeout"]
+[connection signal="timeout" from="frogArea2D/shootTimer" to="frogArea2D" method="_on_shoot_timer_timeout"]

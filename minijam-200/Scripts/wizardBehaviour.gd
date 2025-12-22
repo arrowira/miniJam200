@@ -1,5 +1,6 @@
 extends Area2D
 var groundPound = preload("res://Scenes/ground_pound_effect.tscn")
+var projectile = preload("res://Scenes/wizard_projectile.tscn")
 var teleDir = Vector2.RIGHT
 var teleDist = 200
 
@@ -45,3 +46,12 @@ func _on_tele_cooldown_timeout() -> void:
 
 func _on_start_timeout() -> void:
 	$teleCooldown.start()
+
+
+func _on_shoot_timer_timeout() -> void:
+	var newProj = projectile.instantiate()
+	
+	
+	get_parent().get_parent().add_child(newProj)
+	newProj.global_position = global_position
+	newProj.launch(global_position, get_parent().get_parent().get_node("Player").global_position)

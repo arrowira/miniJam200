@@ -1,15 +1,63 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnc13pyqxah7q"]
+[gd_scene load_steps=7 format=3 uid="uid://dnc13pyqxah7q"]
 
 [ext_resource type="Texture2D" uid="uid://quyyk4c8aci1" path="res://Sprites/wizard Projectile-1.png.png" id="1_biqy3"]
+[ext_resource type="Script" uid="uid://cnn4kr11umlp0" path="res://Scripts/wizard_projectile.gd" id="1_h1oxq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h1oxq"]
 radius = 26.019224
 
-[node name="wizard projectile" type="Area2D"]
+[sub_resource type="Animation" id="Animation_h1oxq"]
+resource_name = "spawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20077246),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[sub_resource type="Animation" id="Animation_y7lym"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_garq8"]
+_data = {
+&"RESET": SubResource("Animation_y7lym"),
+&"spawn": SubResource("Animation_h1oxq")
+}
+
+[node name="projectile" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_h1oxq")
+
+[node name="projArea" type="Area2D" parent="."]
+scale = Vector2(0.25, 0.25)
+
+[node name="Sprite2D" type="Sprite2D" parent="projArea"]
+modulate = Color(1, 1, 1, 0)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_biqy3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="projArea"]
 shape = SubResource("CircleShape2D_h1oxq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="projArea"]
+libraries = {
+&"": SubResource("AnimationLibrary_garq8")
+}

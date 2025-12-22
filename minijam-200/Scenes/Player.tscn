@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dn0wyr0nn2y2q"]
+[gd_scene load_steps=22 format=3 uid="uid://dn0wyr0nn2y2q"]
 
 [ext_resource type="Script" uid="uid://cn7v7jwhckh73" path="res://Scripts/PlayerMovement.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://cpcixri5didi5" path="res://Sprites/playerMovementSheet.png" id="2_52ee3"]
@@ -79,6 +79,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_o3h8g"]
 resource_name = "dashLeft"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -223,11 +224,27 @@ tracks/1/keys = {
 "values": [Vector2(-6, 27)]
 }
 
+[sub_resource type="Animation" id="Animation_1e7my"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.101006925, 0.19912793, 0.30109683, 0.3972939, 0.50022477),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39, 40, 41]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yoq75"]
 _data = {
 &"RESET": SubResource("Animation_megsn"),
 &"dashLeft": SubResource("Animation_o3h8g"),
 &"dashRight": SubResource("Animation_miouo"),
+&"death": SubResource("Animation_1e7my"),
 &"idleLeft": SubResource("Animation_yoq75"),
 &"idleRight": SubResource("Animation_bhhdu"),
 &"runLeft": SubResource("Animation_ksbbd"),

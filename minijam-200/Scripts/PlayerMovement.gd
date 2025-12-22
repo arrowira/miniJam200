@@ -90,7 +90,8 @@ func _physics_process(delta: float) -> void:
 			$Sprite.self_modulate.a = 0.5
 		else:
 			$Sprite.self_modulate.a = 1
-	
+	else:
+		$playerAnimiations.play("death")
 	get_parent().get_node("CanvasLayer/ArrowDisplay/ArrowCount").text = str(Arrows)
 	
 	move_and_slide()

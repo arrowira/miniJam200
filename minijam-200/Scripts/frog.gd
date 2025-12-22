@@ -19,7 +19,7 @@ func _ready() -> void:
 func _physics_process(delta: float):
 	if inWater and !jumping:
 		$Sprite2D.visible=false
-		$Shadow1_png.visible=falseaa
+		$Shadow1_png.visible=false
 	else:
 		$Sprite2D.visible=true
 		$Shadow1_png.visible=true
@@ -47,15 +47,15 @@ func jump(dir):
 
 func _on_jump_timer_timeout() -> void:
 	jumping=false
-	
-	$Sprite2D.frame=0
 	$CollisionShape2D.visible = true
-	var aoe = groundPound.instantiate()
-	aoe.global_position = global_position
-	aoe.global_position.y+=35
-	
-	aoe.z_index=z_index-5
-	get_parent().get_parent().add_child(aoe)
+	$Sprite2D.frame=0
+	if !inWater:
+		var aoe = groundPound.instantiate()
+		aoe.global_position = global_position
+		aoe.global_position.y+=35
+		
+		aoe.z_index=z_index-5
+		get_parent().get_parent().add_child(aoe)
 
 
 func _on_jump_cooldown_timeout() -> void:

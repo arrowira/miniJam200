@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=13 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
@@ -10,16 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://chqwrmeaa261a" path="res://Scenes/wizard.tscn" id="8_344ge"]
 [ext_resource type="Texture2D" uid="uid://dlabmsl6q4vx1" path="res://icon.svg" id="9_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://cd0b22t6ej1g4" path="res://Scenes/healFrog.tscn" id="9_ynf5e"]
-[ext_resource type="Texture2D" uid="uid://cej487rhp56f3" path="res://Sprites/pond1-1.png.png" id="10_hptm8"]
 [ext_resource type="Texture2D" uid="uid://dhoifquegvowv" path="res://Sprites/UpgradeBarBackground.png" id="10_jkdf5"]
-[ext_resource type="Texture2D" uid="uid://bfnnqj5qfo7ju" path="res://Sprites/pond1-2.png.png" id="11_d1ilt"]
-[ext_resource type="PackedScene" uid="uid://cvnwhuiurasqs" path="res://Scenes/eliteFrog.tscn" id="14_jkdf5"]
+[ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_ynf5e")
-
-[node name="wizard2" parent="." instance=ExtResource("8_344ge")]
-position = Vector2(7, 78)
 
 [node name="wizard" parent="." instance=ExtResource("8_344ge")]
 position = Vector2(-201, 15)
@@ -281,19 +276,7 @@ metadata/_edit_use_anchors_ = true
 [node name="healFrog" parent="." instance=ExtResource("9_ynf5e")]
 position = Vector2(-81, 8)
 
-[node name="Pond11_png(1)" type="Sprite2D" parent="."]
-z_index = -4096
-position = Vector2(287, -45.000008)
-rotation = 0.91707885
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("10_hptm8")
-
-[node name="Pond12_png" type="Sprite2D" parent="."]
-position = Vector2(-472, 32)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("11_d1ilt")
-
-[node name="frog7" parent="." instance=ExtResource("14_jkdf5")]
-position = Vector2(-166, 109)
+[node name="pond1" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(-292, 323)
 
 [connection signal="pressed" from="CanvasLayer/deathScreen/Panel/Button" to="." method="_on_button_pressed"]

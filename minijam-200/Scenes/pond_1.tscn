@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4rvk6nqvymxb"]
+
+[ext_resource type="Texture2D" uid="uid://dw5ychk56h0wb" path="res://Sprites/pondma.png" id="1_y7h38"]
+
+[node name="pond1" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+
+[node name="Pondma" type="Sprite2D" parent="."]
+z_index = -4096
+position = Vector2(52.000004, -65)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_y7h38")
+
+[node name="pondCol" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pondCol"]
+polygon = PackedVector2Array(-8, -99, 57, -118, 89, -111, 99, -91, 93, -66, 53, -53, 33, -23, 51, -11, 98, -5, 112, 12, 103, 39, 51, 50, 41, 69, 6, 77, -25, 64, -29, 40, -50, 20, -56, -23, -34, -60)
+
+[node name="pond" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="pond"]
+position = Vector2(0, 0.99999994)
+scale = Vector2(0.8, 0.8)
+polygon = PackedVector2Array(0, -96.24999, 48.749996, -129.99998, 93.74999, -127.499985, 104.99999, -97.49999, 73.74999, -81.24999, 37.499996, -52.499996, 33, -23, 49.999996, -3.7499995, 92.49999, 1.2499999, 119.999985, 17.499998, 109.99999, 38.749996, 51, 50, 44.999996, 76.24999, 16.249998, 82.49999, -25, 64, -29.999996, 39.999996, -49.999996, 17.499998, -56, -23, -29.999996, -57.499996)

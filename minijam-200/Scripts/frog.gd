@@ -6,6 +6,10 @@ var jumping = false
 var jumpStartPos = Vector2.ZERO
 var t = 0
 var height = 0.2
+
+var inWater = true
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$start.wait_time = randf_range(0,3)
@@ -13,6 +17,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float):
+	if inWater and !jumping:
+		$Sprite2D.visible=false
+		$Shadow1_png.visible=falseaa
+	else:
+		$Sprite2D.visible=true
+		$Shadow1_png.visible=true
 	z_index = global_position.y
 	if jumpDir.x>0:
 		$Sprite2D.flip_h = false
@@ -29,6 +39,7 @@ func jump(dir):
 	jumpDir = dir
 	t = 0
 	jumping=true
+	inWater = false
 	$Sprite2D.frame=1
 	$jumpTimer.start()
 	$CollisionShape2D.visible = false
@@ -36,6 +47,7 @@ func jump(dir):
 
 func _on_jump_timer_timeout() -> void:
 	jumping=false
+	
 	$Sprite2D.frame=0
 	$CollisionShape2D.visible = true
 	var aoe = groundPound.instantiate()
@@ -60,3 +72,8 @@ func _on_jump_cooldown_timeout() -> void:
 
 func _on_start_timeout() -> void:
 	$jumpCooldown.start()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == "pond":
+		inWater=true

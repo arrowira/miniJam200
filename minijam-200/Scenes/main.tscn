@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=12 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
-[ext_resource type="PackedScene" uid="uid://vx2bv1y7pogc" path="res://Scenes/frog.tscn" id="3_8gbba"]
 [ext_resource type="Texture2D" uid="uid://ckbqcxm0gsvwm" path="res://Sprites/Health.png" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://d01kyurrhj6hq" path="res://Scripts/HealthManager.gd" id="4_kry3j"]
 [ext_resource type="FontFile" uid="uid://d35yfqyb2ke15" path="res://at01.ttf" id="7_344ge"]
@@ -24,24 +23,6 @@ scale = Vector2(0.3, 0.3)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_speed = 20.0
-
-[node name="frog" parent="." instance=ExtResource("3_8gbba")]
-position = Vector2(172, 141)
-
-[node name="frog2" parent="." instance=ExtResource("3_8gbba")]
-position = Vector2(-193, -85)
-
-[node name="frog3" parent="." instance=ExtResource("3_8gbba")]
-position = Vector2(-80, 97)
-
-[node name="frog4" parent="." instance=ExtResource("3_8gbba")]
-position = Vector2(90, -32)
-
-[node name="frog5" parent="." instance=ExtResource("3_8gbba")]
-position = Vector2(-67, -97)
-
-[node name="frog6" parent="." instance=ExtResource("3_8gbba")]
-position = Vector2(86, 98)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("4_kry3j")

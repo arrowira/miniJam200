@@ -17,12 +17,14 @@ script = ExtResource("1_85unm")
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Shadow1_png" type="Sprite2D" parent="frogArea2D"]
+visible = false
 modulate = Color(0, 0, 0, 0.45882353)
 position = Vector2(3.9999998, 57.999996)
 scale = Vector2(0.4062499, 0.36875007)
 texture = ExtResource("2_c3muq")
 
 [node name="Sprite2D" type="Sprite2D" parent="frogArea2D"]
+visible = false
 position = Vector2(4, 0)
 scale = Vector2(0.15, 0.161)
 texture = ExtResource("3_c3muq")

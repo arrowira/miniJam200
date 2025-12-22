@@ -259,5 +259,11 @@ position = Vector2(-81, 8)
 
 [node name="pond1" parent="." instance=ExtResource("12_6iyac")]
 position = Vector2(-292, 323)
+spawnCoolDown = 10.0
+
+[node name="pond2" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(302, -77)
+rotation = 2.3698082
+spawnCoolDown = 10.0
 
 [connection signal="pressed" from="CanvasLayer/deathScreen/Panel/Button" to="." method="_on_button_pressed"]

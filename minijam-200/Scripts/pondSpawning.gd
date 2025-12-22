@@ -4,15 +4,21 @@ extends Node2D
 @export var healthChance = 0
 @export var wizardChance = 0
 
-var radius = 3
+@export var radius = 3
 
 var regFrog = preload("res://Scenes/frog.tscn")
 var healFrog = preload("res://Scenes/healFrog.tscn")
 var wizardFrog = preload("res://Scenes/wizard.tscn")
 
+@export var spawnCoolDown = 3.0
+
+
+func _ready() -> void:
+	$spawnTimer.wait_time=spawnCoolDown
+
 
 func _on_spawn_timer_timeout() -> void:
-	var spawnAmount = randi_range(2,5)
+	var spawnAmount = randi_range(1,3)
 	for i in range(spawnAmount):
 		var frogType = randi_range(0,100)
 		if frogType>regChance:

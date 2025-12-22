@@ -24,7 +24,10 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.name == "frogArea2D":
 		if(Dropped == false):
 			$DeathSound.play()
-			area.get_parent().queue_free()
+			if(area.get_children()[0].name == "EliteFrog"):
+				area.damage()
+			else:
+				area.get_parent().queue_free()
 			if(area.get_children()[0].name == "NormalFrog"):
 				SpawnFrogGore(1)
 			if(area.get_children()[0].name == "WizardFrog"):

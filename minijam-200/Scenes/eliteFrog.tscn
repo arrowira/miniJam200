@@ -1,17 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvnwhuiurasqs"]
 
-[ext_resource type="Script" uid="uid://bvgnvbbu3jwcn" path="res://Scripts/frog.gd" id="1_jy44h"]
+[ext_resource type="Script" uid="uid://bxgnwdrnnyrb1" path="res://Scripts/eliteFrog.gd" id="1_jy44h"]
 [ext_resource type="Texture2D" uid="uid://bau34t4k1mwlg" path="res://Sprites/white circle-1.png.png" id="2_jy44h"]
 [ext_resource type="Texture2D" uid="uid://bqt2liesg3sag" path="res://Sprites/eliteFrog (1).png" id="3_jy44h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3muq"]
 size = Vector2(207.50006, 62.99999)
 
-[node name="frog" type="Node2D"]
+[node name="eliteFrog" type="Node2D"]
 
 [node name="frogArea2D" type="Area2D" parent="."]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_jy44h")
+
+[node name="EliteFrog" type="Node2D" parent="frogArea2D"]
+scale = Vector2(0.99999994, 0.99999994)
 
 [node name="NormalFrog" type="Node2D" parent="frogArea2D"]
 scale = Vector2(0.99999994, 0.99999994)

@@ -37,7 +37,7 @@ func _on_area_entered(area: Area2D) -> void:
 				ArrowSpeed -= ArrowSlow
 		
 func SpawnFrogGore(type):
-	for i in range(randi_range(3, 5)):
+	for i in range(randi_range(2, 3)):
 		var S
 		if(type == 1):
 			S = FrogGoreObj.instantiate()

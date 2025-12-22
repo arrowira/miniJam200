@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=12 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://ck5nwoqf2obg8" path="res://Sprites/arrow-1.png.png" id="7_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://chqwrmeaa261a" path="res://Scenes/wizard.tscn" id="8_344ge"]
 [ext_resource type="PackedScene" uid="uid://cd0b22t6ej1g4" path="res://Scenes/healFrog.tscn" id="9_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://cej487rhp56f3" path="res://Sprites/pond1-1.png.png" id="10_hptm8"]
+[ext_resource type="Texture2D" uid="uid://bfnnqj5qfo7ju" path="res://Sprites/pond1-2.png.png" id="11_d1ilt"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_ynf5e")
@@ -174,7 +176,7 @@ text = "Arrow Penetration 1"
 
 [node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/MoreArrows"]
 anchors_preset = -1
-anchor_left = -0.07666667
+anchor_left = -0.15
 anchor_right = -0.15
 offset_left = 24.0
 offset_top = 82.0
@@ -194,7 +196,7 @@ text = "More Arrows 1"
 
 [node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/Speed"]
 anchors_preset = -1
-anchor_left = -0.25666666
+anchor_left = -0.42666668
 anchor_right = -0.42666668
 offset_left = 77.0
 offset_top = 97.0
@@ -216,7 +218,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/DashDistance"]
 anchors_preset = -1
-anchor_left = -0.32333332
+anchor_left = -0.38
 anchor_right = -0.38
 offset_left = 96.0
 offset_top = 112.0
@@ -240,7 +242,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI/AimSpeed"]
 anchors_preset = -1
-anchor_left = -0.44
+anchor_left = -0.55
 anchor_right = -0.55
 offset_left = 132.0
 offset_top = 128.0
@@ -262,5 +264,17 @@ metadata/_edit_use_anchors_ = true
 
 [node name="healFrog" parent="." instance=ExtResource("9_ynf5e")]
 position = Vector2(-81, 8)
+
+[node name="Pond11_png(1)" type="Sprite2D" parent="."]
+z_index = -4096
+position = Vector2(287, -45.000008)
+rotation = 0.91707885
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("10_hptm8")
+
+[node name="Pond12_png" type="Sprite2D" parent="."]
+position = Vector2(-472, 32)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("11_d1ilt")
 
 [connection signal="pressed" from="CanvasLayer/deathScreen/Panel/Button" to="." method="_on_button_pressed"]

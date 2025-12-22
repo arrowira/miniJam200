@@ -72,4 +72,4 @@ shoot={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0.24642652, 0.33895066, 0.33618596, 1)
+environment/defaults/default_clear_color=Color(0.27929974, 0.36654228, 0.33870438, 1)

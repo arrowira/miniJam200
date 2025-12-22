@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://da3esl8rvcukf"]
+
+[ext_resource type="Texture2D" uid="uid://tcjpyulonqr4" path="res://Sprites/HealthFrogGore.png" id="1_24oui"]
+[ext_resource type="Script" uid="uid://cktak4b4ts3ko" path="res://Scripts/GoreController.gd" id="2_0jwt4"]
+
+[node name="Gore" type="Sprite2D"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_24oui")
+vframes = 4
+script = ExtResource("2_0jwt4")

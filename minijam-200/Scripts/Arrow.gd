@@ -2,6 +2,7 @@ extends Area2D
 
 var FrogGoreObj = preload("res://Scenes/FrogGoreTemplate.tscn") 
 var WizardFrogGoreObj = preload("res://Scenes/WizardFrogGoreTemplate.tscn") 
+var HealthFrogGoreObj = preload("res://Scenes/HealthFrogGoreTemplate.tscn") 
 
 var DropTimer = 0
 var GreenParts = preload("res://Scenes/green_frog_death_particles.tscn")
@@ -29,6 +30,7 @@ func _on_area_entered(area: Area2D) -> void:
 			if(area.get_children()[0].name == "WizardFrog"):
 				SpawnFrogGore(2)
 			if(area.get_children()[0].name == "HealFrog"):
+				SpawnFrogGore(3)
 				get_parent().get_node("CanvasLayer").heal()
 			var parts = GreenParts.instantiate()
 			parts.global_position = global_position
@@ -43,6 +45,8 @@ func SpawnFrogGore(type):
 			S = FrogGoreObj.instantiate()
 		if(type == 2):
 			S = WizardFrogGoreObj.instantiate() 
+		if(type == 3):
+			S = HealthFrogGoreObj.instantiate()
 		S.position = global_position + Vector2(randi_range(-20, 20), randi_range(-20, 20))
 		S.rotation = randf() * TAU
 		get_tree().root.add_child(S)

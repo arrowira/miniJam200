@@ -226,6 +226,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_1e7my"]
 resource_name = "death"
+length = 10.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false

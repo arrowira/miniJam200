@@ -3,6 +3,7 @@ extends Area2D
 var FrogGoreObj = preload("res://Scenes/FrogGoreTemplate.tscn") 
 var WizardFrogGoreObj = preload("res://Scenes/WizardFrogGoreTemplate.tscn") 
 var HealthFrogGoreObj = preload("res://Scenes/HealthFrogGoreTemplate.tscn") 
+var HealObj = preload("res://Scenes/HealObject.tscn")
 
 var DropTimer = 0
 var GreenParts = preload("res://Scenes/green_frog_death_particles.tscn")
@@ -34,7 +35,9 @@ func _on_area_entered(area: Area2D) -> void:
 				SpawnFrogGore(2)
 			if(area.get_children()[0].name == "HealFrog"):
 				SpawnFrogGore(3)
-				get_parent().get_node("CanvasLayer").heal()
+				var S = HealObj.instantiate()
+				S.global_position = area.global_position
+				get_parent().get_parent().add_child(S)
 			var parts = GreenParts.instantiate()
 			parts.global_position = global_position
 			get_parent().get_parent().add_child(parts)

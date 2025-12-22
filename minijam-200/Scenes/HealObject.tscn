@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4b7mgjliq2nv"]
+
+[ext_resource type="Texture2D" uid="uid://ckbqcxm0gsvwm" path="res://Sprites/Health.png" id="1_fguos"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fguos"]
+size = Vector2(16, 15)
+
+[node name="HealObject" type="Node2D"]
+
+[node name="HeartHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeartHitbox"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_fguos")
+
+[node name="Sprite" type="Sprite2D" parent="HeartHitbox"]
+modulate = Color(1.4687854, 1.4687854, 1.4687854, 1)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("1_fguos")
+vframes = 2

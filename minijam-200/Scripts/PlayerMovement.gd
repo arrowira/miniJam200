@@ -114,6 +114,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if(area.DropTimer>= 20):
 			Arrows+=1
 			area.queue_free()
+	if(area.name == "HeartHitbox" && PlayerHealth < maxHealth):
+		get_parent().get_node("CanvasLayer").heal()
+		area.queue_free()
 
 
 func _on_death_timer_timeout() -> void:

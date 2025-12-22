@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://5f4orw766gg1"]
+[gd_scene load_steps=8 format=3 uid="uid://chqwrmeaa261a"]
 
 [ext_resource type="Script" uid="uid://b5oi0ewr1cvsc" path="res://Scripts/wizardBehaviour.gd" id="1_33wk7"]
 [ext_resource type="Texture2D" uid="uid://bwfwr1xenfsdj" path="res://shadow-1.png.png" id="2_mqqw1"]
@@ -132,6 +132,8 @@ _data = {
 [node name="frogArea2D" type="Area2D" parent="."]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_33wk7")
+
+[node name="WizardFrog" type="Node" parent="frogArea2D"]
 
 [node name="Shadow1_png" type="Sprite2D" parent="frogArea2D"]
 modulate = Color(0, 0, 0, 0.45882353)

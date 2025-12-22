@@ -13,6 +13,9 @@ size = Vector2(59, 62.99999)
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_85unm")
 
+[node name="NormalFrog" type="Node2D" parent="frogArea2D"]
+scale = Vector2(0.99999994, 0.99999994)
+
 [node name="Shadow1_png" type="Sprite2D" parent="frogArea2D"]
 modulate = Color(0, 0, 0, 0.45882353)
 position = Vector2(4, 58)

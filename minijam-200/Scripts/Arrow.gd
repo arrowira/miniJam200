@@ -1,6 +1,7 @@
 extends Area2D
 
 var FrogGoreObj = preload("res://Scenes/FrogGoreTemplate.tscn") 
+var WizardFrogGoreObj = preload("res://Scenes/WizardFrogGoreTemplate.tscn") 
 
 var DropTimer = 0
 var GreenParts = preload("res://Scenes/green_frog_death_particles.tscn")
@@ -21,17 +22,23 @@ func _on_area_entered(area: Area2D) -> void:
 		if(Dropped == false):
 			$DeathSound.play()
 			area.get_parent().queue_free()
-			SpawnFrogGore()
+			if(area.get_children()[0].name == "NormalFrog"):
+				SpawnFrogGore(1)
+			if(area.get_children()[0].name == "WizardFrog"):
+				SpawnFrogGore(2)
 			var parts = GreenParts.instantiate()
 			parts.global_position = global_position
 			get_parent().get_parent().add_child(parts)
 			if(ArrowSpeed >= 10):
 				ArrowSpeed -= 10
 		
-		
-func SpawnFrogGore():
+func SpawnFrogGore(type):
 	for i in range(randi_range(3, 5)):
-		var S = FrogGoreObj.instantiate()
+		var S
+		if(type == 1):
+			S = FrogGoreObj.instantiate()
+		if(type == 2):
+			S = WizardFrogGoreObj.instantiate() 
 		S.position = global_position + Vector2(randi_range(-20, 20), randi_range(-20, 20))
 		S.rotation = randf() * TAU
 		get_tree().root.add_child(S)

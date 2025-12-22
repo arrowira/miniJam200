@@ -1,17 +1,17 @@
 [gd_scene load_steps=10 format=3 uid="uid://dqlq65abvfvhe"]
 
-[ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://gameManager.gd" id="1_6bp64"]
 [ext_resource type="Texture2D" uid="uid://dp4rfoifvw87i" path="res://Sprites/Background.png" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://vx2bv1y7pogc" path="res://Scenes/frog.tscn" id="3_8gbba"]
 [ext_resource type="Texture2D" uid="uid://ckbqcxm0gsvwm" path="res://Sprites/Health.png" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://d01kyurrhj6hq" path="res://Scripts/HealthManager.gd" id="4_kry3j"]
 [ext_resource type="FontFile" uid="uid://d35yfqyb2ke15" path="res://at01.ttf" id="7_344ge"]
 [ext_resource type="Texture2D" uid="uid://ck5nwoqf2obg8" path="res://Sprites/arrow-1.png.png" id="7_ynf5e"]
-[ext_resource type="PackedScene" path="res://Scenes/wizard.tscn" id="8_344ge"]
+[ext_resource type="PackedScene" uid="uid://5f4orw766gg1" path="res://Scenes/wizard.tscn" id="8_344ge"]
 
 [node name="main" type="Node2D"]
-script = ExtResource("1_6bp64")
+script = ExtResource("1_ynf5e")
 
 [node name="wizard2" parent="." instance=ExtResource("8_344ge")]
 position = Vector2(7, 78)

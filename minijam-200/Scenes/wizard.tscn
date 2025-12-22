@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://5f4orw766gg1"]
 
-[ext_resource type="Script" uid="uid://b5oi0ewr1cvsc" path="res://Scenes/wizardBehaviour.gd" id="1_33wk7"]
+[ext_resource type="Script" path="res://Scripts/wizardBehaviour.gd" id="1_33wk7"]
 [ext_resource type="Texture2D" uid="uid://bwfwr1xenfsdj" path="res://shadow-1.png.png" id="2_mqqw1"]
 [ext_resource type="Texture2D" uid="uid://dd3dmaryj0nnn" path="res://Sprites/wizard frog.png" id="3_33wk7"]
 

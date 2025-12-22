@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cru0ydrpo71bi"
-path="res://.godot/imported/eliteFrog.png-424725874e4dab89309679fcd6ed2297.ctex"
+uid="uid://bqt2liesg3sag"
+path="res://.godot/imported/eliteFrog (1).png-0a8f2174d08762cf9c0ef681bb48848b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/eliteFrog.png"
-dest_files=["res://.godot/imported/eliteFrog.png-424725874e4dab89309679fcd6ed2297.ctex"]
+source_file="res://Sprites/eliteFrog (1).png"
+dest_files=["res://.godot/imported/eliteFrog (1).png-0a8f2174d08762cf9c0ef681bb48848b.ctex"]
 
 [params]
 

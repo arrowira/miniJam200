@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvnwhuiurasqs"]
+
+[ext_resource type="Script" uid="uid://bvgnvbbu3jwcn" path="res://Scripts/frog.gd" id="1_jy44h"]
+[ext_resource type="Texture2D" uid="uid://bwfwr1xenfsdj" path="res://shadow-1.png.png" id="2_d5ecd"]
+[ext_resource type="Texture2D" uid="uid://bqt2liesg3sag" path="res://Sprites/eliteFrog (1).png" id="3_jy44h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3muq"]
+size = Vector2(207.50006, 62.99999)
+
+[node name="frog" type="Node2D"]
+
+[node name="frogArea2D" type="Area2D" parent="."]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_jy44h")
+
+[node name="NormalFrog" type="Node2D" parent="frogArea2D"]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Shadow1_png" type="Sprite2D" parent="frogArea2D"]
+modulate = Color(0, 0, 0, 0.45882353)
+position = Vector2(6.2500143, 169.99998)
+scale = Vector2(1.1796875, 0.79687494)
+texture = ExtResource("2_d5ecd")
+
+[node name="Sprite2D" type="Sprite2D" parent="frogArea2D"]
+position = Vector2(5, 0)
+scale = Vector2(4, 4.292)
+texture = ExtResource("3_jy44h")
+hframes = 3
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frogArea2D"]
+position = Vector2(1.1920929e-07, 237.50002)
+scale = Vector2(0.9999995, 0.9999995)
+shape = SubResource("RectangleShape2D_c3muq")
+
+[node name="jumpTimer" type="Timer" parent="frogArea2D"]
+one_shot = true
+
+[node name="jumpCooldown" type="Timer" parent="frogArea2D"]
+wait_time = 3.0
+
+[node name="start" type="Timer" parent="frogArea2D"]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="frogArea2D/jumpTimer" to="frogArea2D" method="_on_jump_timer_timeout"]
+[connection signal="timeout" from="frogArea2D/jumpCooldown" to="frogArea2D" method="_on_jump_cooldown_timeout"]
+[connection signal="timeout" from="frogArea2D/start" to="frogArea2D" method="_on_start_timeout"]

@@ -107,6 +107,7 @@ func _physics_process(delta: float) -> void:
 	
 func Damage(D):
 	if PlayerHealth!=0:
+		$damageSound.play()
 		PlayerHealth-=D
 		get_parent().get_node("CanvasLayer").UpdateHealth()
 		if PlayerHealth == 0:

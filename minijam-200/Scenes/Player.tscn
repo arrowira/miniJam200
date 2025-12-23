@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dn0wyr0nn2y2q"]
+[gd_scene load_steps=23 format=3 uid="uid://dn0wyr0nn2y2q"]
 
 [ext_resource type="Script" uid="uid://cn7v7jwhckh73" path="res://Scripts/PlayerMovement.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://cpcixri5didi5" path="res://Sprites/playerMovementSheet.png" id="2_52ee3"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cu43byynkr0h3" path="res://Sprites/bow.png" id="4_nn08x"]
 [ext_resource type="AudioStream" uid="uid://b833fuqoqqr5n" path="res://audio/bowChargeUp.mp3" id="5_nn08x"]
 [ext_resource type="Texture2D" uid="uid://bwfwr1xenfsdj" path="res://shadow-1.png.png" id="7_52ee3"]
+[ext_resource type="AudioStream" uid="uid://crbgxsttkwkdd" path="res://audio/hitHurt (1).wav" id="8_bhhdu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
 size = Vector2(42, 45)
@@ -311,6 +312,10 @@ scale = Vector2(0.25937498, 0.30312502)
 texture = ExtResource("7_52ee3")
 
 [node name="deathTimer" type="Timer" parent="."]
+
+[node name="damageSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_bhhdu")
+pitch_scale = 0.8
 
 [connection signal="area_entered" from="playerArea" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="deathTimer" to="." method="_on_death_timer_timeout"]

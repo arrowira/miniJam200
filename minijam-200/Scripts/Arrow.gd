@@ -4,6 +4,8 @@ var FrogGoreObj = preload("res://Scenes/FrogGoreTemplate.tscn")
 var WizardFrogGoreObj = preload("res://Scenes/WizardFrogGoreTemplate.tscn") 
 var HealthFrogGoreObj = preload("res://Scenes/HealthFrogGoreTemplate.tscn") 
 var HealObj = preload("res://Scenes/HealObject.tscn")
+var xpLight = preload("res://Scenes/xp_light.tscn")
+
 
 var DropTimer = 0
 var GreenParts = preload("res://Scenes/green_frog_death_particles.tscn")
@@ -48,15 +50,21 @@ func _on_area_entered(area: Area2D) -> void:
 func SpawnFrogGore(type):
 	for i in range(randi_range(2, 3)):
 		var S
+		var xp = xpLight.instantiate()
 		if(type == 1):
 			S = FrogGoreObj.instantiate()
+			xp.value=5
 		if(type == 2):
 			S = WizardFrogGoreObj.instantiate() 
+			xp.value=10
 		if(type == 3):
 			S = HealthFrogGoreObj.instantiate()
+			xp.value=10
+		xp.position = global_position
 		S.position = global_position + Vector2(randi_range(-20, 20), randi_range(-20, 20))
 		S.rotation = randf() * TAU
 		get_tree().root.add_child(S)
+		get_tree().root.get_node("main").add_child(xp)
 
 
 func _on_body_entered(body: Node2D) -> void:

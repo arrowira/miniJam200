@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bak8owxejm4oe"]
+
+[ext_resource type="Texture2D" uid="uid://bau34t4k1mwlg" path="res://Sprites/white circle-1.png.png" id="1_vy4yj"]
+[ext_resource type="Script" uid="uid://cmneabd6gt2ti" path="res://Scripts/xp_light.gd" id="2_eaktg"]
+
+[node name="xpLight" type="Sprite2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_vy4yj")
+script = ExtResource("2_eaktg")

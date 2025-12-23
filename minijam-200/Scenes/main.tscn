@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=17 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://codddka8pe3b2" path="res://Sprites/ProgressBar.png" id="8_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://ceajflhyieidf" path="res://Sprites/ProgressBarHolder.png" id="9_6iyac"]
 [ext_resource type="Script" uid="uid://75tbw7lruvss" path="res://Scripts/XPBar.gd" id="9_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://bak8owxejm4oe" path="res://Scenes/xp_light.tscn" id="10_jkdf5"]
 [ext_resource type="PackedScene" uid="uid://bnjafq8o13yb6" path="res://Scenes/pond_2.tscn" id="11_6iyac"]
 [ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
 [ext_resource type="PackedScene" uid="uid://dw4l6owia3h5n" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
@@ -319,5 +320,8 @@ rotation = 3.063583
 
 [node name="eliteFrog" parent="." instance=ExtResource("14_jkdf5")]
 position = Vector2(206, 25)
+
+[node name="xpLight" parent="." instance=ExtResource("10_jkdf5")]
+position = Vector2(-62, 155)
 
 [connection signal="pressed" from="CanvasLayer/deathScreen/Panel/Button" to="." method="_on_button_pressed"]

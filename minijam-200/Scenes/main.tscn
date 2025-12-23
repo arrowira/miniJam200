@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://ck5nwoqf2obg8" path="res://Sprites/arrow-1.png.png" id="7_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://codddka8pe3b2" path="res://Sprites/ProgressBar.png" id="8_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://ceajflhyieidf" path="res://Sprites/ProgressBarHolder.png" id="9_6iyac"]
-[ext_resource type="PackedScene" uid="uid://bnjafq8o13yb6" path="res://Scenes/pond_2.tscn" id="11_6iyac"]
-[ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
-[ext_resource type="PackedScene" uid="uid://dw4l6owia3h5n" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
+[ext_resource type="PackedScene" path="res://Scenes/pond_2.tscn" id="11_6iyac"]
+[ext_resource type="PackedScene" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
+[ext_resource type="PackedScene" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_ynf5e")
@@ -236,7 +236,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/AimSpeed"]
 modulate = Color(0.7619641, 0.3750653, 1.92523e-07, 1)
 position = Vector2(2, 130)
-scale = Vector2(7.77, 1.3)
+scale = Vector2(1e-05, 1.3)
 texture = ExtResource("8_d1ilt")
 centered = false
 

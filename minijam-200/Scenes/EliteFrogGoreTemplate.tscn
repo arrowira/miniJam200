@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpgqfakrka13v"]
+
+[ext_resource type="Texture2D" uid="uid://bf4pyvfisdx43" path="res://Sprites/EliteFrogGore.png" id="1_i65b8"]
+[ext_resource type="Script" uid="uid://cktak4b4ts3ko" path="res://Scripts/GoreController.gd" id="2_5w23n"]
+
+[node name="Gore" type="Sprite2D"]
+texture = ExtResource("1_i65b8")
+vframes = 4
+script = ExtResource("2_5w23n")

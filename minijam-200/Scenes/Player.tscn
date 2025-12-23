@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://cn7v7jwhckh73" path="res://Scripts/PlayerMovement.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://cpcixri5didi5" path="res://Sprites/playerMovementSheet.png" id="2_52ee3"]
-[ext_resource type="Script" uid="uid://c6f04job5tkik" path="res://Scripts/BowRotation.gd" id="3_gntrk"]
+[ext_resource type="Script" path="res://Scripts/BowRotation.gd" id="3_gntrk"]
 [ext_resource type="AudioStream" uid="uid://dltll0oypd84r" path="res://audio/bowShoot.mp3" id="4_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://cu43byynkr0h3" path="res://Sprites/bow.png" id="4_nn08x"]
 [ext_resource type="AudioStream" uid="uid://b833fuqoqqr5n" path="res://audio/bowChargeUp.mp3" id="5_nn08x"]
 [ext_resource type="Texture2D" uid="uid://bwfwr1xenfsdj" path="res://shadow-1.png.png" id="7_52ee3"]
 [ext_resource type="AudioStream" uid="uid://crbgxsttkwkdd" path="res://audio/hitHurt (1).wav" id="8_bhhdu"]
-[ext_resource type="Script" path="res://Scripts/elite_spawner.gd" id="9_megsn"]
+[ext_resource type="Script" uid="uid://cmrmomjmh5dvx" path="res://Scripts/elite_spawner.gd" id="9_megsn"]
 [ext_resource type="AudioStream" uid="uid://cwmbmpwifbp8a" path="res://audio/item-equip-6904.mp3" id="10_yoq75"]
-[ext_resource type="Texture2D" uid="uid://ck5nwoqf2obg8" path="res://Sprites/arrow-1.png.png" id="11_ksbbd"]
+[ext_resource type="Texture2D" uid="uid://dd5dah3pxwh0i" path="res://Sprites/triangle-1.png.png" id="11_ksbbd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
 size = Vector2(42, 45)
@@ -404,9 +404,9 @@ volume_db = 6.0
 [node name="PointerPivot" type="Node2D" parent="."]
 
 [node name="Pointer" type="Sprite2D" parent="PointerPivot"]
-position = Vector2(143, 1)
-rotation = 2.3572652
-scale = Vector2(0.1, 0.1)
+modulate = Color(0.5336881, 0.4392137, 0.40088165, 1)
+position = Vector2(143, 5.364418e-07)
+rotation = 1.5707964
 texture = ExtResource("11_ksbbd")
 
 [connection signal="area_entered" from="playerArea" to="." method="_on_area_2d_area_entered"]

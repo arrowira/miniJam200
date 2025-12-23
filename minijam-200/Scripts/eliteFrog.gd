@@ -54,9 +54,10 @@ func _on_jump_timer_timeout() -> void:
 	$CollisionShape2D.visible = true
 	var aoe = groundPound.instantiate()
 	aoe.global_position = global_position
-	aoe.global_position.y+=85
+	aoe.global_position.y+=100
 	
 	aoe.z_index=z_index-5
+	aoe.scale*=1.7
 	get_parent().get_parent().add_child(aoe)
 
 

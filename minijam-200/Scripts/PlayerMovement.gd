@@ -16,6 +16,7 @@ var PlayerHealth = 3
 var Arrows = 3
 
 var dead = false
+var ImmunityFrames = 40
 
 var BowChargeNeeded = 25
 
@@ -80,7 +81,7 @@ func _physics_process(delta: float) -> void:
 		if(Input.is_action_just_pressed("Dash") && Dashing == false):
 			Dashing = true
 		
-		if(Dashing == true && DashTime < 40):
+		if(Dashing == true && DashTime <= ImmunityFrames):
 			get_node("playerArea").monitoring = false
 			get_node("playerArea").monitorable = false
 		else:

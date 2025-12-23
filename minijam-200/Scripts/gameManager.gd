@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 			UpgradeArray[4]+=1
 			Upgraded()
 			get_node("Player").DashSpeed += 1
+			get_node("Player").ImmunityFrames += 10
 	if(Input.is_action_just_pressed("Six")):
 		if(UpgradeArray[5]<8):
 			UpgradeArray[5]+=1

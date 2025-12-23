@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnjafq8o13yb6"]
+[gd_scene load_steps=3 format=3 uid="uid://dicaj0vrtlwfi"]
 
 [ext_resource type="Script" uid="uid://4f64158gy874" path="res://Scripts/pondSpawning.gd" id="1_cpltc"]
 [ext_resource type="Texture2D" uid="uid://na0hq0n3ay3b" path="res://Sprites/Pond_2.png" id="2_cpltc"]
@@ -30,4 +30,5 @@ polygon = PackedVector2Array(-40.952385, 40.952385, -45.333336, -0.6666667, -30,
 [node name="spawnTimer" type="Timer" parent="."]
 autostart = true
 
+[connection signal="body_exited" from="pond" to="." method="_on_pond_body_exited"]
 [connection signal="timeout" from="spawnTimer" to="." method="_on_spawn_timer_timeout"]

@@ -32,3 +32,5 @@ stream = ExtResource("3_2nt64")
 volume_db = 10.01
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

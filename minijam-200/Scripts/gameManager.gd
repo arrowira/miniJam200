@@ -14,6 +14,10 @@ func _ready() -> void:
 	
 	
 func _physics_process(delta: float) -> void:
+	if(skillPoints == 0):
+		$CanvasLayer/UpgradeUI/Control.visible = false
+	else:
+		$CanvasLayer/UpgradeUI/Control.visible = true
 	if skillPoints != 0:
 		if(Input.is_action_just_pressed("One")):
 			if(UpgradeArray[0]<8):

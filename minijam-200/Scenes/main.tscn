@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=11 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://ck5nwoqf2obg8" path="res://Sprites/arrow-1.png.png" id="7_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://chqwrmeaa261a" path="res://Scenes/wizard.tscn" id="8_344ge"]
 [ext_resource type="Texture2D" uid="uid://dlabmsl6q4vx1" path="res://icon.svg" id="9_fdnlq"]
-[ext_resource type="PackedScene" uid="uid://cd0b22t6ej1g4" path="res://Scenes/healFrog.tscn" id="9_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://dhoifquegvowv" path="res://Sprites/UpgradeBarBackground.png" id="10_jkdf5"]
 [ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
 
@@ -253,9 +252,6 @@ theme_override_fonts/normal_font = ExtResource("7_344ge")
 text = "Aim Speed
 "
 metadata/_edit_use_anchors_ = true
-
-[node name="healFrog" parent="." instance=ExtResource("9_ynf5e")]
-position = Vector2(-81, 8)
 
 [node name="pond1" parent="." instance=ExtResource("12_6iyac")]
 position = Vector2(-292, 323)

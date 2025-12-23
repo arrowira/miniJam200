@@ -123,6 +123,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if(area.get_children()[0].name == "ArrowSprite"):
 		if(area.DropTimer>= 20):
 			Arrows+=1
+			$arrowPickup.play()
 			area.queue_free()
 	if(area.name == "HeartHitbox"):
 		if PlayerHealth < maxHealth:

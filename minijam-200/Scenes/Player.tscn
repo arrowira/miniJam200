@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dn0wyr0nn2y2q"]
+[gd_scene load_steps=28 format=3 uid="uid://dn0wyr0nn2y2q"]
 
 [ext_resource type="Script" uid="uid://cn7v7jwhckh73" path="res://Scripts/PlayerMovement.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://cpcixri5didi5" path="res://Sprites/playerMovementSheet.png" id="2_52ee3"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bwfwr1xenfsdj" path="res://shadow-1.png.png" id="7_52ee3"]
 [ext_resource type="AudioStream" uid="uid://crbgxsttkwkdd" path="res://audio/hitHurt (1).wav" id="8_bhhdu"]
 [ext_resource type="Script" uid="uid://cmrmomjmh5dvx" path="res://Scripts/elite_spawner.gd" id="9_megsn"]
+[ext_resource type="AudioStream" uid="uid://cwmbmpwifbp8a" path="res://audio/item-equip-6904.mp3" id="10_yoq75"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
 size = Vector2(42, 45)
@@ -394,6 +395,10 @@ script = ExtResource("9_megsn")
 [node name="spawnTimer" type="Timer" parent="elite spawner"]
 wait_time = 2.0
 autostart = true
+
+[node name="arrowPickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_yoq75")
+volume_db = 6.0
 
 [connection signal="area_entered" from="playerArea" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="deathTimer" to="." method="_on_death_timer_timeout"]

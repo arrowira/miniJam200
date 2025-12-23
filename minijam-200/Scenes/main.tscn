@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=20 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://ckbqcxm0gsvwm" path="res://Sprites/Health.png" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://d01kyurrhj6hq" path="res://Scripts/HealthManager.gd" id="4_kry3j"]
 [ext_resource type="FontFile" uid="uid://d35yfqyb2ke15" path="res://at01.ttf" id="7_344ge"]
+[ext_resource type="Script" uid="uid://bsk63ovss8h8u" path="res://Scripts/upgrade_ui.gd" id="7_jkdf5"]
 [ext_resource type="Texture2D" uid="uid://ck5nwoqf2obg8" path="res://Sprites/arrow-1.png.png" id="7_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://codddka8pe3b2" path="res://Sprites/ProgressBar.png" id="8_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://ceajflhyieidf" path="res://Sprites/ProgressBarHolder.png" id="9_6iyac"]
@@ -13,6 +14,43 @@
 [ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
 [ext_resource type="PackedScene" uid="uid://dw4l6owia3h5n" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://cvnwhuiurasqs" path="res://Scenes/eliteFrog.tscn" id="14_jkdf5"]
+
+[sub_resource type="Animation" id="Animation_wsu2k"]
+resource_name = "pulsingText"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5054723),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_k12tt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h1bgf"]
+_data = {
+&"RESET": SubResource("Animation_k12tt"),
+&"pulsingText": SubResource("Animation_wsu2k")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdnlq"]
 bg_color = Color(0.15686275, 0.15686275, 0.15686275, 0.41960785)
@@ -121,6 +159,7 @@ text = "RETRY"
 horizontal_alignment = 1
 
 [node name="UpgradeUI" type="Node" parent="CanvasLayer"]
+script = ExtResource("7_jkdf5")
 
 [node name="HealthUpgrade" type="Node" parent="CanvasLayer/UpgradeUI"]
 
@@ -278,6 +317,31 @@ text = "[1]
 [4] 
 [5] 
 [6]"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/UpgradeUI"]
+libraries = {
+&"": SubResource("AnimationLibrary_h1bgf")
+}
+
+[node name="Control" type="Control" parent="CanvasLayer/UpgradeUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 70.0
+offset_top = 42.0
+offset_right = 110.0
+offset_bottom = 82.0
+
+[node name="skillPoints" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/Control"]
+layout_mode = 0
+offset_left = -15.386021
+offset_top = -9.616264
+offset_right = 24.61398
+offset_bottom = 30.38374
+theme_override_colors/default_color = Color(0.96690387, 0.75726306, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+theme_override_font_sizes/normal_font_size = 32
+text = "x0
+"
 
 [node name="XPbar" type="Node" parent="CanvasLayer"]
 script = ExtResource("9_fdnlq")

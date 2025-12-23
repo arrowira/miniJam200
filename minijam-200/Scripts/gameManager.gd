@@ -3,6 +3,8 @@ extends Node2D
 var UpgradeArray
 var BarSize = 7.77
 
+var skillPoints = 1
+
 func _ready() -> void:
 	UpgradeArray = []
 	for i in range(6):
@@ -11,37 +13,38 @@ func _ready() -> void:
 	
 	
 func _physics_process(delta: float) -> void:
-	if(Input.is_action_just_pressed("One")):
-		if(UpgradeArray[0]<8):
-			UpgradeArray[0]+=1
-			Upgraded()
-			get_node("CanvasLayer").addheart()
-	if(Input.is_action_just_pressed("Two")):
-		if(UpgradeArray[1]<8):
-			UpgradeArray[1]+=1
-			Upgraded()
-			#Built into arrow script
-	if(Input.is_action_just_pressed("Three")):
-		if(UpgradeArray[2]<8):
-			UpgradeArray[2]+=1
-			Upgraded()
-			get_node("Player").Arrows +=1
-	if(Input.is_action_just_pressed("Four")):
-		if(UpgradeArray[3]<8):
-			UpgradeArray[3]+=1
-			Upgraded()
-			get_node("Player").DefSpeed += 5
-	if(Input.is_action_just_pressed("Five")):
-		if(UpgradeArray[4]<8):
-			UpgradeArray[4]+=1
-			Upgraded()
-			get_node("Player").DashSpeed += 1
-			get_node("Player").ImmunityFrames += 10
-	if(Input.is_action_just_pressed("Six")):
-		if(UpgradeArray[5]<8):
-			UpgradeArray[5]+=1
-			Upgraded()
-			get_node("Player").BowChargeNeeded -=3
+	if skillPoints != 0:
+		if(Input.is_action_just_pressed("One")):
+			if(UpgradeArray[0]<8):
+				UpgradeArray[0]+=1
+				Upgraded()
+				get_node("CanvasLayer").addheart()
+		if(Input.is_action_just_pressed("Two")):
+			if(UpgradeArray[1]<8):
+				UpgradeArray[1]+=1
+				Upgraded()
+				#Built into arrow script
+		if(Input.is_action_just_pressed("Three")):
+			if(UpgradeArray[2]<8):
+				UpgradeArray[2]+=1
+				Upgraded()
+				get_node("Player").Arrows +=1
+		if(Input.is_action_just_pressed("Four")):
+			if(UpgradeArray[3]<8):
+				UpgradeArray[3]+=1
+				Upgraded()
+				get_node("Player").DefSpeed += 5
+		if(Input.is_action_just_pressed("Five")):
+			if(UpgradeArray[4]<8):
+				UpgradeArray[4]+=1
+				Upgraded()
+				get_node("Player").DashSpeed += 1
+				get_node("Player").ImmunityFrames += 10
+		if(Input.is_action_just_pressed("Six")):
+			if(UpgradeArray[5]<8):
+				UpgradeArray[5]+=1
+				Upgraded()
+				get_node("Player").BowChargeNeeded -=3
 
 # Run when anything is upgraded to update the disaplay 
 func Upgraded():
@@ -57,7 +60,13 @@ func Upgraded():
 		$CanvasLayer/UpgradeUI/DashDistance/Progress.scale = Vector2((BarSize/8)*(UpgradeArray[4]), $CanvasLayer/UpgradeUI/DashDistance/Progress.scale.y)
 	if(UpgradeArray[5]!= 0):
 		$CanvasLayer/UpgradeUI/AimSpeed/Progress.scale = Vector2((BarSize/8)*(UpgradeArray[5]), $CanvasLayer/UpgradeUI/AimSpeed/Progress.scale.y)
+	skillPoints-=1
+	$CanvasLayer/UpgradeUI/Control/skillPoints.text = "x"+str(skillPoints)
+	
+	
 	
 func _on_button_pressed() -> void:
 	get_tree().reload_current_scene()
-	
+func addSkillPoint():
+	skillPoints+=1
+	$CanvasLayer/UpgradeUI/Control/skillPoints.text = "x"+str(skillPoints)

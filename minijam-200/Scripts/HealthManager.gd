@@ -29,6 +29,7 @@ func heal():
 	if get_parent().get_node("Player").PlayerHealth != get_parent().get_node("Player").maxHealth:
 		get_parent().get_node("Player").PlayerHealth+=1
 		$hearts.get_children()[get_parent().get_node("Player").PlayerHealth-1].frame=0
+		$healSfx.play()
 	
 	
 	

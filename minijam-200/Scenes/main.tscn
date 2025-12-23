@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=24 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://d036u52ag8i4v" path="res://audio/pickupCoin (1).wav" id="11_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
 [ext_resource type="PackedScene" uid="uid://dw4l6owia3h5n" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
+[ext_resource type="AudioStream" uid="uid://bddads1ov27tk" path="res://audio/healSfx.mp3" id="12_k12tt"]
 [ext_resource type="AudioStream" uid="uid://b6bc0epnvmfou" path="res://audio/powerUp.wav" id="15_wsu2k"]
 
 [sub_resource type="Animation" id="Animation_wsu2k"]
@@ -457,6 +458,10 @@ horizontal_alignment = 1
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/XPbar"]
 stream = ExtResource("11_wsu2k")
 pitch_scale = 0.5
+
+[node name="healSfx" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("12_k12tt")
+volume_db = 8.988
 
 [node name="pond2" parent="." instance=ExtResource("12_fdnlq")]
 position = Vector2(-242, 308)

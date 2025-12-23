@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=16 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
@@ -8,10 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://ck5nwoqf2obg8" path="res://Sprites/arrow-1.png.png" id="7_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://codddka8pe3b2" path="res://Sprites/ProgressBar.png" id="8_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://ceajflhyieidf" path="res://Sprites/ProgressBarHolder.png" id="9_6iyac"]
-[ext_resource type="PackedScene" path="res://Scenes/pond_2.tscn" id="11_6iyac"]
-[ext_resource type="PackedScene" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
-[ext_resource type="PackedScene" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
-[ext_resource type="PackedScene" path="res://Scenes/eliteFrog.tscn" id="14_jkdf5"]
+[ext_resource type="Script" uid="uid://75tbw7lruvss" path="res://Scripts/XPBar.gd" id="9_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://bnjafq8o13yb6" path="res://Scenes/pond_2.tscn" id="11_6iyac"]
+[ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
+[ext_resource type="PackedScene" uid="uid://dw4l6owia3h5n" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://cvnwhuiurasqs" path="res://Scenes/eliteFrog.tscn" id="14_jkdf5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdnlq"]
+bg_color = Color(0.15686275, 0.15686275, 0.15686275, 0.41960785)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jkdf5"]
+bg_color = Color(0.44857132, 0.6182687, 0.7835502, 1)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_ynf5e")
@@ -257,6 +264,29 @@ theme_override_fonts/normal_font = ExtResource("7_344ge")
 text = "Aim Speed
 "
 metadata/_edit_use_anchors_ = true
+
+[node name="XPbar" type="Node" parent="CanvasLayer"]
+script = ExtResource("9_fdnlq")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/XPbar"]
+offset_left = 85.0
+offset_top = 269.0
+offset_right = 519.0
+offset_bottom = 286.0
+theme_override_fonts/font = ExtResource("7_344ge")
+theme_override_styles/background = SubResource("StyleBoxFlat_fdnlq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jkdf5")
+
+[node name="lvlLabel" type="RichTextLabel" parent="CanvasLayer/XPbar"]
+offset_left = 84.0
+offset_top = 241.0
+offset_right = 519.0
+offset_bottom = 281.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+theme_override_font_sizes/normal_font_size = 32
+text = "0
+"
+horizontal_alignment = 1
 
 [node name="pond2" parent="." instance=ExtResource("12_fdnlq")]
 position = Vector2(-242, 308)

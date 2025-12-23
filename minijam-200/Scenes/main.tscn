@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=20 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
 [ext_resource type="PackedScene" uid="uid://dw4l6owia3h5n" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://cvnwhuiurasqs" path="res://Scenes/eliteFrog.tscn" id="14_jkdf5"]
-[ext_resource type="PackedScene" uid="uid://c4b7mgjliq2nv" path="res://Scenes/HealObject.tscn" id="15_wsu2k"]
 
 [sub_resource type="Animation" id="Animation_wsu2k"]
 resource_name = "pulsingText"
@@ -71,7 +70,11 @@ position_smoothing_speed = 20.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("4_kry3j")
 
-[node name="ArrowDisplay" type="Node" parent="CanvasLayer"]
+[node name="ArrowDisplay" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 11.0
+offset_bottom = 11.0
 
 [node name="ArrowDisplaySprite" type="Sprite2D" parent="CanvasLayer/ArrowDisplay"]
 texture_filter = 1
@@ -80,6 +83,7 @@ scale = Vector2(0.04, 0.04)
 texture = ExtResource("7_ynf5e")
 
 [node name="ArrowCount" type="RichTextLabel" parent="CanvasLayer/ArrowDisplay"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 24.0
 offset_right = 42.0
@@ -88,7 +92,11 @@ theme_override_fonts/normal_font = ExtResource("7_344ge")
 theme_override_font_sizes/normal_font_size = 32
 text = "3"
 
-[node name="hearts" type="Node" parent="CanvasLayer"]
+[node name="hearts" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 1.0
+offset_bottom = 1.0
 
 [node name="Health1" type="Sprite2D" parent="CanvasLayer/hearts"]
 texture_filter = 2
@@ -99,14 +107,14 @@ vframes = 2
 
 [node name="Health2" type="Sprite2D" parent="CanvasLayer/hearts"]
 texture_filter = 2
-position = Vector2(26.000002, 9.000001)
+position = Vector2(28.000002, 9)
 scale = Vector2(0.047500003, 0.047500007)
 texture = ExtResource("4_jjvhh")
 vframes = 2
 
 [node name="Health3" type="Sprite2D" parent="CanvasLayer/hearts"]
 texture_filter = 2
-position = Vector2(42, 9)
+position = Vector2(46.000004, 9.000001)
 scale = Vector2(0.047500003, 0.047500007)
 texture = ExtResource("4_jjvhh")
 vframes = 2
@@ -159,10 +167,15 @@ theme_override_font_sizes/normal_font_size = 64
 text = "RETRY"
 horizontal_alignment = 1
 
-[node name="UpgradeUI" type="Node" parent="CanvasLayer"]
+[node name="UpgradeUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 152.0
+offset_bottom = 152.0
 script = ExtResource("7_jkdf5")
 
-[node name="HealthUpgrade" type="Node" parent="CanvasLayer/UpgradeUI"]
+[node name="HealthUpgrade" type="Control" parent="CanvasLayer/UpgradeUI"]
+anchors_preset = 0
 
 [node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/HealthUpgrade"]
 modulate = Color(0.6998984, 0, 0.16074723, 1)
@@ -177,6 +190,7 @@ scale = Vector2(1, 1.5)
 texture = ExtResource("9_6iyac")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/HealthUpgrade"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 51.0
 offset_right = 64.0
@@ -185,7 +199,8 @@ theme_override_fonts/normal_font = ExtResource("7_344ge")
 text = "Max Health
 "
 
-[node name="ArrowPenetration" type="Node" parent="CanvasLayer/UpgradeUI"]
+[node name="ArrowPenetration" type="Control" parent="CanvasLayer/UpgradeUI"]
+anchors_preset = 0
 
 [node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/ArrowPenetration"]
 modulate = Color(0.267029, 0.30976233, 1, 1)
@@ -200,6 +215,7 @@ scale = Vector2(1, 1.5)
 texture = ExtResource("9_6iyac")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/ArrowPenetration"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 66.0
 offset_right = 99.0
@@ -207,7 +223,8 @@ offset_bottom = 84.0
 theme_override_fonts/normal_font = ExtResource("7_344ge")
 text = "Arrow Pen*"
 
-[node name="MoreArrows" type="Node" parent="CanvasLayer/UpgradeUI"]
+[node name="MoreArrows" type="Control" parent="CanvasLayer/UpgradeUI"]
+anchors_preset = 0
 
 [node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/MoreArrows"]
 modulate = Color(0, 0.5020362, 0.49272907, 1)
@@ -222,6 +239,7 @@ scale = Vector2(1, 1.5)
 texture = ExtResource("9_6iyac")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/MoreArrows"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 81.0
 offset_right = 73.0
@@ -229,7 +247,8 @@ offset_bottom = 99.0
 theme_override_fonts/normal_font = ExtResource("7_344ge")
 text = "More Arrows"
 
-[node name="Speed" type="Node" parent="CanvasLayer/UpgradeUI"]
+[node name="Speed" type="Control" parent="CanvasLayer/UpgradeUI"]
+anchors_preset = 0
 
 [node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/Speed"]
 modulate = Color(0.47226244, 0.3558236, 0.70643914, 1)
@@ -244,6 +263,7 @@ scale = Vector2(1, 1.5)
 texture = ExtResource("9_6iyac")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/Speed"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 96.0
 offset_right = 41.0
@@ -253,7 +273,8 @@ text = "Speed
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="DashDistance" type="Node" parent="CanvasLayer/UpgradeUI"]
+[node name="DashDistance" type="Control" parent="CanvasLayer/UpgradeUI"]
+anchors_preset = 0
 
 [node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/DashDistance"]
 modulate = Color(0, 0.5205299, 0.30591217, 1)
@@ -268,18 +289,20 @@ scale = Vector2(1, 1.5)
 texture = ExtResource("9_6iyac")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/DashDistance"]
+layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.13
 offset_left = 3.0
 offset_top = 111.0
-offset_right = 40.0
+offset_right = 103.0
 offset_bottom = 129.0
 theme_override_fonts/normal_font = ExtResource("7_344ge")
 text = "Dash Distance
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="AimSpeed" type="Node" parent="CanvasLayer/UpgradeUI"]
+[node name="AimSpeed" type="Control" parent="CanvasLayer/UpgradeUI"]
+anchors_preset = 0
 
 [node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/AimSpeed"]
 modulate = Color(0.7619641, 0.3750653, 1.92523e-07, 1)
@@ -294,11 +317,12 @@ scale = Vector2(1, 1.5)
 texture = ExtResource("9_6iyac")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/AimSpeed"]
+layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.13
 offset_left = 2.0
 offset_top = 127.0
-offset_right = 39.0
+offset_right = 102.0
 offset_bottom = 145.0
 theme_override_fonts/normal_font = ExtResource("7_344ge")
 text = "Aim Speed
@@ -306,6 +330,7 @@ text = "Aim Speed
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI"]
+layout_mode = 0
 offset_left = 66.0
 offset_top = 51.0
 offset_right = 90.0
@@ -325,7 +350,6 @@ libraries = {
 }
 
 [node name="Control" type="Control" parent="CanvasLayer/UpgradeUI"]
-layout_mode = 3
 anchors_preset = 0
 offset_left = 70.0
 offset_top = 42.0
@@ -344,10 +368,13 @@ theme_override_font_sizes/normal_font_size = 32
 text = "x0
 "
 
-[node name="XPbar" type="Node" parent="CanvasLayer"]
+[node name="XPbar" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("9_fdnlq")
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/XPbar"]
+layout_mode = 0
 offset_left = 85.0
 offset_top = 269.0
 offset_right = 519.0
@@ -357,6 +384,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_fdnlq")
 theme_override_styles/fill = SubResource("StyleBoxFlat_jkdf5")
 
 [node name="lvlLabel" type="RichTextLabel" parent="CanvasLayer/XPbar"]
+layout_mode = 0
 offset_left = 84.0
 offset_top = 241.0
 offset_right = 519.0
@@ -398,8 +426,5 @@ rotation = 3.063583
 
 [node name="eliteFrog" parent="." instance=ExtResource("14_jkdf5")]
 position = Vector2(206, 25)
-
-[node name="HealObject" parent="." instance=ExtResource("15_wsu2k")]
-position = Vector2(-24, 57)
 
 [connection signal="pressed" from="CanvasLayer/deathScreen/Panel/Button" to="." method="_on_button_pressed"]

@@ -9,6 +9,7 @@ var jumpStartPos = Vector2.ZERO
 var t = 0
 var height = 0.2
 var EliteFrogGoreObj = preload("res://Scenes/EliteFrogGoreTemplate.tscn")
+var deathParts = preload("res://Scenes/eliteFrogDeathParticles.tscn")
 
 var xpLight = preload("res://Scenes/xp_light.tscn")
 
@@ -44,7 +45,13 @@ func damage():
 	health-=1
 	$Sprite2D.frame=regFrame
 	if health == 0:
+		var parts = deathParts.instantiate()
+		parts.position = global_position
+		get_tree().root.get_node("main").add_child(parts)
+		
+		
 		queue_free()
+		
 		for i in range(5):
 			var S = xpLight.instantiate()
 			S.value = 15

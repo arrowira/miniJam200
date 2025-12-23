@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://dw4l6owia3h5n"]
+
+[ext_resource type="Script" uid="uid://4f64158gy874" path="res://Scripts/pondSpawning.gd" id="1_wei3t"]
+[ext_resource type="Texture2D" uid="uid://y6geh7mfbawj" path="res://Sprites/pond_3.png" id="2_wei3t"]
+
+[node name="pond2" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_wei3t")
+regChance = 50
+healthChance = 20
+wizardChance = 30
+spawnCoolDown = 5.0
+
+[node name="Pondma" type="Sprite2D" parent="."]
+z_index = -4096
+position = Vector2(52.000004, -65)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_wei3t")
+
+[node name="pondCol" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pondCol"]
+visible = false
+polygon = PackedVector2Array(-40.666668, 3.3333335, -30.666668, -22, -10.666667, -37.333336, 11.333334, -24.666668, 27.333334, -16, 33.333336, -25.333334, 25.333334, -48, 7.3333335, -93.333336, 16.666668, -103.333336, 40, -118.66667, 72, -118.66667, 88, -110, 96, -100, 84, -73.333336, 90, -59.333336, 145.33334, -40.666668, 153.33334, -25.333334, 148, -8.666667, 139.33334, 1.3333334, 100.66667, 10, 87.333336, 26.666668, 90, 49.333336, 88, 62.666668, 67.333336, 78, 43.333336, 77.333336, 18, 64.66667, -13.333334, 52.666668, -29.333334, 28)
+
+[node name="pond" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pond"]
+scale = Vector2(0.7, 0.7)
+polygon = PackedVector2Array(-40.666668, 3.3333335, -30.666668, -22, -10.666667, -37.333336, 11.333334, -24.666668, 27.333334, -16, 54.28572, -12.380954, 59.047626, -55.238102, 39.047623, -101.90478, 35.2381, -124.76192, 44.76191, -144.76192, 70.4762, -153.33336, 110.476204, -142.85716, 101.90478, -111.42859, 111.42859, -80.95239, 124.76192, -60.95239, 174.28574, -50.476196, 200.95241, -34.285717, 148, -8.666667, 139.33334, 1.3333334, 121.90478, 17.142859, 110.476204, 32.380955, 110.476204, 62.85715, 103.80954, 82.857155, 77.14287, 88.57144, 43.333336, 77.333336, 18, 64.66667, -13.333334, 52.666668, -29.333334, 28)
+
+[node name="spawnTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="spawnTimer" to="." method="_on_spawn_timer_timeout"]

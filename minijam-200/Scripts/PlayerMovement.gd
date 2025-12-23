@@ -105,6 +105,9 @@ func _physics_process(delta: float) -> void:
 		$playerAnimiations.play("death")
 	get_parent().get_node("CanvasLayer/ArrowDisplay/ArrowCount").text = str(Arrows)
 	
+	for i in range(ArrowPos.size()):
+		if(!is_instance_valid(ArrowPos[i])):
+			ArrowPos.remove_at(i)
 	var L = 10000
 	var NI = 0
 	for i in range(ArrowPos.size()):
@@ -139,9 +142,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if(area.DropTimer>= 20):
 			Arrows+=1
 			$arrowPickup.play()
-			for i in range(ArrowPos.size()):
-				if(ArrowPos[i].global_position == area.global_position):
-					ArrowPos.remove_at(i)
 			area.queue_free()
 	if(area.name == "HeartHitbox"):
 		if PlayerHealth < maxHealth:

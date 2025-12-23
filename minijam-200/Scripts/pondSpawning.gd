@@ -11,6 +11,7 @@ var healFrog = preload("res://Scenes/healFrog.tscn")
 var wizardFrog = preload("res://Scenes/wizard.tscn")
 
 var spawnCoolDown = 10
+var playerDistanceToSpawn = 200
 
 
 func _ready() -> void:
@@ -18,20 +19,21 @@ func _ready() -> void:
 
 
 func _on_spawn_timer_timeout() -> void:
-	var spawnAmount = randi_range(1,3)
-	for i in range(spawnAmount):
-		var frogType = randi_range(0,100)
-		if frogType>regChance:
-			if frogType>regChance+healthChance:
-				if frogType > regChance+wizardChance+healthChance:
-					pass
+	if global_position.distance_to(get_parent().get_node("Player").global_position)<playerDistanceToSpawn:
+		var spawnAmount = randi_range(1,3)
+		for i in range(spawnAmount):
+			var frogType = randi_range(0,100)
+			if frogType>regChance:
+				if frogType>regChance+healthChance:
+					if frogType > regChance+wizardChance+healthChance:
+						pass
+					else:
+						spawnFrog("wizard")
 				else:
-					spawnFrog("wizard")
+					spawnFrog("health")
+					
 			else:
-				spawnFrog("health")
-				
-		else:
-			spawnFrog("reg")
+				spawnFrog("reg")
 
 func spawnFrog(type):
 	var newFrog

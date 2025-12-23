@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnjafq8o13yb6"]
+
+[ext_resource type="Script" uid="uid://4f64158gy874" path="res://Scripts/pondSpawning.gd" id="1_cpltc"]
+[ext_resource type="Texture2D" uid="uid://dw5ychk56h0wb" path="res://Sprites/pondma.png" id="2_wr5yr"]
+
+[node name="pond1" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_cpltc")
+spawnCoolDown = 5.0
+
+[node name="Pondma" type="Sprite2D" parent="."]
+z_index = -4096
+position = Vector2(52.000004, -65)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_wr5yr")
+
+[node name="pondCol" type="StaticBody2D" parent="."]
+
+[node name="pond" type="Area2D" parent="."]
+
+[node name="spawnTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="spawnTimer" to="." method="_on_spawn_timer_timeout"]

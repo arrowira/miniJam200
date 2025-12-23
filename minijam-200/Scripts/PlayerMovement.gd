@@ -108,6 +108,7 @@ func _physics_process(delta: float) -> void:
 	for i in range(ArrowPos.size()):
 		if(!is_instance_valid(ArrowPos[i])):
 			ArrowPos.remove_at(i)
+			break
 	var LowestDistance = 10000
 	var NewI = 0
 	for i in range(ArrowPos.size()):

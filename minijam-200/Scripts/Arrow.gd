@@ -14,6 +14,9 @@ var ArrowSlow = 10
 var Dropped = false
 var CanDrop = true
 
+func _ready():
+	get_tree().current_scene.get_node("Player").ArrowPos.append(self)
+
 func _physics_process(delta: float) -> void:
 	if !CanDrop:
 		global_position += transform.x * 15
@@ -25,6 +28,7 @@ func _physics_process(delta: float) -> void:
 			Dropped = true
 	DropTimer+=1
 	ArrowSlow = 10 - (get_tree().current_scene.UpgradeArray[1])
+	
 	
 	
 

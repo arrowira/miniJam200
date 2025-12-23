@@ -20,6 +20,8 @@ var ImmunityFrames = 40
 
 var BowChargeNeeded = 25
 
+var ArrowPos = []
+
 func _physics_process(delta: float) -> void:
 	if !dead:
 		z_index = global_position.y-12
@@ -103,6 +105,19 @@ func _physics_process(delta: float) -> void:
 		$playerAnimiations.play("death")
 	get_parent().get_node("CanvasLayer/ArrowDisplay/ArrowCount").text = str(Arrows)
 	
+	var L = 10000
+	var NI = 0
+	for i in range(ArrowPos.size()):
+		var d = global_position.distance_to(ArrowPos[i].global_position)
+		if(d < L):
+			L = d
+			i = NI
+	if(L < 10000):
+		$PointerPivot/Pointer.visible = true
+		$PointerPivot.look_at(ArrowPos[NI].global_position)
+	else:
+		$PointerPivot/Pointer.visible = false
+		
 	move_and_slide()
 	
 func Damage(D):
@@ -125,11 +140,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			Arrows+=1
 			$arrowPickup.play()
 			area.queue_free()
+			get_tree().root.get_node("Player").arrow_targets.erase(area)
 	if(area.name == "HeartHitbox"):
 		if PlayerHealth < maxHealth:
 			get_parent().get_node("CanvasLayer").heal()
 		area.queue_free()
-
 
 func _on_death_timer_timeout() -> void:
 	get_parent().get_node("CanvasLayer").get_node("deathScreen").visible = true

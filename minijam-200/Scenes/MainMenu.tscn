@@ -1,21 +1,145 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxi4gkvsplqyh"]
+[gd_scene load_steps=11 format=3 uid="uid://ccyvs65rpci4a"]
 
+[ext_resource type="Script" uid="uid://dg57fnder8ys2" path="res://Scripts/main_menu.gd" id="1_8saeu"]
 [ext_resource type="Texture2D" uid="uid://codddka8pe3b2" path="res://Sprites/ProgressBar.png" id="1_tt5f1"]
+[ext_resource type="FontFile" uid="uid://d35yfqyb2ke15" path="res://at01.ttf" id="2_853f1"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tt5f1"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_853f1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tt5f1"]
+bg_color = Color(0.24313726, 0.24313726, 0.24313726, 0.54509807)
+
+[sub_resource type="Animation" id="Animation_ghw46"]
+resource_name = "toSettings"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.32987654, 0.96593356),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(610, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_df05h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8saeu"]
+resource_name = "toMain"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.23325834, 1),
+"update": 0,
+"values": [Vector2(610, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8um5k"]
+_data = {
+&"RESET": SubResource("Animation_df05h"),
+&"toMain": SubResource("Animation_8saeu"),
+&"toSettings": SubResource("Animation_ghw46")
+}
+
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_8saeu")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(22, 2)
+energy = 16.0
+texture = SubResource("NoiseTexture2D_tt5f1")
+height = 56.0
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.3720304, 0.44814527, 0.32103452, 1)
+z_index = -50
+position = Vector2(362.87497, -9.536743e-07)
+scale = Vector2(291.03122, 173.40623)
+texture = ExtResource("1_tt5f1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Background" type="Sprite2D" parent="CanvasLayer"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(-7.6293945e-06, -9.536743e-07)
-scale = Vector2(200.31248, 173.40623)
-texture = ExtResource("1_tt5f1")
+[node name="menuPT1" type="Panel" parent="."]
+offset_left = -292.0
+offset_top = -148.0
+offset_right = 292.0
+offset_bottom = 144.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_853f1")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(172, 79)
-texture = SubResource("NoiseTexture2D_tt5f1")
+[node name="menuPanel" type="Panel" parent="menuPT1"]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 11.0
+offset_right = 367.0
+offset_bottom = 292.0
+
+[node name="settings" type="Button" parent="menuPT1/menuPanel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 235.0
+offset_right = 128.0
+offset_bottom = 263.0
+theme_override_fonts/font = ExtResource("2_853f1")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tt5f1")
+text = "SETTINGS"
+
+[node name="menuPT2" type="Panel" parent="."]
+offset_left = 314.0
+offset_top = -148.0
+offset_right = 898.0
+offset_bottom = 144.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_853f1")
+
+[node name="menuPanel" type="Panel" parent="menuPT2"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 11.0
+offset_right = 541.0
+offset_bottom = 292.0
+
+[node name="back" type="Button" parent="menuPT2/menuPanel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 16.0
+offset_right = 78.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("2_853f1")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tt5f1")
+text = "BACK"
+
+[node name="camAnimations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8um5k")
+}
+
+[connection signal="pressed" from="menuPT1/menuPanel/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="menuPT2/menuPanel/back" to="." method="_on_back_pressed"]

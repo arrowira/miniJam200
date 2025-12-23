@@ -11,7 +11,7 @@ var healFrog = preload("res://Scenes/healFrog.tscn")
 var wizardFrog = preload("res://Scenes/wizard.tscn")
 
 var spawnCoolDown = 10
-var playerDistanceToSpawn = 200
+var playerDistanceToSpawn = 500
 
 
 func _ready() -> void:

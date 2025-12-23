@@ -255,8 +255,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="pond1" parent="." instance=ExtResource("12_6iyac")]
 position = Vector2(-292, 323)
-regChance = 0
-wizardChance = 100
+regChance = 50
+healthChance = 20
+wizardChance = 30
 spawnCoolDown = 10.0
 
 [node name="pond2" parent="." instance=ExtResource("12_6iyac")]

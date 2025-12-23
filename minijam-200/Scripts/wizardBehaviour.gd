@@ -57,13 +57,14 @@ func _on_start_timeout() -> void:
 
 
 func _on_shoot_timer_timeout() -> void:
-	$shootTimer.wait_time = randf_range(1.5,2.5)
-	var newProj = projectile.instantiate()
-	
-	
-	get_parent().get_parent().add_child(newProj)
-	newProj.global_position = global_position
-	newProj.launch(global_position, get_parent().get_parent().get_node("Player").global_position)
+	if !inWater:
+		$shootTimer.wait_time = randf_range(1.5,2.5)
+		var newProj = projectile.instantiate()
+		
+		
+		get_parent().get_parent().add_child(newProj)
+		newProj.global_position = global_position
+		newProj.launch(global_position, get_parent().get_parent().get_node("Player").global_position)
 
 
 func _on_area_entered(area: Area2D) -> void:

@@ -4,6 +4,7 @@ var UpgradeArray
 var BarSize = 7.77
 
 var skillPoints = 1
+var firstUpgrade = true
 
 func _ready() -> void:
 	UpgradeArray = []
@@ -62,7 +63,11 @@ func Upgraded():
 		$CanvasLayer/UpgradeUI/AimSpeed/Progress.scale = Vector2((BarSize/8)*(UpgradeArray[5]), $CanvasLayer/UpgradeUI/AimSpeed/Progress.scale.y)
 	skillPoints-=1
 	$CanvasLayer/UpgradeUI/Control/skillPoints.text = "x"+str(skillPoints)
-	
+	if firstUpgrade:
+		firstUpgrade = false
+	else:
+		$skillPoint.play()
+		
 	
 	
 func _on_button_pressed() -> void:

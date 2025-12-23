@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=23 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://d036u52ag8i4v" path="res://audio/pickupCoin (1).wav" id="11_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
 [ext_resource type="PackedScene" uid="uid://dw4l6owia3h5n" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
+[ext_resource type="AudioStream" uid="uid://b6bc0epnvmfou" path="res://audio/powerUp.wav" id="15_wsu2k"]
 
 [sub_resource type="Animation" id="Animation_wsu2k"]
 resource_name = "pulsingText"
@@ -51,6 +52,9 @@ _data = {
 &"RESET": SubResource("Animation_k12tt"),
 &"pulsingText": SubResource("Animation_wsu2k")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsu2k"]
+bg_color = Color(0.37549436, 0.34602383, 0.32046762, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdnlq"]
 bg_color = Color(0.15686275, 0.15686275, 0.15686275, 0.41960785)
@@ -369,6 +373,60 @@ theme_override_font_sizes/normal_font_size = 32
 text = "x0
 "
 
+[node name="Panel" type="Panel" parent="CanvasLayer/UpgradeUI"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = 54.0
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wsu2k")
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/UpgradeUI"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = 69.0
+offset_right = 64.0
+offset_bottom = 79.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wsu2k")
+
+[node name="Panel3" type="Panel" parent="CanvasLayer/UpgradeUI"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = 84.0
+offset_right = 64.0
+offset_bottom = 94.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wsu2k")
+
+[node name="Panel4" type="Panel" parent="CanvasLayer/UpgradeUI"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = 99.0
+offset_right = 64.0
+offset_bottom = 109.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wsu2k")
+
+[node name="Panel5" type="Panel" parent="CanvasLayer/UpgradeUI"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = 114.0
+offset_right = 64.0
+offset_bottom = 124.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wsu2k")
+
+[node name="Panel6" type="Panel" parent="CanvasLayer/UpgradeUI"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = 130.0
+offset_right = 64.0
+offset_bottom = 140.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wsu2k")
+
 [node name="XPbar" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
@@ -647,5 +705,9 @@ shape = SubResource("RectangleShape2D_jkdf5")
 position = Vector2(1244.0001, -1005)
 rotation = -1.5766101
 shape = SubResource("RectangleShape2D_jkdf5")
+
+[node name="skillPoint" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_wsu2k")
+volume_db = -7.062
 
 [connection signal="pressed" from="CanvasLayer/deathScreen/Panel/Button" to="." method="_on_button_pressed"]

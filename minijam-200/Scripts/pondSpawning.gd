@@ -39,6 +39,8 @@ func spawnFrog(type):
 		newFrog = regFrog.instantiate()
 	if type =="health":
 		newFrog = healFrog.instantiate()
+	if type == "wizard":
+		newFrog = wizardFrog.instantiate()
 	get_parent().add_child(newFrog)
 	newFrog.global_position = Vector2(global_position.x+cos(randf_range(0,180)*radius),global_position.y+sin(randf_range(0,180)*radius))
 	

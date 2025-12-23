@@ -136,12 +136,14 @@ script = ExtResource("1_33wk7")
 [node name="WizardFrog" type="Node" parent="frogArea2D"]
 
 [node name="Shadow1_png" type="Sprite2D" parent="frogArea2D"]
+visible = false
 modulate = Color(0, 0, 0, 0.45882353)
 position = Vector2(4, 58)
 scale = Vector2(0.40624994, 0.36875007)
 texture = ExtResource("2_mqqw1")
 
 [node name="Sprite2D" type="Sprite2D" parent="frogArea2D"]
+visible = false
 position = Vector2(7.5, 47.5)
 scale = Vector2(0.15, 0.165)
 texture = ExtResource("3_33wk7")
@@ -182,6 +184,8 @@ speed_scale = 1.5
 wait_time = 2.0
 autostart = true
 
+[connection signal="area_entered" from="frogArea2D" to="frogArea2D" method="_on_area_entered"]
+[connection signal="area_exited" from="frogArea2D" to="frogArea2D" method="_on_area_exited"]
 [connection signal="timeout" from="frogArea2D/teleportTimer" to="frogArea2D" method="_on_tele_timer_timeout"]
 [connection signal="timeout" from="frogArea2D/teleCooldown" to="frogArea2D" method="_on_tele_cooldown_timeout"]
 [connection signal="timeout" from="frogArea2D/start" to="frogArea2D" method="_on_start_timeout"]

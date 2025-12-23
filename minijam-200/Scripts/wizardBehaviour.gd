@@ -7,6 +7,8 @@ var teleDist = 200
 var jumpStartPos = Vector2.ZERO
 var t = 0
 var height = 0.2
+
+var inWater = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$start.wait_time = randf_range(0,1)
@@ -14,10 +16,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float):
+	if inWater:
+		$Sprite2D.visible=false
+		$Shadow1_png.visible=false
+	else:
+		$Sprite2D.visible=true
+		$Shadow1_png.visible=true
+	
 	z_index = global_position.y
 		
 func teleport(dir):
-	print("telepsort")
 	teleDir = dir
 	global_position += teleDir*teleDist
 	$AnimationPlayer.play('teleport')
@@ -56,3 +64,13 @@ func _on_shoot_timer_timeout() -> void:
 	get_parent().get_parent().add_child(newProj)
 	newProj.global_position = global_position
 	newProj.launch(global_position, get_parent().get_parent().get_node("Player").global_position)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.name=="pond":
+		inWater=true
+
+
+func _on_area_exited(area: Area2D) -> void:
+	if area.name == "pond":
+		inWater=false

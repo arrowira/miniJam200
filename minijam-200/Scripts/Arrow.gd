@@ -57,13 +57,13 @@ func SpawnFrogGore(type):
 		var xp = xpLight.instantiate()
 		if(type == 1):
 			S = FrogGoreObj.instantiate()
-			xp.value=5
+			xp.value=10
 		if(type == 2):
 			S = WizardFrogGoreObj.instantiate() 
-			xp.value=10
+			xp.value=30
 		if(type == 3):
 			S = HealthFrogGoreObj.instantiate()
-			xp.value=10
+			xp.value=20
 		xp.position = global_position
 		S.position = global_position + Vector2(randi_range(-20, 20), randi_range(-20, 20))
 		S.rotation = randf() * TAU

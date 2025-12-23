@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=21 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
 [ext_resource type="PackedScene" uid="uid://dw4l6owia3h5n" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://cvnwhuiurasqs" path="res://Scenes/eliteFrog.tscn" id="14_jkdf5"]
+[ext_resource type="PackedScene" uid="uid://c4b7mgjliq2nv" path="res://Scenes/HealObject.tscn" id="15_wsu2k"]
 
 [sub_resource type="Animation" id="Animation_wsu2k"]
 resource_name = "pulsingText"
@@ -397,5 +398,8 @@ rotation = 3.063583
 
 [node name="eliteFrog" parent="." instance=ExtResource("14_jkdf5")]
 position = Vector2(206, 25)
+
+[node name="HealObject" parent="." instance=ExtResource("15_wsu2k")]
+position = Vector2(-24, 57)
 
 [connection signal="pressed" from="CanvasLayer/deathScreen/Panel/Button" to="." method="_on_button_pressed"]

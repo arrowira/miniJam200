@@ -161,4 +161,6 @@ func _on_death_timer_timeout() -> void:
 
 func reduceChargeTime():
 	$BowPivot/AnimationPlayer.speed_scale+=0.2
+	$charge.pitch_scale+=0.4
+	$charge.volume_db+=1
 	BowChargeNeeded-=2

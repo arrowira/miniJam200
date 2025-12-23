@@ -355,7 +355,7 @@ volume_db = -9.566
 
 [node name="charge" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_nn08x")
-volume_db = -17.563
+volume_db = -13.0
 
 [node name="playerArea" type="Area2D" parent="."]
 

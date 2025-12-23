@@ -227,7 +227,7 @@ offset_top = 66.0
 offset_right = 99.0
 offset_bottom = 84.0
 theme_override_fonts/normal_font = ExtResource("7_344ge")
-text = "Arrow Pen*"
+text = "Arrow Power"
 
 [node name="MoreArrows" type="Control" parent="CanvasLayer/UpgradeUI"]
 anchors_preset = 0
@@ -331,7 +331,7 @@ offset_top = 127.0
 offset_right = 102.0
 offset_bottom = 145.0
 theme_override_fonts/normal_font = ExtResource("7_344ge")
-text = "Aim Speed
+text = "Draw Speed
 "
 metadata/_edit_use_anchors_ = true
 

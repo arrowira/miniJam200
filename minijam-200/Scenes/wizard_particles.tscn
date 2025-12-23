@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh64gbc7i2nyx"]
+
+[ext_resource type="Script" uid="uid://dc6atf6vbnw7m" path="res://Scripts/wizard_particles.gd" id="1_6f1p5"]
+
+[sub_resource type="Curve" id="Curve_1jrlu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="wizardParticles" type="Node2D"]
+script = ExtResource("1_6f1p5")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 13.33
+initial_velocity_max = 53.33
+linear_accel_min = -25.33
+linear_accel_max = -25.33
+scale_amount_max = 9.67
+scale_amount_curve = SubResource("Curve_1jrlu")
+color = Color(0.92134523, 0.5682534, 0.9766634, 1)

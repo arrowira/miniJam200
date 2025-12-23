@@ -118,7 +118,12 @@ func _physics_process(delta: float) -> void:
 			i = NewI
 	if(LowestDistance < 10000):
 		$PointerPivot/Pointer.visible = true
+		$PointerPivot/Pointer.self_modulate.a = 1
 		$PointerPivot.look_at(ArrowPos[NewI].global_position)
+		if(LowestDistance <= 200):
+			$PointerPivot/Pointer.self_modulate.a = 1-(LowestDistance/200)
+		if(LowestDistance <= 50):
+			$PointerPivot/Pointer.self_modulate.a = 0
 	else:
 		$PointerPivot/Pointer.visible = false
 		

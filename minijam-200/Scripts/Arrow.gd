@@ -78,6 +78,9 @@ func SpawnFrogGore(type):
 func _on_body_entered(body: Node2D) -> void:
 	if(body.name == "pondCol"):
 		CanDrop = false
+	if(body.name.contains("BorderWall")):
+		DropTimer = 30
+		CanDrop = true
 	
 func _on_body_exited(body: Node2D) -> void:
 	if(body.name == "pondCol"):

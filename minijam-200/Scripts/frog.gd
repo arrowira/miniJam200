@@ -72,7 +72,6 @@ func _on_jump_cooldown_timeout() -> void:
 		var playerDir: Vector2 = get_parent().get_parent().get_node("Player").global_position - self.global_position
 		jump(playerDir.normalized())
 
-
 func _on_start_timeout() -> void:
 	$jumpCooldown.start()
 

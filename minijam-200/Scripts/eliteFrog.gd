@@ -8,6 +8,8 @@ var jumping = false
 var jumpStartPos = Vector2.ZERO
 var t = 0
 var height = 0.2
+var EliteFrogGoreObj = preload("res://Scenes/EliteFrogGoreTemplate.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$start.wait_time = randf_range(0,3)
@@ -41,6 +43,11 @@ func damage():
 	$Sprite2D.frame=regFrame
 	if health == 0:
 		queue_free()
+		for i in range(randi_range(3, 4)):
+			var S = EliteFrogGoreObj.instantiate()
+			S.position = global_position + Vector2(randi_range(-30, 30), randi_range(-30, 30))
+			S.rotation = randf() * TAU
+			get_tree().root.add_child(S)
 func _on_jump_timer_timeout() -> void:
 	jumping=false
 	$Sprite2D.frame=regFrame

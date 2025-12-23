@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=13 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/pond_2.tscn" id="11_6iyac"]
 [ext_resource type="PackedScene" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
 [ext_resource type="PackedScene" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
+[ext_resource type="PackedScene" path="res://Scenes/eliteFrog.tscn" id="14_jkdf5"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_ynf5e")
@@ -285,5 +286,8 @@ position = Vector2(-798, 365)
 [node name="pond7" parent="." instance=ExtResource("11_6iyac")]
 position = Vector2(683, -467.99997)
 rotation = 3.063583
+
+[node name="eliteFrog" parent="." instance=ExtResource("14_jkdf5")]
+position = Vector2(206, 25)
 
 [connection signal="pressed" from="CanvasLayer/deathScreen/Panel/Button" to="." method="_on_button_pressed"]

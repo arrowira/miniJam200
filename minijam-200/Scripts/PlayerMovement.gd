@@ -80,6 +80,12 @@ func _physics_process(delta: float) -> void:
 		if(Input.is_action_just_pressed("Dash") && Dashing == false):
 			Dashing = true
 		
+		if(Dashing == true && DashTime < 40):
+			get_node("playerArea").monitoring = false
+			get_node("playerArea").monitorable = false
+		else:
+			get_node("playerArea").monitoring = true
+			get_node("playerArea").monitorable = true
 		if(Dashing == true):
 			if(DashTime == 0):
 				velocity*=DashSpeed

@@ -10,6 +10,8 @@ var t = 0
 var height = 0.2
 var EliteFrogGoreObj = preload("res://Scenes/EliteFrogGoreTemplate.tscn")
 
+var xpLight = preload("res://Scenes/xp_light.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$start.wait_time = randf_range(0,3)
@@ -17,7 +19,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float):
-	z_index = global_position.y
+	z_index = global_position.y+70
 	if jumpDir.x>0:
 		$Sprite2D.flip_h = false
 	else:
@@ -43,6 +45,11 @@ func damage():
 	$Sprite2D.frame=regFrame
 	if health == 0:
 		queue_free()
+		for i in range(5):
+			var S = xpLight.instantiate()
+			S.value = 15
+			S.position = global_position + Vector2(randi_range(-30, 30), randi_range(-30, 30))
+			get_tree().root.get_node("main").add_child(S)
 		for i in range(randi_range(3, 4)):
 			var S = EliteFrogGoreObj.instantiate()
 			S.position = global_position + Vector2(randi_range(-30, 30), randi_range(-30, 30))

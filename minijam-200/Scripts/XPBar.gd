@@ -11,6 +11,8 @@ func _process(delta: float) -> void:
 		addXP(10)
 
 func addXP(amt):
+	$AudioStreamPlayer.play()
+	$AudioStreamPlayer.pitch_scale = 1 + randf_range(0,0.5)
 	xp+=int(amt*lvlLengthMod)
 	if xp>=100:
 		xp=xp%100

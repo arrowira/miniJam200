@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=21 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ceajflhyieidf" path="res://Sprites/ProgressBarHolder.png" id="9_6iyac"]
 [ext_resource type="Script" uid="uid://75tbw7lruvss" path="res://Scripts/XPBar.gd" id="9_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://bnjafq8o13yb6" path="res://Scenes/pond_2.tscn" id="11_6iyac"]
+[ext_resource type="AudioStream" uid="uid://d036u52ag8i4v" path="res://audio/pickupCoin (1).wav" id="11_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
 [ext_resource type="PackedScene" uid="uid://dw4l6owia3h5n" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://cvnwhuiurasqs" path="res://Scenes/eliteFrog.tscn" id="14_jkdf5"]
@@ -394,6 +395,10 @@ theme_override_font_sizes/normal_font_size = 32
 text = "0
 "
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/XPbar"]
+stream = ExtResource("11_wsu2k")
+pitch_scale = 0.5
 
 [node name="pond2" parent="." instance=ExtResource("12_fdnlq")]
 position = Vector2(-242, 308)

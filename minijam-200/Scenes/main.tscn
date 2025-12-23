@@ -65,9 +65,6 @@ script = ExtResource("1_ynf5e")
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 scale = Vector2(0.3, 0.3)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position_smoothing_speed = 20.0
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("4_kry3j")
 

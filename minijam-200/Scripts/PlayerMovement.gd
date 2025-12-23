@@ -106,7 +106,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func Damage(D):
+	
 	if PlayerHealth!=0:
+		$camShake.play('camShake')
 		$damageSound.play()
 		PlayerHealth-=D
 		get_parent().get_node("CanvasLayer").UpdateHealth()

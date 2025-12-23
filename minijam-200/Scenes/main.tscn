@@ -259,6 +259,8 @@ position = Vector2(-81, 8)
 
 [node name="pond1" parent="." instance=ExtResource("12_6iyac")]
 position = Vector2(-292, 323)
+regChance = 49
+healthChance = 50
 spawnCoolDown = 10.0
 
 [node name="pond2" parent="." instance=ExtResource("12_6iyac")]

@@ -9,7 +9,6 @@ script = ExtResource("1_wei3t")
 regChance = 50
 healthChance = 20
 wizardChance = 30
-spawnCoolDown = 5.0
 
 [node name="Pondma" type="Sprite2D" parent="."]
 z_index = -4096
@@ -20,7 +19,6 @@ texture = ExtResource("2_wei3t")
 [node name="pondCol" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pondCol"]
-visible = false
 polygon = PackedVector2Array(-40.666668, 3.3333335, -30.666668, -22, -10.666667, -37.333336, 11.333334, -24.666668, 27.333334, -16, 33.333336, -25.333334, 25.333334, -48, 7.3333335, -93.333336, 16.666668, -103.333336, 40, -118.66667, 72, -118.66667, 88, -110, 96, -100, 84, -73.333336, 90, -59.333336, 145.33334, -40.666668, 153.33334, -25.333334, 148, -8.666667, 139.33334, 1.3333334, 100.66667, 10, 87.333336, 26.666668, 90, 49.333336, 88, 62.666668, 67.333336, 78, 43.333336, 77.333336, 18, 64.66667, -13.333334, 52.666668, -29.333334, 28)
 
 [node name="pond" type="Area2D" parent="."]

@@ -1,0 +1,401 @@
+[gd_scene load_steps=20 format=3 uid="uid://dqlq65abvfvhe"]
+
+[ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://ckbqcxm0gsvwm" path="res://Sprites/Health.png" id="4_jjvhh"]
+[ext_resource type="Script" uid="uid://d01kyurrhj6hq" path="res://Scripts/HealthManager.gd" id="4_kry3j"]
+[ext_resource type="FontFile" uid="uid://d35yfqyb2ke15" path="res://at01.ttf" id="7_344ge"]
+[ext_resource type="Script" uid="uid://bsk63ovss8h8u" path="res://Scripts/upgrade_ui.gd" id="7_jkdf5"]
+[ext_resource type="Texture2D" uid="uid://ck5nwoqf2obg8" path="res://Sprites/arrow-1.png.png" id="7_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://codddka8pe3b2" path="res://Sprites/ProgressBar.png" id="8_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://ceajflhyieidf" path="res://Sprites/ProgressBarHolder.png" id="9_6iyac"]
+[ext_resource type="Script" uid="uid://75tbw7lruvss" path="res://Scripts/XPBar.gd" id="9_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://bnjafq8o13yb6" path="res://Scenes/pond_2.tscn" id="11_6iyac"]
+[ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
+[ext_resource type="PackedScene" uid="uid://dw4l6owia3h5n" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://cvnwhuiurasqs" path="res://Scenes/eliteFrog.tscn" id="14_jkdf5"]
+
+[sub_resource type="Animation" id="Animation_wsu2k"]
+resource_name = "pulsingText"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5054723),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.1, 1.1)]
+}
+
+[sub_resource type="Animation" id="Animation_k12tt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h1bgf"]
+_data = {
+&"RESET": SubResource("Animation_k12tt"),
+&"pulsingText": SubResource("Animation_wsu2k")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdnlq"]
+bg_color = Color(0.15686275, 0.15686275, 0.15686275, 0.41960785)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jkdf5"]
+bg_color = Color(0.44857132, 0.6182687, 0.7835502, 1)
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_ynf5e")
+
+[node name="Player" parent="." instance=ExtResource("1_jjgbg")]
+scale = Vector2(0.3, 0.3)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_speed = 20.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("4_kry3j")
+
+[node name="ArrowDisplay" type="Node" parent="CanvasLayer"]
+
+[node name="ArrowDisplaySprite" type="Sprite2D" parent="CanvasLayer/ArrowDisplay"]
+texture_filter = 1
+position = Vector2(18, 34)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("7_ynf5e")
+
+[node name="ArrowCount" type="RichTextLabel" parent="CanvasLayer/ArrowDisplay"]
+offset_left = 2.0
+offset_top = 24.0
+offset_right = 42.0
+offset_bottom = 64.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+theme_override_font_sizes/normal_font_size = 32
+text = "3"
+
+[node name="hearts" type="Node" parent="CanvasLayer"]
+
+[node name="Health1" type="Sprite2D" parent="CanvasLayer/hearts"]
+texture_filter = 2
+position = Vector2(10.000001, 9)
+scale = Vector2(0.047500003, 0.047500007)
+texture = ExtResource("4_jjvhh")
+vframes = 2
+
+[node name="Health2" type="Sprite2D" parent="CanvasLayer/hearts"]
+texture_filter = 2
+position = Vector2(26.000002, 9.000001)
+scale = Vector2(0.047500003, 0.047500007)
+texture = ExtResource("4_jjvhh")
+vframes = 2
+
+[node name="Health3" type="Sprite2D" parent="CanvasLayer/hearts"]
+texture_filter = 2
+position = Vector2(42, 9)
+scale = Vector2(0.047500003, 0.047500007)
+texture = ExtResource("4_jjvhh")
+vframes = 2
+
+[node name="deathScreen" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/deathScreen"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 21.0
+offset_right = 568.0
+offset_bottom = 278.0
+
+[node name="death Text" type="RichTextLabel" parent="CanvasLayer/deathScreen/Panel"]
+layout_mode = 0
+offset_right = 534.0
+offset_bottom = 108.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[wave]You Died"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/deathScreen/Panel"]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 167.0
+offset_right = 369.0
+offset_bottom = 225.0
+theme_override_fonts/font = ExtResource("7_344ge")
+theme_override_font_sizes/font_size = 32
+text = "
+"
+clip_text = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/deathScreen/Panel/Button"]
+modulate = Color(0.3496107, 0.6441328, 0.3789337, 1)
+layout_mode = 0
+offset_left = 35.0
+offset_right = 166.0
+offset_bottom = 80.0
+mouse_filter = 1
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+theme_override_font_sizes/normal_font_size = 64
+text = "RETRY"
+horizontal_alignment = 1
+
+[node name="UpgradeUI" type="Node" parent="CanvasLayer"]
+script = ExtResource("7_jkdf5")
+
+[node name="HealthUpgrade" type="Node" parent="CanvasLayer/UpgradeUI"]
+
+[node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/HealthUpgrade"]
+modulate = Color(0.6998984, 0, 0.16074723, 1)
+position = Vector2(2, 54)
+scale = Vector2(1e-05, 1.3)
+texture = ExtResource("8_d1ilt")
+centered = false
+
+[node name="Bar" type="Sprite2D" parent="CanvasLayer/UpgradeUI/HealthUpgrade"]
+position = Vector2(33, 59)
+scale = Vector2(1, 1.5)
+texture = ExtResource("9_6iyac")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/HealthUpgrade"]
+offset_left = 4.0
+offset_top = 51.0
+offset_right = 64.0
+offset_bottom = 69.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+text = "Max Health
+"
+
+[node name="ArrowPenetration" type="Node" parent="CanvasLayer/UpgradeUI"]
+
+[node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/ArrowPenetration"]
+modulate = Color(0.267029, 0.30976233, 1, 1)
+position = Vector2(1.9999999, 69)
+scale = Vector2(1e-05, 1.3)
+texture = ExtResource("8_d1ilt")
+centered = false
+
+[node name="Bar" type="Sprite2D" parent="CanvasLayer/UpgradeUI/ArrowPenetration"]
+position = Vector2(33, 74)
+scale = Vector2(1, 1.5)
+texture = ExtResource("9_6iyac")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/ArrowPenetration"]
+offset_left = 4.0
+offset_top = 66.0
+offset_right = 99.0
+offset_bottom = 84.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+text = "Arrow Pen*"
+
+[node name="MoreArrows" type="Node" parent="CanvasLayer/UpgradeUI"]
+
+[node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/MoreArrows"]
+modulate = Color(0, 0.5020362, 0.49272907, 1)
+position = Vector2(2, 84)
+scale = Vector2(1e-05, 1.3)
+texture = ExtResource("8_d1ilt")
+centered = false
+
+[node name="Bar" type="Sprite2D" parent="CanvasLayer/UpgradeUI/MoreArrows"]
+position = Vector2(33, 89)
+scale = Vector2(1, 1.5)
+texture = ExtResource("9_6iyac")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/MoreArrows"]
+offset_left = 4.0
+offset_top = 81.0
+offset_right = 73.0
+offset_bottom = 99.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+text = "More Arrows"
+
+[node name="Speed" type="Node" parent="CanvasLayer/UpgradeUI"]
+
+[node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/Speed"]
+modulate = Color(0.47226244, 0.3558236, 0.70643914, 1)
+position = Vector2(2, 99)
+scale = Vector2(1e-05, 1.3)
+texture = ExtResource("8_d1ilt")
+centered = false
+
+[node name="Bar" type="Sprite2D" parent="CanvasLayer/UpgradeUI/Speed"]
+position = Vector2(33, 104)
+scale = Vector2(1, 1.5)
+texture = ExtResource("9_6iyac")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/Speed"]
+offset_left = 4.0
+offset_top = 96.0
+offset_right = 41.0
+offset_bottom = 114.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+text = "Speed
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="DashDistance" type="Node" parent="CanvasLayer/UpgradeUI"]
+
+[node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/DashDistance"]
+modulate = Color(0, 0.5205299, 0.30591217, 1)
+position = Vector2(2, 114)
+scale = Vector2(1e-05, 1.3)
+texture = ExtResource("8_d1ilt")
+centered = false
+
+[node name="Bar" type="Sprite2D" parent="CanvasLayer/UpgradeUI/DashDistance"]
+position = Vector2(33, 119)
+scale = Vector2(1, 1.5)
+texture = ExtResource("9_6iyac")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/DashDistance"]
+anchors_preset = -1
+anchor_right = 0.13
+offset_left = 3.0
+offset_top = 111.0
+offset_right = 40.0
+offset_bottom = 129.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+text = "Dash Distance
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="AimSpeed" type="Node" parent="CanvasLayer/UpgradeUI"]
+
+[node name="Progress" type="Sprite2D" parent="CanvasLayer/UpgradeUI/AimSpeed"]
+modulate = Color(0.7619641, 0.3750653, 1.92523e-07, 1)
+position = Vector2(2, 130)
+scale = Vector2(1e-05, 1.3)
+texture = ExtResource("8_d1ilt")
+centered = false
+
+[node name="Bar" type="Sprite2D" parent="CanvasLayer/UpgradeUI/AimSpeed"]
+position = Vector2(33, 135)
+scale = Vector2(1, 1.5)
+texture = ExtResource("9_6iyac")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/AimSpeed"]
+anchors_preset = -1
+anchor_right = 0.13
+offset_left = 2.0
+offset_top = 127.0
+offset_right = 39.0
+offset_bottom = 145.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+text = "Aim Speed
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/UpgradeUI"]
+offset_left = 66.0
+offset_top = 51.0
+offset_right = 90.0
+offset_bottom = 151.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+theme_override_font_sizes/normal_font_size = 17
+text = "[1]
+[2] 
+[3] 
+[4] 
+[5] 
+[6]"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/UpgradeUI"]
+libraries = {
+&"": SubResource("AnimationLibrary_h1bgf")
+}
+
+[node name="Control" type="Control" parent="CanvasLayer/UpgradeUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 70.0
+offset_top = 42.0
+offset_right = 110.0
+offset_bottom = 82.0
+
+[node name="skillPoints" type="RichTextLabel" parent="CanvasLayer/UpgradeUI/Control"]
+layout_mode = 0
+offset_left = -15.386021
+offset_top = -9.616264
+offset_right = 24.61398
+offset_bottom = 30.38374
+theme_override_colors/default_color = Color(0.96690387, 0.75726306, 0, 1)
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+theme_override_font_sizes/normal_font_size = 32
+text = "x0
+"
+
+[node name="XPbar" type="Node" parent="CanvasLayer"]
+script = ExtResource("9_fdnlq")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/XPbar"]
+offset_left = 85.0
+offset_top = 269.0
+offset_right = 519.0
+offset_bottom = 286.0
+theme_override_fonts/font = ExtResource("7_344ge")
+theme_override_styles/background = SubResource("StyleBoxFlat_fdnlq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jkdf5")
+
+[node name="lvlLabel" type="RichTextLabel" parent="CanvasLayer/XPbar"]
+offset_left = 84.0
+offset_top = 241.0
+offset_right = 519.0
+offset_bottom = 281.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+theme_override_font_sizes/normal_font_size = 32
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="pond2" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(-242, 308)
+
+[node name="pond3" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(152, -364)
+rotation = 2.529827
+
+[node name="pond4" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(1018.00006, 456.00006)
+rotation = -2.0841835
+
+[node name="pond1" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(-522, -156)
+
+[node name="pond8" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(-213, -783)
+
+[node name="pond5" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(501, 98)
+rotation = -3.0829191
+scale = Vector2(1.5000001, 1.5000001)
+
+[node name="pond6" parent="." instance=ExtResource("11_6iyac")]
+position = Vector2(-798, 365)
+
+[node name="pond7" parent="." instance=ExtResource("11_6iyac")]
+position = Vector2(683, -467.99997)
+rotation = 3.063583
+
+[node name="eliteFrog" parent="." instance=ExtResource("14_jkdf5")]
+position = Vector2(206, 25)
+
+[connection signal="pressed" from="CanvasLayer/deathScreen/Panel/Button" to="." method="_on_button_pressed"]

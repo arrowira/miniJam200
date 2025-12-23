@@ -12,16 +12,20 @@ var GreenParts = preload("res://Scenes/green_frog_death_particles.tscn")
 var ArrowSpeed = 15
 var ArrowSlow = 10
 var Dropped = false
-var CanDrop = false
+var CanDrop = true
 
 func _physics_process(delta: float) -> void:
-	if(DropTimer<=25 || CanDrop == true):
-		global_position += transform.x * ArrowSpeed
+	if !CanDrop:
+		global_position += transform.x * 15
 	else:
-		$CPUParticles2D.visible = false
-		Dropped = true
+		if(DropTimer<=25):
+			global_position += transform.x * ArrowSpeed
+		else:
+			$CPUParticles2D.visible = false
+			Dropped = true
 	DropTimer+=1
 	ArrowSlow = 10 - (get_tree().current_scene.UpgradeArray[1]*2)
+	
 	
 
 func _on_area_entered(area: Area2D) -> void:
@@ -68,9 +72,9 @@ func SpawnFrogGore(type):
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if(body.name == "PondCol"):
+	if(body.name == "pondCol"):
 		CanDrop = false
 	
 func _on_body_exited(body: Node2D) -> void:
-	if(body.name == "PondCol"):
+	if(body.name == "pondCol"):
 		CanDrop = true

@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 			$CPUParticles2D.visible = false
 			Dropped = true
 	DropTimer+=1
-	ArrowSlow = 10 - (get_tree().current_scene.UpgradeArray[1]*2)
+	ArrowSlow = 10 - (get_tree().current_scene.UpgradeArray[1])
 	
 	
 

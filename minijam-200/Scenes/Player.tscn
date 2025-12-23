@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cn7v7jwhckh73" path="res://Scripts/PlayerMovement.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://cpcixri5didi5" path="res://Sprites/playerMovementSheet.png" id="2_52ee3"]
-[ext_resource type="Script" path="res://Scripts/BowRotation.gd" id="3_gntrk"]
+[ext_resource type="Script" uid="uid://c6f04job5tkik" path="res://Scripts/BowRotation.gd" id="3_gntrk"]
 [ext_resource type="AudioStream" uid="uid://dltll0oypd84r" path="res://audio/bowShoot.mp3" id="4_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://cu43byynkr0h3" path="res://Sprites/bow.png" id="4_nn08x"]
 [ext_resource type="AudioStream" uid="uid://b833fuqoqqr5n" path="res://audio/bowChargeUp.mp3" id="5_nn08x"]
 [ext_resource type="Texture2D" uid="uid://bwfwr1xenfsdj" path="res://shadow-1.png.png" id="7_52ee3"]
 [ext_resource type="AudioStream" uid="uid://crbgxsttkwkdd" path="res://audio/hitHurt (1).wav" id="8_bhhdu"]
-[ext_resource type="Script" uid="uid://cmrmomjmh5dvx" path="res://Scripts/elite_spawner.gd" id="9_megsn"]
+[ext_resource type="Script" path="res://Scripts/elite_spawner.gd" id="9_megsn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
 size = Vector2(42, 45)
@@ -255,6 +255,33 @@ _data = {
 &"runRight": SubResource("Animation_glx4g")
 }
 
+[sub_resource type="Animation" id="Animation_lslt6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_arntx"]
 resource_name = "camShake"
 length = 0.25
@@ -281,33 +308,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 0.5303105, 0.65950817, 1), Color(1, 0.5303105, 0.65950817, 1), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_lslt6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ulo2v"]

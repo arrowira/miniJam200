@@ -33,18 +33,18 @@ func _physics_process(delta: float) -> void:
 			if(UpgradeArray[3]<8):
 				UpgradeArray[3]+=1
 				Upgraded()
-				get_node("Player").DefSpeed += 5
+				get_node("Player").DefSpeed += 1
 		if(Input.is_action_just_pressed("Five")):
 			if(UpgradeArray[4]<8):
 				UpgradeArray[4]+=1
 				Upgraded()
 				get_node("Player").DashSpeed += 1
-				get_node("Player").ImmunityFrames += 10
+				get_node("Player").ImmunityFrames += 5
 		if(Input.is_action_just_pressed("Six")):
 			if(UpgradeArray[5]<8):
 				UpgradeArray[5]+=1
 				Upgraded()
-				get_node("Player").BowChargeNeeded -=3
+				get_node("Player").BowChargeNeeded -=2
 
 # Run when anything is upgraded to update the disaplay 
 func Upgraded():

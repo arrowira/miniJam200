@@ -77,5 +77,4 @@ func _on_start_timeout() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "pond":
-		
 		inWater=true

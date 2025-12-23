@@ -76,7 +76,6 @@ func _on_jump_cooldown_timeout() -> void:
 func _on_start_timeout() -> void:
 	$jumpCooldown.start()
 
-
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "pond":
 		

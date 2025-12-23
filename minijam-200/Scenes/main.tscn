@@ -14,7 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://d036u52ag8i4v" path="res://audio/pickupCoin (1).wav" id="11_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
 [ext_resource type="PackedScene" uid="uid://dw4l6owia3h5n" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
-[ext_resource type="PackedScene" uid="uid://cvnwhuiurasqs" path="res://Scenes/eliteFrog.tscn" id="14_jkdf5"]
 
 [sub_resource type="Animation" id="Animation_wsu2k"]
 resource_name = "pulsingText"
@@ -59,10 +58,14 @@ bg_color = Color(0.15686275, 0.15686275, 0.15686275, 0.41960785)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jkdf5"]
 bg_color = Color(0.44857132, 0.6182687, 0.7835502, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkdf5"]
+size = Vector2(152, 4134)
+
 [node name="main" type="Node2D"]
 script = ExtResource("1_ynf5e")
 
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
+position = Vector2(1486, 860)
 scale = Vector2(0.3, 0.3)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -410,14 +413,23 @@ rotation = -2.0841835
 
 [node name="pond1" parent="." instance=ExtResource("12_6iyac")]
 position = Vector2(-522, -156)
+regChance = 50
+healthChance = 20
+wizardChance = 30
 
 [node name="pond8" parent="." instance=ExtResource("12_6iyac")]
 position = Vector2(-213, -783)
+regChance = 50
+healthChance = 20
+wizardChance = 30
 
 [node name="pond5" parent="." instance=ExtResource("12_6iyac")]
 position = Vector2(501, 98)
 rotation = -3.0829191
 scale = Vector2(1.5000001, 1.5000001)
+regChance = 50
+healthChance = 20
+wizardChance = 30
 
 [node name="pond6" parent="." instance=ExtResource("11_6iyac")]
 position = Vector2(-798, 365)
@@ -426,7 +438,214 @@ position = Vector2(-798, 365)
 position = Vector2(683, -467.99997)
 rotation = 3.063583
 
-[node name="eliteFrog" parent="." instance=ExtResource("14_jkdf5")]
-position = Vector2(206, 25)
+[node name="pond9" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(180, 757)
+
+[node name="pond10" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(-459, 868)
+regChance = 50
+healthChance = 20
+wizardChance = 30
+
+[node name="pond11" parent="." instance=ExtResource("11_6iyac")]
+position = Vector2(-731, -625)
+
+[node name="pond12" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(962, -104)
+
+[node name="pond13" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(1958, 140)
+rotation = -1.7410156
+
+[node name="pond14" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(2352, -531.99994)
+rotation = 0.78881156
+
+[node name="pond15" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(3218, 288)
+rotation = -3.8251991
+
+[node name="pond16" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(1678, -324)
+rotation = -1.7410156
+regChance = 50
+healthChance = 20
+wizardChance = 30
+
+[node name="pond17" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(1987, -951)
+rotation = -1.7410156
+regChance = 50
+healthChance = 20
+wizardChance = 30
+
+[node name="pond18" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(2701, -70.00001)
+rotation = -4.8239346
+scale = Vector2(1.5000001, 1.5000001)
+regChance = 50
+healthChance = 20
+wizardChance = 30
+
+[node name="pond19" parent="." instance=ExtResource("11_6iyac")]
+position = Vector2(1402, 197)
+rotation = -1.7410156
+
+[node name="pond20" parent="." instance=ExtResource("11_6iyac")]
+position = Vector2(2882.9998, -635.99994)
+rotation = 1.3225673
+
+[node name="pond21" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(2380, 589)
+rotation = -1.7410156
+
+[node name="pond22" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(1741, 700)
+rotation = -1.7410156
+regChance = 50
+healthChance = 20
+wizardChance = 30
+
+[node name="pond23" parent="." instance=ExtResource("11_6iyac")]
+position = Vector2(1469, -793)
+rotation = -1.7410156
+
+[node name="pond24" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(3162, -272)
+rotation = -1.7410156
+
+[node name="pond25" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(1009, 2045.0002)
+
+[node name="pond26" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(1403, 1373.0002)
+rotation = 2.529827
+
+[node name="pond27" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(2269, 2193.0002)
+rotation = -2.0841835
+
+[node name="pond28" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(729, 1581.0002)
+regChance = 50
+healthChance = 20
+wizardChance = 30
+
+[node name="pond29" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(1038, 954.00024)
+regChance = 50
+healthChance = 20
+wizardChance = 30
+
+[node name="pond30" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(1752, 1835.0002)
+rotation = -3.0829191
+scale = Vector2(1.5000001, 1.5000001)
+regChance = 50
+healthChance = 20
+wizardChance = 30
+
+[node name="pond31" parent="." instance=ExtResource("11_6iyac")]
+position = Vector2(453, 2102.0002)
+
+[node name="pond32" parent="." instance=ExtResource("11_6iyac")]
+position = Vector2(1933.9999, 1269)
+rotation = 3.063583
+
+[node name="pond33" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(1431, 2494.0002)
+
+[node name="pond34" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(792, 2605.0002)
+regChance = 50
+healthChance = 20
+wizardChance = 30
+
+[node name="pond35" parent="." instance=ExtResource("11_6iyac")]
+position = Vector2(520, 1112.0002)
+
+[node name="pond36" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(2213, 1633.0002)
+
+[node name="pond37" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(3209, 1877)
+rotation = -1.7410156
+
+[node name="pond38" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(-615, 1480.9998)
+rotation = 0.78881156
+
+[node name="pond39" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(251, 2300.9998)
+rotation = -3.8251991
+
+[node name="pond40" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(2929, 1413)
+rotation = -1.7410156
+regChance = 50
+healthChance = 20
+wizardChance = 30
+
+[node name="pond41" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(3238, 786)
+rotation = -1.7410156
+regChance = 50
+healthChance = 20
+wizardChance = 30
+
+[node name="pond42" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(-266, 1942.9998)
+rotation = -4.8239346
+scale = Vector2(1.5000001, 1.5000001)
+regChance = 50
+healthChance = 20
+wizardChance = 30
+
+[node name="pond43" parent="." instance=ExtResource("11_6iyac")]
+position = Vector2(2653, 1934)
+rotation = -1.7410156
+
+[node name="pond44" parent="." instance=ExtResource("11_6iyac")]
+position = Vector2(-84.00049, 1377.0001)
+rotation = 1.3225673
+
+[node name="pond45" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(-586.9995, 2601.9995)
+rotation = -1.7410156
+
+[node name="pond46" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(2992, 2437)
+rotation = -1.7410156
+regChance = 50
+healthChance = 20
+wizardChance = 30
+
+[node name="pond47" parent="." instance=ExtResource("11_6iyac")]
+position = Vector2(2720, 944)
+rotation = -1.7410156
+
+[node name="pond48" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(195.00049, 1740.9995)
+rotation = -1.7410156
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-860, 918)
+shape = SubResource("RectangleShape2D_jkdf5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3322, 918)
+shape = SubResource("RectangleShape2D_jkdf5")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1261.9999, 2751)
+rotation = -1.5766101
+shape = SubResource("RectangleShape2D_jkdf5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1244.0001, -1005)
+rotation = -1.5766101
+shape = SubResource("RectangleShape2D_jkdf5")
 
 [connection signal="pressed" from="CanvasLayer/deathScreen/Panel/Button" to="." method="_on_button_pressed"]

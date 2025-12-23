@@ -19,7 +19,7 @@ func addXP(amt):
 		lvl += 1
 		$lvlLabel.text = str(lvl)
 		get_tree().root.get_node("main").addSkillPoint()
-		lvlLengthMod *= 0.9
+		lvlLengthMod *= 0.95
 	
 	
 	$ProgressBar.value=xp

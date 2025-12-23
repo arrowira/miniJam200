@@ -63,7 +63,7 @@ func SpawnFrogGore(type):
 		xp.position = global_position
 		S.position = global_position + Vector2(randi_range(-20, 20), randi_range(-20, 20))
 		S.rotation = randf() * TAU
-		get_tree().root.add_child(S)
+		get_tree().root.get_node("main").add_child(S)
 		get_tree().root.get_node("main").add_child(xp)
 
 

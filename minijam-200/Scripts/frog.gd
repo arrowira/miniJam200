@@ -14,6 +14,7 @@ var inWater = true
 func _ready() -> void:
 	$start.wait_time = randf_range(0,3)
 	$start.start()
+	$AnimationPlayer.play("RESET")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float):
@@ -47,6 +48,7 @@ func jump(dir):
 
 func _on_jump_timer_timeout() -> void:
 	jumping=false
+	
 	$CollisionShape2D.visible = true
 	$Sprite2D.frame=0
 	if !inWater:
@@ -56,7 +58,8 @@ func _on_jump_timer_timeout() -> void:
 		
 		aoe.z_index=z_index-5
 		get_parent().get_parent().add_child(aoe)
-
+	else:
+		$AnimationPlayer.play("splash")
 
 func _on_jump_cooldown_timeout() -> void:
 	var movementChoice = randi_range(0,10)
@@ -76,4 +79,5 @@ func _on_start_timeout() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "pond":
+		
 		inWater=true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfnnqj5qfo7ju"
-path="res://.godot/imported/pond1-2.png.png-d9fa8e48e0a86a2a35e168cb6f2c39c7.ctex"
+uid="uid://bx3ogioqm5h2b"
+path="res://.godot/imported/water splash.png-e165d0a34b3ce48edcfc72e3e820e0e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/pond1-2.png.png"
-dest_files=["res://.godot/imported/pond1-2.png.png-d9fa8e48e0a86a2a35e168cb6f2c39c7.ctex"]
+source_file="res://Sprites/water splash.png"
+dest_files=["res://.godot/imported/water splash.png-e165d0a34b3ce48edcfc72e3e820e0e8.ctex"]
 
 [params]
 

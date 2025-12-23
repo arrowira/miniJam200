@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnjafq8o13yb6"]
+
+[ext_resource type="Script" uid="uid://4f64158gy874" path="res://Scripts/pondSpawning.gd" id="1_cpltc"]
+[ext_resource type="Texture2D" uid="uid://na0hq0n3ay3b" path="res://Sprites/Pond_2.png" id="2_cpltc"]
+
+[node name="pond2" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_cpltc")
+regChance = 50
+healthChance = 20
+wizardChance = 30
+spawnCoolDown = 5.0
+
+[node name="Pondma" type="Sprite2D" parent="."]
+z_index = -4096
+position = Vector2(52.000004, -65)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_cpltc")
+
+[node name="pondCol" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pondCol"]
+polygon = PackedVector2Array(-36.666668, 56, -45.333336, -0.6666667, -30, -26, -22, -54.666668, -27.333334, -88.66667, -20, -122.66667, 12.666667, -140, 76, -130, 77.333336, -93.333336, 44, -73.333336, 24, -52.666668, 30.666668, -39.333336, 87.333336, -43.333336, 132, -29.333334, 138.66667, 0.6666667, 126, 34, 70.66667, 70, 28.666668, 84, -17.333334, 78)
+
+[node name="pond" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="pond"]
+scale = Vector2(0.7, 0.7)
+polygon = PackedVector2Array(-40.952385, 40.952385, -45.333336, -0.6666667, -30, -26, -22, -54.666668, -27.333334, -88.66667, -24.761908, -147.61906, 15.238097, -180.95241, 60.95239, -177.14288, 90.476204, -161.90479, 60.95239, -127.619064, 0.9523811, -73.33334, 31.428576, -23.809526, 91.42858, -40.000004, 148.57144, -42.857147, 173.33336, 4.761905, 135.23811, 66.66667, 67.61906, 92.38097, 18.09524, 100.95239, -23.809526, 85.714294)
+
+[node name="spawnTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="spawnTimer" to="." method="_on_spawn_timer_timeout"]

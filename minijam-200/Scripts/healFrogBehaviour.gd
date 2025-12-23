@@ -11,6 +11,7 @@ var inWater = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$AnimationPlayer.play("RESET")
 	$start.wait_time = randf_range(0,3)
 	$start.start()
 
@@ -50,6 +51,8 @@ func _on_jump_timer_timeout() -> void:
 	jumping=false
 	$Sprite2D.frame=0
 	$CollisionShape2D.visible = true
+	if inWater:
+		$AnimationPlayer.play("splash")
 	
 
 func _on_jump_cooldown_timeout() -> void:

@@ -10,7 +10,7 @@ var regFrog = preload("res://Scenes/frog.tscn")
 var healFrog = preload("res://Scenes/healFrog.tscn")
 var wizardFrog = preload("res://Scenes/wizard.tscn")
 
-@export var spawnCoolDown = 3.0
+var spawnCoolDown = 10
 
 
 func _ready() -> void:

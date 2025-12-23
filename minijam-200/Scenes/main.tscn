@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=13 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://chqwrmeaa261a" path="res://Scenes/wizard.tscn" id="8_344ge"]
 [ext_resource type="Texture2D" uid="uid://codddka8pe3b2" path="res://Sprites/ProgressBar.png" id="8_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://ceajflhyieidf" path="res://Sprites/ProgressBarHolder.png" id="9_6iyac"]
-[ext_resource type="PackedScene" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
+[ext_resource type="PackedScene" uid="uid://bnjafq8o13yb6" path="res://Scenes/pond_2.tscn" id="11_6iyac"]
+[ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
+[ext_resource type="PackedScene" uid="uid://dw4l6owia3h5n" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_ynf5e")
@@ -259,16 +261,33 @@ text = "Aim Speed
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="pond1" parent="." instance=ExtResource("12_6iyac")]
-position = Vector2(-292, 323)
-regChance = 50
-healthChance = 20
-wizardChance = 30
-spawnCoolDown = 10.0
+[node name="pond2" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(-242, 308)
 
-[node name="pond2" parent="." instance=ExtResource("12_6iyac")]
-position = Vector2(302, -77)
-rotation = 2.3698082
-spawnCoolDown = 10.0
+[node name="pond3" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(152, -364)
+rotation = 2.529827
+
+[node name="pond4" parent="." instance=ExtResource("12_fdnlq")]
+position = Vector2(1018.00006, 456.00006)
+rotation = -2.0841835
+
+[node name="pond1" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(-522, -156)
+
+[node name="pond8" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(-213, -783)
+
+[node name="pond5" parent="." instance=ExtResource("12_6iyac")]
+position = Vector2(501, 98)
+rotation = -3.0829191
+scale = Vector2(1.5000001, 1.5000001)
+
+[node name="pond6" parent="." instance=ExtResource("11_6iyac")]
+position = Vector2(-798, 365)
+
+[node name="pond7" parent="." instance=ExtResource("11_6iyac")]
+position = Vector2(683, -467.99997)
+rotation = 3.063583
 
 [connection signal="pressed" from="CanvasLayer/deathScreen/Panel/Button" to="." method="_on_button_pressed"]

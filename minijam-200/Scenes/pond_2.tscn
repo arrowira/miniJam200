@@ -9,7 +9,6 @@ script = ExtResource("1_cpltc")
 regChance = 50
 healthChance = 20
 wizardChance = 30
-spawnCoolDown = 5.0
 
 [node name="Pondma" type="Sprite2D" parent="."]
 z_index = -4096

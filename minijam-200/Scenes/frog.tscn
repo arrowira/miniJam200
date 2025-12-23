@@ -61,6 +61,7 @@ scale = Vector2(0.4062499, 0.36875007)
 texture = ExtResource("2_c3muq")
 
 [node name="Sprite2D" type="Sprite2D" parent="frogArea2D"]
+visible = false
 position = Vector2(4, 0)
 scale = Vector2(0.15, 0.161)
 texture = ExtResource("3_c3muq")

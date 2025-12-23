@@ -139,8 +139,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if(area.DropTimer>= 20):
 			Arrows+=1
 			$arrowPickup.play()
+			for i in range(ArrowPos.size()):
+				if(ArrowPos[i].global_position == area.global_position):
+					ArrowPos.remove_at(i)
 			area.queue_free()
-			get_tree().root.get_node("Player").arrow_targets.erase(area)
 	if(area.name == "HeartHitbox"):
 		if PlayerHealth < maxHealth:
 			get_parent().get_node("CanvasLayer").heal()

@@ -5,17 +5,32 @@
 [ext_resource type="Texture2D" uid="uid://ckbqcxm0gsvwm" path="res://Sprites/Health.png" id="4_jjvhh"]
 [ext_resource type="Script" uid="uid://d01kyurrhj6hq" path="res://Scripts/HealthManager.gd" id="4_kry3j"]
 [ext_resource type="FontFile" uid="uid://d35yfqyb2ke15" path="res://at01.ttf" id="7_344ge"]
-[ext_resource type="Script" uid="uid://bsk63ovss8h8u" path="res://Scripts/upgrade_ui.gd" id="7_jkdf5"]
+[ext_resource type="Script" path="res://Scripts/upgrade_ui.gd" id="7_jkdf5"]
 [ext_resource type="Texture2D" uid="uid://ck5nwoqf2obg8" path="res://Sprites/arrow-1.png.png" id="7_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://codddka8pe3b2" path="res://Sprites/ProgressBar.png" id="8_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://ceajflhyieidf" path="res://Sprites/ProgressBarHolder.png" id="9_6iyac"]
 [ext_resource type="Script" uid="uid://75tbw7lruvss" path="res://Scripts/XPBar.gd" id="9_fdnlq"]
-[ext_resource type="PackedScene" uid="uid://bnjafq8o13yb6" path="res://Scenes/pond_2.tscn" id="11_6iyac"]
+[ext_resource type="PackedScene" uid="uid://dicaj0vrtlwfi" path="res://Scenes/pond_2.tscn" id="11_6iyac"]
 [ext_resource type="AudioStream" uid="uid://d036u52ag8i4v" path="res://audio/pickupCoin (1).wav" id="11_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
-[ext_resource type="PackedScene" uid="uid://dw4l6owia3h5n" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
+[ext_resource type="PackedScene" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
 [ext_resource type="AudioStream" uid="uid://bddads1ov27tk" path="res://audio/healSfx.mp3" id="12_k12tt"]
 [ext_resource type="AudioStream" uid="uid://b6bc0epnvmfou" path="res://audio/powerUp.wav" id="15_wsu2k"]
+
+[sub_resource type="Animation" id="Animation_k12tt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_wsu2k"]
 resource_name = "pulsingText"
@@ -31,21 +46,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.1, 1.1)]
-}
-
-[sub_resource type="Animation" id="Animation_k12tt"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Control:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h1bgf"]
@@ -64,7 +64,7 @@ bg_color = Color(0.15686275, 0.15686275, 0.15686275, 0.41960785)
 bg_color = Color(0.44857132, 0.6182687, 0.7835502, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jkdf5"]
-size = Vector2(152, 4134)
+size = Vector2(152, 4438.9253)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_ynf5e")
@@ -691,23 +691,24 @@ rotation = -1.7410156
 position = Vector2(195.00049, 1740.9995)
 rotation = -1.7410156
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="BorderWall" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-860, 918)
+[node name="Wall" type="CollisionShape2D" parent="BorderWall"]
+position = Vector2(-1023, 931)
 shape = SubResource("RectangleShape2D_jkdf5")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(3322, 918)
+[node name="Wall2" type="CollisionShape2D" parent="BorderWall"]
+position = Vector2(3511, 879)
 shape = SubResource("RectangleShape2D_jkdf5")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1261.9999, 2751)
+[node name="Wall3" type="CollisionShape2D" parent="BorderWall"]
+position = Vector2(1258.4601, 2911.1135)
 rotation = -1.5766101
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_jkdf5")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1244.0001, -1005)
+[node name="Wall4" type="CollisionShape2D" parent="BorderWall"]
+position = Vector2(1238, -1326.9999)
 rotation = -1.5766101
 shape = SubResource("RectangleShape2D_jkdf5")
 

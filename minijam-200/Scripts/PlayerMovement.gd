@@ -108,16 +108,16 @@ func _physics_process(delta: float) -> void:
 	for i in range(ArrowPos.size()):
 		if(!is_instance_valid(ArrowPos[i])):
 			ArrowPos.remove_at(i)
-	var L = 10000
-	var NI = 0
+	var LowestDistance = 10000
+	var NewI = 0
 	for i in range(ArrowPos.size()):
 		var d = global_position.distance_to(ArrowPos[i].global_position)
-		if(d < L):
-			L = d
-			i = NI
-	if(L < 10000):
+		if(d < LowestDistance):
+			LowestDistance = d
+			i = NewI
+	if(LowestDistance < 10000):
 		$PointerPivot/Pointer.visible = true
-		$PointerPivot.look_at(ArrowPos[NI].global_position)
+		$PointerPivot.look_at(ArrowPos[NewI].global_position)
 	else:
 		$PointerPivot/Pointer.visible = false
 		

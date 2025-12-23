@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxi4gkvsplqyh"]
+
+[ext_resource type="Texture2D" uid="uid://codddka8pe3b2" path="res://Sprites/ProgressBar.png" id="1_tt5f1"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-7.6293945e-06, -9.536743e-07)
+scale = Vector2(200.31248, 173.40623)
+texture = ExtResource("1_tt5f1")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+position = Vector2(146, 73)

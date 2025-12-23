@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 			if(UpgradeArray[5]<8):
 				UpgradeArray[5]+=1
 				Upgraded()
-				get_node("Player").BowChargeNeeded -=2
+				get_node("Player").reduceChargeTime()
 
 # Run when anything is upgraded to update the disaplay 
 func Upgraded():

@@ -158,3 +158,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_death_timer_timeout() -> void:
 	get_parent().get_node("CanvasLayer").get_node("deathScreen").visible = true
 	pass
+
+func reduceChargeTime():
+	pass

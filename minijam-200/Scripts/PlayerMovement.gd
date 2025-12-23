@@ -105,6 +105,7 @@ func _physics_process(delta: float) -> void:
 		$playerAnimiations.play("death")
 	get_parent().get_node("CanvasLayer/ArrowDisplay/ArrowCount").text = str(Arrows)
 	
+	
 	for i in range(ArrowPos.size()):
 		if(!is_instance_valid(ArrowPos[i])):
 			ArrowPos.remove_at(i)
@@ -124,7 +125,10 @@ func _physics_process(delta: float) -> void:
 			$PointerPivot/Pointer.self_modulate.a = (LowestDistance-100)/200
 		if(LowestDistance <= 100):
 			$PointerPivot/Pointer.self_modulate.a = 0
-		
+		if(LowestDistance<=10 && ArrowPos[NewI].DropTimer>= 20):
+			Arrows+=1
+			$arrowPickup.play()
+			ArrowPos[NewI].queue_free()
 	else:
 		$PointerPivot/Pointer.visible = false
 		

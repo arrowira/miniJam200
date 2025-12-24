@@ -141,10 +141,11 @@ func Damage(D):
 		$damageSound.play()
 		PlayerHealth-=D
 		get_parent().get_node("CanvasLayer").UpdateHealth()
-		if PlayerHealth == 0:
-			dead = true
-			velocity = Vector2.ZERO
-			$deathTimer.start()
+	if PlayerHealth == 0:
+		get_parent().get_node("music").pitch_scale =0.3
+		dead = true
+		velocity = Vector2.ZERO
+		$deathTimer.start()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "damage":

@@ -54,7 +54,7 @@ func damage():
 		
 		for i in range(5):
 			var S = xpLight.instantiate()
-			S.value = 15
+			S.value = 25
 			S.position = global_position + Vector2(randi_range(-30, 30), randi_range(-30, 30))
 			get_tree().root.get_node("main").add_child(S)
 		for i in range(randi_range(3, 4)):

@@ -4,7 +4,7 @@ var FrogGoreObj = preload("res://Scenes/FrogGoreTemplateMenu.tscn")
 
 func _physics_process(delta: float) -> void:
 	if(randi_range(1, 3) == 1):
-		for i in range(6):
+		for i in range(1):
 			var type = randi_range(0, 3)
 			var S = FrogGoreObj.instantiate()
 			if(randi_range(0, 3) == 1):

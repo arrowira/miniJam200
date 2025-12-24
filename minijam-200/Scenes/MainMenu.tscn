@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccyvs65rpci4a"]
+[gd_scene load_steps=13 format=3 uid="uid://dxi4gkvsplqyh"]
 
 [ext_resource type="Script" uid="uid://dg57fnder8ys2" path="res://Scripts/main_menu.gd" id="1_8saeu"]
 [ext_resource type="Texture2D" uid="uid://codddka8pe3b2" path="res://Sprites/ProgressBar.png" id="1_tt5f1"]
 [ext_resource type="FontFile" uid="uid://d35yfqyb2ke15" path="res://at01.ttf" id="2_853f1"]
 [ext_resource type="Script" uid="uid://ds4nx2kvtmn5q" path="res://Scripts/FrogFalling.gd" id="2_ghw46"]
-[ext_resource type="Script" uid="uid://c7pegv72i5x60" path="res://Scripts/MouseCollision.gd" id="5_df05h"]
+[ext_resource type="Script" path="res://Scenes/MouseCollision.gd" id="5_df05h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_853f1"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dn0wyr0nn2y2q"]
+[gd_scene load_steps=30 format=3 uid="uid://dn0wyr0nn2y2q"]
 
 [ext_resource type="Script" uid="uid://cn7v7jwhckh73" path="res://Scripts/PlayerMovement.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://cpcixri5didi5" path="res://Sprites/playerMovementSheet.png" id="2_52ee3"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cmrmomjmh5dvx" path="res://Scripts/elite_spawner.gd" id="9_megsn"]
 [ext_resource type="AudioStream" uid="uid://cwmbmpwifbp8a" path="res://audio/item-equip-6904.mp3" id="10_yoq75"]
 [ext_resource type="Texture2D" uid="uid://dd5dah3pxwh0i" path="res://Sprites/triangle-1.png.png" id="11_ksbbd"]
+[ext_resource type="AudioStream" uid="uid://biwj5glwfdsbx" path="res://audio/simple-whoosh-382724.mp3" id="12_glx4g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
 size = Vector2(42, 45)
@@ -409,7 +410,10 @@ position = Vector2(143, 5.364418e-07)
 rotation = 1.5707964
 texture = ExtResource("11_ksbbd")
 
-[node name="deathSfx" type="AudioStreamPlayer" parent="."]
+[node name="dashSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_glx4g")
+volume_db = -10.0
+pitch_scale = 1.17
 
 [connection signal="area_entered" from="playerArea" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="deathTimer" to="." method="_on_death_timer_timeout"]

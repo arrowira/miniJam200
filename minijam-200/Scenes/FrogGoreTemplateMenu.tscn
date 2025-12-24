@@ -1,19 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwx1q02rl17la"]
+[gd_scene load_steps=5 format=3 uid="uid://cwx1q02rl17la"]
 
+[ext_resource type="Script" uid="uid://dbsa5gwt15svp" path="res://Scripts/menuGore.gd" id="1_3dpp5"]
 [ext_resource type="Texture2D" uid="uid://63fli2fkhu67" path="res://Sprites/GreenFrogGore.png" id="1_i6wrm"]
 [ext_resource type="Script" uid="uid://cktak4b4ts3ko" path="res://Scripts/GoreController.gd" id="2_3dpp5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6wrm"]
-size = Vector2(21, 20)
+size = Vector2(32, 29)
 
 [node name="RigidBody2D" type="RigidBody2D"]
 gravity_scale = 0.3
+script = ExtResource("1_3dpp5")
 
 [node name="Gore" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("1_i6wrm")
 vframes = 4
 script = ExtResource("2_3dpp5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_i6wrm")

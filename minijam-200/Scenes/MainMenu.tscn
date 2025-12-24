@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxi4gkvsplqyh"]
+[gd_scene load_steps=13 format=3 uid="uid://ccyvs65rpci4a"]
 
 [ext_resource type="Script" uid="uid://dg57fnder8ys2" path="res://Scripts/main_menu.gd" id="1_8saeu"]
 [ext_resource type="Texture2D" uid="uid://codddka8pe3b2" path="res://Sprites/ProgressBar.png" id="1_tt5f1"]
 [ext_resource type="FontFile" uid="uid://d35yfqyb2ke15" path="res://at01.ttf" id="2_853f1"]
 [ext_resource type="Script" uid="uid://ds4nx2kvtmn5q" path="res://Scripts/FrogFalling.gd" id="2_ghw46"]
-[ext_resource type="Script" uid="uid://c7pegv72i5x60" path="res://Scenes/MouseCollision.gd" id="5_df05h"]
+[ext_resource type="Script" uid="uid://c7pegv72i5x60" path="res://Scripts/MouseCollision.gd" id="5_df05h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_853f1"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -67,7 +67,6 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8um5k"]
-size = Vector2(6, 7)
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_8saeu")
@@ -76,7 +75,7 @@ script = ExtResource("1_8saeu")
 script = ExtResource("2_ghw46")
 
 [node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0.3720304, 0.44814527, 0.32103452, 1)
+modulate = Color(0.2788047, 0.2804289, 0.2657738, 1)
 z_index = -50
 position = Vector2(362.87497, -9.536743e-07)
 scale = Vector2(291.03122, 173.40623)
@@ -145,7 +144,6 @@ libraries = {
 script = ExtResource("5_df05h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-7, -6.5)
 shape = SubResource("RectangleShape2D_8um5k")
 
 [connection signal="pressed" from="menuPT1/menuPanel/settings" to="." method="_on_settings_pressed"]

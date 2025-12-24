@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxi4gkvsplqyh"]
+[gd_scene load_steps=14 format=3 uid="uid://dxi4gkvsplqyh"]
 
 [ext_resource type="Script" uid="uid://dg57fnder8ys2" path="res://Scripts/main_menu.gd" id="1_8saeu"]
 [ext_resource type="Texture2D" uid="uid://codddka8pe3b2" path="res://Sprites/ProgressBar.png" id="1_tt5f1"]
 [ext_resource type="FontFile" uid="uid://d35yfqyb2ke15" path="res://at01.ttf" id="2_853f1"]
 [ext_resource type="Script" uid="uid://ds4nx2kvtmn5q" path="res://Scripts/FrogFalling.gd" id="2_ghw46"]
-[ext_resource type="Script" path="res://Scripts/MouseCollision.gd" id="5_df05h"]
+[ext_resource type="Script" uid="uid://c7pegv72i5x60" path="res://Scripts/MouseCollision.gd" id="5_df05h"]
+[ext_resource type="AudioStream" uid="uid://devbygi72pu45" path="res://audio/miniJam200menuMusic.mp3" id="6_8um5k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_853f1"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -95,20 +96,31 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_853f1")
 [node name="menuPanel" type="Panel" parent="menuPT1"]
 layout_mode = 0
 offset_left = 218.0
-offset_top = 11.0
+offset_top = 107.0
 offset_right = 367.0
-offset_bottom = 292.0
+offset_bottom = 200.0
 
 [node name="settings" type="Button" parent="menuPT1/menuPanel"]
 layout_mode = 0
 offset_left = 22.0
-offset_top = 235.0
+offset_top = 55.0
 offset_right = 128.0
-offset_bottom = 263.0
+offset_bottom = 83.0
 theme_override_fonts/font = ExtResource("2_853f1")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_tt5f1")
 text = "SETTINGS"
+
+[node name="play" type="Button" parent="menuPT1/menuPanel"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 11.0
+offset_right = 128.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("2_853f1")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_tt5f1")
+text = "PLAY"
 
 [node name="menuPT2" type="Panel" parent="."]
 offset_left = 314.0
@@ -155,6 +167,12 @@ script = ExtResource("5_df05h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_8um5k")
 
+[node name="mainMenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_8um5k")
+volume_db = -1.0
+autoplay = true
+
 [connection signal="pressed" from="menuPT1/menuPanel/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="menuPT1/menuPanel/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="menuPT2/menuPanel/back" to="." method="_on_back_pressed"]
 [connection signal="drag_ended" from="menuPT2/HSlider" to="." method="_on_h_slider_drag_ended"]

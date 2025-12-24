@@ -23,3 +23,7 @@ func _on_h_slider_drag_ended(value_changed: bool) -> void:
 		AudioServer.get_bus_index("Master"),
 		db
 	)
+
+
+func _on_play_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main.tscn")

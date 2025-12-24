@@ -72,6 +72,30 @@ _data = {
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_8saeu")
 
+[node name="RichTextLabel6" type="RichTextLabel" parent="."]
+offset_left = -205.0
+offset_top = 51.0
+offset_right = 224.0
+offset_bottom = 185.0
+theme_override_colors/default_color = Color(0.22740039, 0.13239947, 0.0745829, 1)
+theme_override_fonts/normal_font = ExtResource("2_853f1")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[shake][wave]FIGHTER"
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = -203.0
+offset_top = -141.0
+offset_right = 226.0
+offset_bottom = -7.0
+theme_override_colors/default_color = Color(0.22174901, 0.14760742, 0.08679863, 1)
+theme_override_fonts/normal_font = ExtResource("2_853f1")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[shake][wave]FROG"
+horizontal_alignment = 1
+
 [node name="FrogSpawner" type="Node2D" parent="."]
 script = ExtResource("2_ghw46")
 
@@ -83,6 +107,54 @@ scale = Vector2(291.03122, 173.40623)
 texture = ExtResource("1_tt5f1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -209.0
+offset_top = -153.0
+offset_right = 220.0
+offset_bottom = -19.0
+theme_override_colors/default_color = Color(0.49485326, 0.6571869, 0.4717651, 1)
+theme_override_fonts/normal_font = ExtResource("2_853f1")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[shake][wave]FROG"
+horizontal_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = -210.0
+offset_top = -153.0
+offset_right = 219.0
+offset_bottom = -19.0
+theme_override_colors/default_color = Color(0.6241337, 0.785875, 0.60055923, 1)
+theme_override_fonts/normal_font = ExtResource("2_853f1")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[shake][wave]FROG"
+horizontal_alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+offset_left = -210.0
+offset_top = 37.0
+offset_right = 219.0
+offset_bottom = 171.0
+theme_override_colors/default_color = Color(0.49485326, 0.6571869, 0.4717651, 1)
+theme_override_fonts/normal_font = ExtResource("2_853f1")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[shake][wave]FIGHTER"
+horizontal_alignment = 1
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+offset_left = -208.0
+offset_top = 39.0
+offset_right = 221.0
+offset_bottom = 173.0
+theme_override_colors/default_color = Color(0.6678639, 0.82160324, 0.6452621, 1)
+theme_override_fonts/normal_font = ExtResource("2_853f1")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[shake][wave]FIGHTER"
+horizontal_alignment = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

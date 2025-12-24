@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://codddka8pe3b2" path="res://Sprites/ProgressBar.png" id="1_tt5f1"]
 [ext_resource type="FontFile" uid="uid://d35yfqyb2ke15" path="res://at01.ttf" id="2_853f1"]
 [ext_resource type="Script" uid="uid://ds4nx2kvtmn5q" path="res://Scripts/FrogFalling.gd" id="2_ghw46"]
-[ext_resource type="Script" uid="uid://c7pegv72i5x60" path="res://Scripts/MouseCollision.gd" id="5_df05h"]
+[ext_resource type="Script" path="res://Scenes/MouseCollision.gd" id="5_df05h"]
 [ext_resource type="AudioStream" uid="uid://devbygi72pu45" path="res://audio/miniJam200menuMusic.mp3" id="6_8um5k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_853f1"]
@@ -149,12 +149,20 @@ text = "BACK"
 
 [node name="HSlider" type="HSlider" parent="menuPT2"]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 81.0
-offset_right = 216.0
-offset_bottom = 97.0
-max_value = 1.0
-step = 0.05
+offset_left = 97.0
+offset_top = 108.0
+offset_right = 213.0
+offset_bottom = 124.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="menuPT2"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 74.0
+offset_right = 197.0
+offset_bottom = 114.0
+theme_override_fonts/normal_font = ExtResource("2_853f1")
+theme_override_font_sizes/normal_font_size = 32
+text = "Volume"
 
 [node name="camAnimations" type="AnimationPlayer" parent="."]
 libraries = {

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6eeucmvdpp3v"
-path="res://.godot/imported/pondBorder-3.png.png-adf0ac4aba4739fe2a1314bf20c6044b.ctex"
+path="res://.godot/imported/pondBorder.png-392b0ffb76c573286a18b87f91331b05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/pondBorder-3.png.png"
-dest_files=["res://.godot/imported/pondBorder-3.png.png-adf0ac4aba4739fe2a1314bf20c6044b.ctex"]
+source_file="res://Sprites/pondBorder.png"
+dest_files=["res://.godot/imported/pondBorder.png-392b0ffb76c573286a18b87f91331b05.ctex"]
 
 [params]
 

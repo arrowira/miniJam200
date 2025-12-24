@@ -18,7 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://bddads1ov27tk" path="res://audio/healSfx.mp3" id="12_k12tt"]
 [ext_resource type="AudioStream" uid="uid://b6bc0epnvmfou" path="res://audio/powerUp.wav" id="15_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://dsgr2v5hac8gj" path="res://Scenes/music.tscn" id="17_h1bgf"]
-[ext_resource type="Texture2D" uid="uid://b6eeucmvdpp3v" path="res://Sprites/pondBorder-3.png.png" id="19_fevyy"]
+[ext_resource type="Texture2D" uid="uid://b6eeucmvdpp3v" path="res://Sprites/pondBorder.png" id="19_fevyy"]
 [ext_resource type="PackedScene" uid="uid://86nv614lnxn" path="res://Scenes/folliage_patch.tscn" id="20_hibaj"]
 
 [sub_resource type="Animation" id="Animation_k12tt"]

@@ -83,12 +83,6 @@ func _physics_process(delta: float) -> void:
 		if(Input.is_action_just_pressed("Dash") && Dashing == false):
 			Dashing = true
 		
-		if(Dashing == true && DashTime <= ImmunityFrames):
-			get_node("playerArea").monitoring = false
-			get_node("playerArea").monitorable = false
-		else:
-			get_node("playerArea").monitoring = true
-			get_node("playerArea").monitorable = true
 		if(Dashing == true):
 			if(DashTime == 0):
 				velocity*=DashSpeed
@@ -125,27 +119,23 @@ func _physics_process(delta: float) -> void:
 			$PointerPivot/Pointer.self_modulate.a = (LowestDistance-100)/200
 		if(LowestDistance <= 100):
 			$PointerPivot/Pointer.self_modulate.a = 0
-		if(LowestDistance<=10 && ArrowPos[NewI].DropTimer>= 20):
-			Arrows+=1
-			$arrowPickup.play()
-			ArrowPos[NewI].queue_free()
 	else:
 		$PointerPivot/Pointer.visible = false
 		
 	move_and_slide()
 	
 func Damage(D):
-	
-	if PlayerHealth!=0:
-		$camShake.play('camShake')
-		$damageSound.play()
-		PlayerHealth-=D
-		get_parent().get_node("CanvasLayer").UpdateHealth()
-	if PlayerHealth == 0:
-		get_parent().get_node("music").pitch_scale =0.3
-		dead = true
-		velocity = Vector2.ZERO
-		$deathTimer.start()
+	if(Dashing == false || DashTime > ImmunityFrames):
+		if PlayerHealth!=0:
+			$camShake.play('camShake')
+			$damageSound.play()
+			PlayerHealth-=D
+			get_parent().get_node("CanvasLayer").UpdateHealth()
+		if PlayerHealth == 0:
+			get_parent().get_node("music").pitch_scale =0.3
+			dead = true
+			velocity = Vector2.ZERO
+			$deathTimer.start()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "damage":

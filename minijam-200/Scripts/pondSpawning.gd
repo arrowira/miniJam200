@@ -13,7 +13,6 @@ var wizardFrog = preload("res://Scenes/wizard.tscn")
 var spawnCoolDown = 10
 var playerDistanceToSpawn = 500
 
-
 func _ready() -> void:
 	$spawnTimer.wait_time=spawnCoolDown
 

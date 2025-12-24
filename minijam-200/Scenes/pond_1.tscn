@@ -6,7 +6,6 @@
 [node name="pond1" type="Node2D"]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_ycvll")
-spawnCoolDown = 5.0
 
 [node name="Pondma" type="Sprite2D" parent="."]
 z_index = -4096

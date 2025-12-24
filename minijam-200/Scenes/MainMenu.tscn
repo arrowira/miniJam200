@@ -1,32 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccyvs65rpci4a"]
+[gd_scene load_steps=13 format=3 uid="uid://dxi4gkvsplqyh"]
 
 [ext_resource type="Script" uid="uid://dg57fnder8ys2" path="res://Scripts/main_menu.gd" id="1_8saeu"]
 [ext_resource type="Texture2D" uid="uid://codddka8pe3b2" path="res://Sprites/ProgressBar.png" id="1_tt5f1"]
 [ext_resource type="FontFile" uid="uid://d35yfqyb2ke15" path="res://at01.ttf" id="2_853f1"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tt5f1"]
+[ext_resource type="Script" uid="uid://ds4nx2kvtmn5q" path="res://Scripts/FrogFalling.gd" id="2_ghw46"]
+[ext_resource type="Script" uid="uid://c7pegv72i5x60" path="res://Scenes/MouseCollision.gd" id="5_df05h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_853f1"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tt5f1"]
 bg_color = Color(0.24313726, 0.24313726, 0.24313726, 0.54509807)
-
-[sub_resource type="Animation" id="Animation_ghw46"]
-resource_name = "toSettings"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(0.32987654, 0.96593356),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(610, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_df05h"]
 length = 0.001
@@ -59,6 +43,22 @@ tracks/0/keys = {
 "values": [Vector2(610, 0), Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_ghw46"]
+resource_name = "toSettings"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(0.32987654, 0.96593356),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(610, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8um5k"]
 _data = {
 &"RESET": SubResource("Animation_df05h"),
@@ -66,14 +66,14 @@ _data = {
 &"toSettings": SubResource("Animation_ghw46")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8um5k"]
+size = Vector2(6, 7)
+
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_8saeu")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(22, 2)
-energy = 16.0
-texture = SubResource("NoiseTexture2D_tt5f1")
-height = 56.0
+[node name="FrogSpawner" type="Node2D" parent="."]
+script = ExtResource("2_ghw46")
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.3720304, 0.44814527, 0.32103452, 1)
@@ -140,6 +140,13 @@ text = "BACK"
 libraries = {
 &"": SubResource("AnimationLibrary_8um5k")
 }
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("5_df05h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-7, -6.5)
+shape = SubResource("RectangleShape2D_8um5k")
 
 [connection signal="pressed" from="menuPT1/menuPanel/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="menuPT2/menuPanel/back" to="." method="_on_back_pressed"]

@@ -17,6 +17,7 @@ func addXP(amt):
 	if xp>=100:
 		xp=xp%100
 		lvl += 1
+		$lvlSFX.play()
 		$lvlLabel.text = str(lvl)
 		get_tree().root.get_node("main").addSkillPoint()
 		lvlLengthMod *= 0.95

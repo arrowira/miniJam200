@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_spawn_timer_timeout() -> void:
-	var spawnChance = randi_range(0,20)
+	var spawnChance = randi_range(0,30)
 	if spawnChance == 5:
 		var newFrog = eliteFrog.instantiate()
 		get_tree().root.get_node("main").add_child(newFrog)

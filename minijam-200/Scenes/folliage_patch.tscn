@@ -1,0 +1,141 @@
+[gd_scene load_steps=2 format=3 uid="uid://86nv614lnxn"]
+
+[ext_resource type="Texture2D" uid="uid://c56i1icmykymi" path="res://Sprites/folliage.png" id="1_h4cv2"]
+
+[node name="folliage patch" type="Node2D"]
+show_behind_parent = true
+
+[node name="Folliage" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(3, -3)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+frame = 1
+
+[node name="Folliage2" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(-87.99999, -73.99999)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+
+[node name="Folliage3" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(86.99999, -107)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+
+[node name="Folliage4" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(84, 87.999985)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+
+[node name="Folliage5" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(-72, 42.000004)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+
+[node name="Folliage6" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(151.99998, -29.999989)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+frame = 1
+
+[node name="Folliage7" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(10.999996, -159)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+frame = 1
+
+[node name="Folliage8" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(-177.99998, -19.000015)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+frame = 1
+
+[node name="Folliage9" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(-29.000015, 124.999985)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+frame = 1
+
+[node name="Folliage10" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(14.999989, -77)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+frame = 1
+
+[node name="Folliage11" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(-76, -148)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+frame = 1
+
+[node name="Folliage12" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(98.999985, -181)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+
+[node name="Folliage13" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(95.999985, 13.999977)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+
+[node name="Folliage14" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(-60, -32)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+
+[node name="Folliage15" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(163.99998, -104)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+frame = 1
+
+[node name="Folliage16" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(-35.99998, -237)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+
+[node name="Folliage17" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(-166, -93.00003)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+
+[node name="Folliage18" type="Sprite2D" parent="."]
+modulate = Color(0.346109, 0.44553053, 0.41377997, 1)
+position = Vector2(-17.000027, 50.999973)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_h4cv2")
+vframes = 2
+frame = 1

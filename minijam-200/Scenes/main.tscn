@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=28 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://b6bc0epnvmfou" path="res://audio/powerUp.wav" id="15_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://dsgr2v5hac8gj" path="res://Scenes/music.tscn" id="17_h1bgf"]
 [ext_resource type="Texture2D" uid="uid://b6eeucmvdpp3v" path="res://Sprites/pondBorder-3.png.png" id="19_fevyy"]
+[ext_resource type="PackedScene" uid="uid://86nv614lnxn" path="res://Scenes/folliage_patch.tscn" id="20_hibaj"]
 
 [sub_resource type="Animation" id="Animation_k12tt"]
 length = 0.001
@@ -862,5 +863,56 @@ z_index = -4096
 position = Vector2(1256, 995)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("19_fevyy")
+
+[node name="folliage patch" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(1480, 992)
+
+[node name="folliage patch2" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(720, 747)
+
+[node name="folliage patch3" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(2144, 937)
+
+[node name="folliage patch4" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(2336, 147)
+
+[node name="folliage patch5" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(2065, -278)
+
+[node name="folliage patch6" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(518, -888)
+
+[node name="folliage patch7" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(-29, 1083)
+
+[node name="folliage patch8" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(1169, 2457)
+
+[node name="folliage patch9" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(1952, 2625)
+
+[node name="folliage patch10" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(2462, 3080)
+
+[node name="folliage patch11" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(2585, 2347)
+
+[node name="folliage patch12" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(2471, 1324)
+
+[node name="folliage patch13" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(1376, 1894)
+
+[node name="folliage patch14" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(-214, 2515)
+
+[node name="folliage patch15" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(-477, -952)
+
+[node name="folliage patch16" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(2806, 562)
+
+[node name="folliage patch17" parent="." instance=ExtResource("20_hibaj")]
+position = Vector2(2571, -888)
 
 [connection signal="pressed" from="CanvasLayer/deathScreen/Panel/Button" to="." method="_on_button_pressed"]

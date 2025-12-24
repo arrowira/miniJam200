@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dqlq65abvfvhe"]
+[gd_scene load_steps=26 format=3 uid="uid://dqlq65abvfvhe"]
 
 [ext_resource type="PackedScene" uid="uid://dn0wyr0nn2y2q" path="res://Scenes/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b08py2jdic62i" path="res://Scripts/gameManager.gd" id="1_ynf5e"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bnjafq8o13yb6" path="res://Scenes/pond_2.tscn" id="11_6iyac"]
 [ext_resource type="AudioStream" uid="uid://d036u52ag8i4v" path="res://audio/pickupCoin (1).wav" id="11_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://b4rvk6nqvymxb" path="res://Scenes/pond_1.tscn" id="12_6iyac"]
+[ext_resource type="AudioStream" uid="uid://d2krrtpwjo6ds" path="res://audio/upgradeSfx.mp3" id="12_b3802"]
 [ext_resource type="PackedScene" uid="uid://dw4l6owia3h5n" path="res://Scenes/pond3.tscn" id="12_fdnlq"]
 [ext_resource type="AudioStream" uid="uid://bddads1ov27tk" path="res://audio/healSfx.mp3" id="12_k12tt"]
 [ext_resource type="AudioStream" uid="uid://b6bc0epnvmfou" path="res://audio/powerUp.wav" id="15_wsu2k"]
@@ -456,9 +457,24 @@ text = "0
 "
 horizontal_alignment = 1
 
+[node name="lvlLabel2" type="RichTextLabel" parent="CanvasLayer/XPbar"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 241.0
+offset_right = 440.0
+offset_bottom = 281.0
+theme_override_fonts/normal_font = ExtResource("7_344ge")
+theme_override_font_sizes/normal_font_size = 32
+text = "Level:"
+horizontal_alignment = 1
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/XPbar"]
 stream = ExtResource("11_wsu2k")
 pitch_scale = 0.5
+
+[node name="lvlSFX" type="AudioStreamPlayer" parent="CanvasLayer/XPbar"]
+stream = ExtResource("12_b3802")
+volume_db = 5.0
 
 [node name="healSfx" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("12_k12tt")
